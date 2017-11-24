@@ -258,7 +258,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/24/1/" itemprop="url">利用密钥对进行ssh链接</a></h1>
+                <a class="post-title-link" href="/2017/11/24/1/" itemprop="url">SSH通过密钥对链接</a></h1>
         
 
         <div class="post-meta">
@@ -310,7 +310,9 @@
       
         
           
-            <h1 id="本地生成密钥对"><a href="#本地生成密钥对" class="headerlink" title="本地生成密钥对"></a>本地生成密钥对</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+            <h2 id="1-本地生成密钥对"><a href="#1-本地生成密钥对" class="headerlink" title="1. 本地生成密钥对"></a>1. 本地生成密钥对</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<h2 id="2-拷贝公钥到服务器"><a href="#2-拷贝公钥到服务器" class="headerlink" title="2. 拷贝公钥到服务器"></a>2. 拷贝公钥到服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<h2 id="3-设置服务器文件权限"><a href="#3-设置服务器文件权限" class="headerlink" title="3. 设置服务器文件权限"></a>3. 设置服务器文件权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 700 ~/.ssh</span><br><span class="line">$ chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 
           
         
