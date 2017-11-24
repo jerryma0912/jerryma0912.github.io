@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2017/11/24/1/</loc>
-    <lastmod>2017-11-24T16:36:11.000Z</lastmod>
+    <lastmod>2017-11-24T16:40:35.000Z</lastmod>
     <data>
         <display>
         <title>SSH通过密钥对链接</title>
@@ -17,6 +17,9 @@
            
              
               <breadCrumb title="建立博客" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
+          
+             
+              <breadCrumb title="ssh免密登录" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/"/>
           
         </display>
     </data>
