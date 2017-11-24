@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="1. 本地生成密钥对1$ ssh-keygen -t rsa 2. 拷贝公钥到服务器1$ scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys 3. 设置服务器文件权限12$ chmod 700 ~/.ssh$ chmod 600 ~/.ssh/authorized_keys 参考文档：使用ssh-keygen设置ssh无密码登录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-24T16:17:42.000Z">
+<meta property="og:updated_time" content="2017-11-24T16:18:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH通过密钥对链接">
 <meta name="twitter:description" content="1. 本地生成密钥对1$ ssh-keygen -t rsa 2. 拷贝公钥到服务器1$ scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys 3. 设置服务器文件权限12$ chmod 700 ~/.ssh$ chmod 600 ~/.ssh/authorized_keys 参考文档：使用ssh-keygen设置ssh无密码登录">
@@ -313,7 +313,7 @@
         <h2 id="1-本地生成密钥对"><a href="#1-本地生成密钥对" class="headerlink" title="1. 本地生成密钥对"></a>1. 本地生成密钥对</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
 <h2 id="2-拷贝公钥到服务器"><a href="#2-拷贝公钥到服务器" class="headerlink" title="2. 拷贝公钥到服务器"></a>2. 拷贝公钥到服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 <h2 id="3-设置服务器文件权限"><a href="#3-设置服务器文件权限" class="headerlink" title="3. 设置服务器文件权限"></a>3. 设置服务器文件权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 700 ~/.ssh</span><br><span class="line">$ chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<p>参考文档：<br><a href="http://blog.51cto.com/lhflinux/526122/" target="_blank" rel="noopener">使用ssh-keygen设置ssh无密码登录</a></p>
+<p>参考文档：<br><a href="http://blog.51cto.com/lhflinux/526122" target="_blank" rel="noopener">使用ssh-keygen设置ssh无密码登录</a></p>
 
       
     </div>
