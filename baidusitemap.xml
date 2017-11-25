@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2017/11/25/ssh-login-noPasswd/</loc>
-    <lastmod>2017-11-25T03:09:37.000Z</lastmod>
+    <lastmod>2017-11-25T03:10:24.000Z</lastmod>
     <data>
         <display>
         <title>SSH通过密钥对链接</title>
@@ -19,7 +19,7 @@
               <breadCrumb title="建立博客" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
           
              
-              <breadCrumb title="2.ssh免秘钥登录" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/2-ssh%E5%85%8D%E7%A7%98%E9%92%A5%E7%99%BB%E5%BD%95/"/>
+              <breadCrumb title="2. ssh免秘钥登录" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/2-ssh%E5%85%8D%E7%A7%98%E9%92%A5%E7%99%BB%E5%BD%95/"/>
           
         </display>
     </data>
@@ -28,7 +28,7 @@
     
   <url>
     <loc>http://yoursite.com/2017/11/25/install-lnmpa/</loc>
-    <lastmod>2017-11-25T03:03:51.000Z</lastmod>
+    <lastmod>2017-11-25T03:10:20.000Z</lastmod>
     <data>
         <display>
         <title>CentOS 7.0下LNMPA环境安装</title>
@@ -42,7 +42,7 @@
               <breadCrumb title="建立博客" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
           
              
-              <breadCrumb title="服务器环境搭建" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+              <breadCrumb title="1. 服务器环境搭建" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/1-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>
