@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文主要讲述了在centOS 7.3环境下，搭建LNMPA环境的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-25T06:35:51.000Z">
+<meta property="og:updated_time" content="2017-11-25T06:39:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7.3下LNMPA环境安装">
 <meta name="twitter:description" content="本文主要讲述了在centOS 7.3环境下，搭建LNMPA环境的方法。">
@@ -369,7 +369,7 @@
 <h4 id="3-验证是否安装成功"><a href="#3-验证是否安装成功" class="headerlink" title="3.验证是否安装成功"></a>3.验证是否安装成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ php -v</span><br></pre></td></tr></table></figure>
 <p>参考文章：<a href="https://www.cnblogs.com/719907411hl/p/6891061.html" target="_blank" rel="noopener">CentOS通过yum安装php7.0</a></p>
 <hr>
-<h3 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h3><h4 id="1-修改监听端口"><a href="#1-修改监听端口" class="headerlink" title="1.修改监听端口"></a>1.修改监听端口</h4><p>apache已经安装完成，默认监听端口为<code>80</code>, 为了防止与nginx冲突，因此，此处将apache监听端口改为<code>8080</code>端口。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$     nano /etc/httpd/conf/httpd.conf</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h3><h4 id="1-修改监听端口"><a href="#1-修改监听端口" class="headerlink" title="1.修改监听端口"></a>1.修改监听端口</h4><p>apache已经安装完成，默认监听端口为<code>80</code>, 为了防止与nginx冲突，因此，此处将apache监听端口改为<code>8080</code>端口。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano /etc/httpd/conf/httpd.conf</span><br></pre></td></tr></table></figure></p>
 <p>修改文件内容如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Listen 80</span></span><br><span class="line">Listen 8080</span><br></pre></td></tr></table></figure></p>
 <h4 id="2-重启httpd"><a href="#2-重启httpd" class="headerlink" title="2.重启httpd"></a>2.重启httpd</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl restart httpd</span><br></pre></td></tr></table></figure>
 <h4 id="3-验证apache是否安装成功"><a href="#3-验证apache是否安装成功" class="headerlink" title="3.验证apache是否安装成功"></a>3.验证apache是否安装成功</h4><p>打开浏览器，进入网址<code>http://SERVER:8080</code>,检查是否打开apache欢迎页</p>
