@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="本地生成密钥对1$ ssh-keygen -t rsa 拷贝公钥到服务器1$ scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys 设置服务器文件权限12$ chmod 700 ~/.ssh$ chmod 600 ~/.ssh/authorized_keys 参">
+<meta name="description" content="###服务器环境搭建 (CentOS 7系统) 1. 安装git1$ yum install git 2. 创建git用户1$ adduser git 3. 设置git用户的权限(1) 为了能够进行写操作，首先改变文件权限12$ chmod 740 /etc/sudoers$ nano /etc/sudoers (2)">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSH通过密钥对链接">
-<meta property="og:url" content="http://yoursite.com/2017/11/25/ssh-login-noPasswd/index.html">
+<meta property="og:title" content="hexo的搭建">
+<meta property="og:url" content="http://yoursite.com/2017/11/25/install-hexo/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本地生成密钥对1$ ssh-keygen -t rsa 拷贝公钥到服务器1$ scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys 设置服务器文件权限12$ chmod 700 ~/.ssh$ chmod 600 ~/.ssh/authorized_keys 参考文档：使用ssh-keygen设置ssh无密码登录">
+<meta property="og:description" content="###服务器环境搭建 (CentOS 7系统) 1. 安装git1$ yum install git 2. 创建git用户1$ adduser git 3. 设置git用户的权限(1) 为了能够进行写操作，首先改变文件权限12$ chmod 740 /etc/sudoers$ nano /etc/sudoers (2) 找到并添加以下内容：123## Allow root to run any c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-25T03:10:24.000Z">
+<meta property="og:updated_time" content="2017-11-25T06:24:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSH通过密钥对链接">
-<meta name="twitter:description" content="本地生成密钥对1$ ssh-keygen -t rsa 拷贝公钥到服务器1$ scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys 设置服务器文件权限12$ chmod 700 ~/.ssh$ chmod 600 ~/.ssh/authorized_keys 参考文档：使用ssh-keygen设置ssh无密码登录">
+<meta name="twitter:title" content="hexo的搭建">
+<meta name="twitter:description" content="###服务器环境搭建 (CentOS 7系统) 1. 安装git1$ yum install git 2. 创建git用户1$ adduser git 3. 设置git用户的权限(1) 为了能够进行写操作，首先改变文件权限12$ chmod 740 /etc/sudoers$ nano /etc/sudoers (2) 找到并添加以下内容：123## Allow root to run any c">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/25/ssh-login-noPasswd/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/25/install-hexo/"/>
 
 
 
 
 
-  <title>SSH通过密钥对链接 | JERRY HOME</title>
+  <title>hexo的搭建 | JERRY HOME</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/ssh-login-noPasswd/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/install-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSH通过密钥对链接</h1>
+          <h1 class="post-title" itemprop="name headline">hexo的搭建</h1>
         
 
         <div class="post-meta">
@@ -292,7 +292,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T11:13:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T14:22:26+08:00">
                 2017-11-25
               </time>
             
@@ -326,8 +326,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/2-ssh免秘钥登录/" itemprop="url" rel="index">
-                    <span itemprop="name">2. ssh免秘钥登录</span>
+                  <a href="/categories/建立博客/hexo的搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo的搭建</span>
                   </a>
                 </span>
 
@@ -363,10 +363,25 @@
       
 
       
-        <h2 id="本地生成密钥对"><a href="#本地生成密钥对" class="headerlink" title="本地生成密钥对"></a>本地生成密钥对</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-<h2 id="拷贝公钥到服务器"><a href="#拷贝公钥到服务器" class="headerlink" title="拷贝公钥到服务器"></a>拷贝公钥到服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<h2 id="设置服务器文件权限"><a href="#设置服务器文件权限" class="headerlink" title="设置服务器文件权限"></a>设置服务器文件权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 700 ~/.ssh</span><br><span class="line">$ chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<p>参考文档：<br><a href="http://blog.51cto.com/lhflinux/526122" target="_blank" rel="noopener">使用ssh-keygen设置ssh无密码登录</a></p>
+        <p>###服务器环境搭建 (CentOS 7系统)</p>
+<h4 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install git</span><br></pre></td></tr></table></figure>
+<h4 id="2-创建git用户"><a href="#2-创建git用户" class="headerlink" title="2. 创建git用户"></a>2. 创建git用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adduser git</span><br></pre></td></tr></table></figure>
+<h4 id="3-设置git用户的权限"><a href="#3-设置git用户的权限" class="headerlink" title="3. 设置git用户的权限"></a>3. 设置git用户的权限</h4><p>(1) 为了能够进行写操作，首先改变文件权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 740 /etc/sudoers</span><br><span class="line">$ nano /etc/sudoers</span><br></pre></td></tr></table></figure></p>
+<p>(2) 找到并添加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Allow root to run any commands anywhere</span></span><br><span class="line">root    ALL=(ALL)    ALL</span><br><span class="line">git     ALL=(ALL)      ALL</span><br></pre></td></tr></table></figure></p>
+<p>(3) 修改完内容后，改回原权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 400 /etc/sudoers</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-设置git用户密码"><a href="#4-设置git用户密码" class="headerlink" title="4.设置git用户密码"></a>4.设置git用户密码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ passwd git</span><br></pre></td></tr></table></figure>
+<h4 id="5-设置免密登录"><a href="#5-设置免密登录" class="headerlink" title="5.设置免密登录"></a>5.设置免密登录</h4><p>设置过程请参考博文:<a href="http://101.132.100.254/2017/11/25/ssh-login-noPasswd/" target="_blank" rel="noopener">SSH通过密钥对链接</a></p>
+<hr>
+<h3 id="本地环境搭建（OS-X系统）"><a href="#本地环境搭建（OS-X系统）" class="headerlink" title="本地环境搭建（OS X系统）"></a>本地环境搭建（OS X系统）</h3><h4 id="1-初始化hexo程序"><a href="#1-初始化hexo程序" class="headerlink" title="1. 初始化hexo程序"></a>1. 初始化hexo程序</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ <span class="built_in">cd</span> ~/Documents/blog</span><br><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装deployer插件及本地server插件"><a href="#2-安装deployer插件及本地server插件" class="headerlink" title="2. 安装deployer插件及本地server插件"></a>2. 安装deployer插件及本地server插件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ npm install hexo-server</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="自动化部署"><a href="#自动化部署" class="headerlink" title="自动化部署"></a>自动化部署</h3><h4 id="1-在服务器中进入git用户"><a href="#1-在服务器中进入git用户" class="headerlink" title="1. 在服务器中进入git用户"></a>1. 在服务器中进入git用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ su git</span><br></pre></td></tr></table></figure>
+<h4 id="2-建立git裸库"><a href="#2-建立git裸库" class="headerlink" title="2.建立git裸库"></a>2.建立git裸库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~</span><br><span class="line">$ git init --bare blog.git</span><br></pre></td></tr></table></figure>
+<h4 id="3-同步网站根目录"><a href="#3-同步网站根目录" class="headerlink" title="3. 同步网站根目录"></a>3. 同步网站根目录</h4><p>进入<code>~/blog.git/hooks/</code>目录，新建<code>post-receive</code>文件，在文件中写以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">git --work-tree=/usr/share/nginx/html --git-dir=/home/git/blog.git checkout -f</span><br></pre></td></tr></table></figure></p>
+<p>设置文件执行权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +x post-receive</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-配置本地文件-config-yml"><a href="#4-配置本地文件-config-yml" class="headerlink" title="4. 配置本地文件_config.yml"></a>4. 配置本地文件_config.yml</h4><p>打开本地文件<code>~/Documents/blog/_config.yml</code>，找到<code>deploy</code>并改为以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@SERVER:/home/git/blog.git</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="本地上传文件命令"><a href="#本地上传文件命令" class="headerlink" title="本地上传文件命令"></a>本地上传文件命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g --deploy</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -397,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/25/install-lnmpa/" rel="next" title="CentOS 7.0下LNMPA环境安装">
-                <i class="fa fa-chevron-left"></i> CentOS 7.0下LNMPA环境安装
+              <a href="/2017/11/25/ssh-login-noPasswd/" rel="next" title="SSH通过密钥对链接">
+                <i class="fa fa-chevron-left"></i> SSH通过密钥对链接
               </a>
             
           </div>
@@ -406,10 +421,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/25/install-hexo/" rel="prev" title="hexo的搭建">
-                hexo的搭建 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地生成密钥对"><span class="nav-number">1.</span> <span class="nav-text">本地生成密钥对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝公钥到服务器"><span class="nav-number">2.</span> <span class="nav-text">拷贝公钥到服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置服务器文件权限"><span class="nav-number">3.</span> <span class="nav-text">设置服务器文件权限</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-安装git"><span class="nav-number">1.</span> <span class="nav-text">1. 安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创建git用户"><span class="nav-number">2.</span> <span class="nav-text">2. 创建git用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-设置git用户的权限"><span class="nav-number">3.</span> <span class="nav-text">3. 设置git用户的权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-设置git用户密码"><span class="nav-number">4.</span> <span class="nav-text">4.设置git用户密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-设置免密登录"><span class="nav-number">5.</span> <span class="nav-text">5.设置免密登录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地环境搭建（OS-X系统）"><span class="nav-number"></span> <span class="nav-text">本地环境搭建（OS X系统）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-初始化hexo程序"><span class="nav-number">1.</span> <span class="nav-text">1. 初始化hexo程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装deployer插件及本地server插件"><span class="nav-number">2.</span> <span class="nav-text">2. 安装deployer插件及本地server插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动化部署"><span class="nav-number"></span> <span class="nav-text">自动化部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-在服务器中进入git用户"><span class="nav-number">1.</span> <span class="nav-text">1. 在服务器中进入git用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-建立git裸库"><span class="nav-number">2.</span> <span class="nav-text">2.建立git裸库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-同步网站根目录"><span class="nav-number">3.</span> <span class="nav-text">3. 同步网站根目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-配置本地文件-config-yml"><span class="nav-number">4.</span> <span class="nav-text">4. 配置本地文件_config.yml</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地上传文件命令"><span class="nav-number"></span> <span class="nav-text">本地上传文件命令</span></a></div>
             
 
           </div>

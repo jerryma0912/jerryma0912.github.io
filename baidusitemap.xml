@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/11/25/install-hexo/</loc>
+    <lastmod>2017-11-25T06:24:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>hexo的搭建</title>
+        <pubTime>2017-11-25T06:22:26.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="建立博客" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
+          
+             
+              <breadCrumb title="hexo的搭建" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/hexo%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/11/25/install-lnmpa/</loc>
     <lastmod>2017-11-25T03:17:43.000Z</lastmod>
     <data>
