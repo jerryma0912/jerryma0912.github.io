@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文主要记录了python的基础数据类型。运行环境：macOS 10.12.6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-01T15:24:43.000Z">
+<meta property="og:updated_time" content="2018-02-01T15:34:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的基础数据类型">
 <meta name="twitter:description" content="本文主要记录了python的基础数据类型。运行环境：macOS 10.12.6">
@@ -364,6 +364,8 @@
 
       
         <p>本文主要记录了python的基础数据类型。运行环境：macOS 10.12.6<br><a id="more"></a></p>
+<hr>
+
 <h3 id="python的内存空间"><a href="#python的内存空间" class="headerlink" title="python的内存空间"></a>python的内存空间</h3><h4 id="1-变量引用计数"><a href="#1-变量引用计数" class="headerlink" title="(1)变量引用计数"></a>(1)变量引用计数</h4><p>输入以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=123  b=123  c=123</span><br></pre></td></tr></table></figure></p>
 <p>查询a、b、c的id，结果为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id(a)= 140639992833056</span><br><span class="line">id(b)= 140639992833056</span><br><span class="line">id(c)= 140639992833056</span><br></pre></td></tr></table></figure></p>
 <p>这说明python动态申请了一个空间，存储了123。然后变量同时指向了这个地址单元。此时<code>引用计数</code>为3。<br>在上述代码的基础上，添加代码<code>b=789</code>,查询id后的结果如下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id(a)= 140639992833056</span><br><span class="line">id(b)= 140639992864208</span><br><span class="line">id(c)= 140639992833056</span><br></pre></td></tr></table></figure></p>
