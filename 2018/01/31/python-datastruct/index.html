@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="通常，我们进行ssh连接时需要通过密码登录。但是对于远程服务器来说，在一定时间内没有操作，会自动断开连接，再次登录时需要再次输入密码，十分的不方便。为此，可以使用密钥对授权的方法，完成免密登录，从而提高效率。">
-<meta name="keywords" content="hexo">
+<meta name="description" content="本文主要记录了python的基础数据类型。运行环境：macOS 10.12.6">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSH通过密钥对链接">
-<meta property="og:url" content="http://yoursite.com/2017/11/25/ssh-login-noPasswd/index.html">
+<meta property="og:title" content="python的基础数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/01/31/python-datastruct/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="通常，我们进行ssh连接时需要通过密码登录。但是对于远程服务器来说，在一定时间内没有操作，会自动断开连接，再次登录时需要再次输入密码，十分的不方便。为此，可以使用密钥对授权的方法，完成免密登录，从而提高效率。">
+<meta property="og:description" content="本文主要记录了python的基础数据类型。运行环境：macOS 10.12.6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-30T23:46:55.000Z">
+<meta property="og:updated_time" content="2018-01-31T07:30:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSH通过密钥对链接">
-<meta name="twitter:description" content="通常，我们进行ssh连接时需要通过密码登录。但是对于远程服务器来说，在一定时间内没有操作，会自动断开连接，再次登录时需要再次输入密码，十分的不方便。为此，可以使用密钥对授权的方法，完成免密登录，从而提高效率。">
+<meta name="twitter:title" content="python的基础数据类型">
+<meta name="twitter:description" content="本文主要记录了python的基础数据类型。运行环境：macOS 10.12.6">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/25/ssh-login-noPasswd/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/31/python-datastruct/"/>
 
 
 
 
 
-  <title>SSH通过密钥对链接 | JERRY HOME</title>
+  <title>python的基础数据类型 | JERRY HOME</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/ssh-login-noPasswd/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/python-datastruct/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSH通过密钥对链接</h1>
+          <h1 class="post-title" itemprop="name headline">python的基础数据类型</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T11:13:34+08:00">
-                2017-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T11:09:51+08:00">
+                2018-01-31
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/" itemprop="url" rel="index">
-                    <span itemprop="name">建立博客</span>
+                  <a href="/categories/python学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">python学习笔记</span>
                   </a>
                 </span>
 
@@ -326,8 +326,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/2-ssh免秘钥登录/" itemprop="url" rel="index">
-                    <span itemprop="name">2. ssh免秘钥登录</span>
+                  <a href="/categories/python学习笔记/1-数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">1. 数据结构</span>
                   </a>
                 </span>
 
@@ -363,11 +363,22 @@
       
 
       
-        <p>通常，我们进行ssh连接时需要通过密码登录。但是对于远程服务器来说，在一定时间内没有操作，会自动断开连接，再次登录时需要再次输入密码，十分的不方便。为此，可以使用<code>密钥对</code>授权的方法，完成免密登录，从而提高效率。<br><a id="more"></a></p>
-<h2 id="本地生成密钥对"><a href="#本地生成密钥对" class="headerlink" title="本地生成密钥对"></a>本地生成密钥对</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-<h2 id="拷贝公钥到服务器"><a href="#拷贝公钥到服务器" class="headerlink" title="拷贝公钥到服务器"></a>拷贝公钥到服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_rsa.pub git@SERVER:~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<h2 id="设置服务器文件权限"><a href="#设置服务器文件权限" class="headerlink" title="设置服务器文件权限"></a>设置服务器文件权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 700 ~/.ssh</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<p>参考文档：<br><a href="http://blog.51cto.com/lhflinux/526122" target="_blank" rel="noopener">使用ssh-keygen设置ssh无密码登录</a></p>
+        <p>本文主要记录了python的基础数据类型。运行环境：macOS 10.12.6<br><a id="more"></a></p>
+<p>###python的内存空间</p>
+<p>####(1)变量引用计数<br>输入以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=123  b=123  c=123</span><br></pre></td></tr></table></figure></p>
+<p>查询a、b、c的id，结果为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id(a)= 140639992833056</span><br><span class="line">id(b)= 140639992833056</span><br><span class="line">id(c)= 140639992833056</span><br></pre></td></tr></table></figure></p>
+<p>这说明python动态申请了一个空间，存储了123。然后变量同时指向了这个地址单元。此时<code>引用计数</code>为3。<br>在上述代码的基础上，添加代码<code>b=789</code>,查询id后的结果如下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id(a)= 140639992833056</span><br><span class="line">id(b)= 140639992864208</span><br><span class="line">id(c)= 140639992833056</span><br></pre></td></tr></table></figure></p>
+<p>可以看出，此时b指向了另一个地址单元，而a和b依然指向原地址单元。相当于在C语言中，用malloc()开辟一个空间，然后将指针指向该空间。<br><br><br>这样做的好处在于节约内存的开销。</p>
+<p>####(2)del语句可以直接释放资源，变量名删除，引用计数减1</p>
+<p>####(3)变量内存自动管理回收，垃圾收集<br>如果将a和c都不指向123后，再新建一个变量<code>c=123</code>,此时c的id依旧为140639992833056，这样做的好处在于减少了malloc()和free()的反复性。<br><br>实际上，python中的<code>引用计数</code>，当其为0时，若内存不足/优化内存时，该内存会被释放。</p>
+<p>###python中使用中文<br>(1)需要使用中文时，在文件开头写入：<code>#--coding:UTF-8--</code>或者<code>#coding=utf-8</code>来指定编码。<br><br>(2)在python中，注释为<code>#</code></p>
+<p>###简单函数<br>函数定义的格式如下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def add(x,y):</span><br><span class="line">    z=x+y</span><br><span class="line">    <span class="built_in">return</span> z</span><br><span class="line">    </span><br><span class="line">res = add(3,5)</span><br><span class="line"><span class="built_in">print</span> res</span><br></pre></td></tr></table></figure></p>
+<p><br>(1)def定义函数的关键字<br><br>(2)x和y为形参，不需要类型修饰<br><br>(3)函数定义行需要跟：<br><br>(4)函数体整体缩进(不缩进报错！)<br><br>(5)函数可以有返回值，若无返回值，返回None(会自动返回，也可以手动返回)</p>
+<p>###局部变量和全局变量</p>
+<p>####代码1：局部变量作用于覆盖全局变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def p_num():</span><br><span class="line">    num=5</span><br><span class="line">    <span class="built_in">print</span> num</span><br><span class="line">num=10</span><br><span class="line">p_num()</span><br><span class="line"><span class="built_in">print</span> num</span><br><span class="line"></span><br><span class="line"><span class="comment">#结果： 5 10</span></span><br></pre></td></tr></table></figure></p>
+<p>####代码2：函数内局部变量定义；解释器不使用全局变量，局部变量的定义晚于被引用，则报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def p_num():</span><br><span class="line">    <span class="built_in">print</span> num</span><br><span class="line">    num=5   <span class="comment">#若注释，则输出结果为10 10 10</span></span><br><span class="line">    <span class="built_in">print</span> num</span><br><span class="line">num=10</span><br><span class="line">p_num()</span><br><span class="line"><span class="built_in">print</span> num</span><br><span class="line"></span><br><span class="line"><span class="comment">#结果：报错！</span></span><br></pre></td></tr></table></figure></p>
+<p>####代码3：函数内部可以直接访问全局变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def p_num():</span><br><span class="line">    <span class="built_in">print</span> num</span><br><span class="line">num=10</span><br><span class="line">p_num()</span><br><span class="line"><span class="built_in">print</span> num</span><br><span class="line"></span><br><span class="line"><span class="comment">#结果：10 10</span></span><br></pre></td></tr></table></figure></p>
+<p>####代码4：函数内修改全局变量，使用global关键字</p>
 
       
     </div>
@@ -385,7 +396,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -398,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/25/install-lnmpa/" rel="next" title="CentOS 7.3下LNMPA环境安装">
-                <i class="fa fa-chevron-left"></i> CentOS 7.3下LNMPA环境安装
+              <a href="/2017/11/25/install-hexo/" rel="next" title="hexo的搭建">
+                <i class="fa fa-chevron-left"></i> hexo的搭建
               </a>
             
           </div>
@@ -407,10 +418,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/25/install-hexo/" rel="prev" title="hexo的搭建">
-                hexo的搭建 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -462,17 +469,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -534,22 +532,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地生成密钥对"><span class="nav-number">1.</span> <span class="nav-text">本地生成密钥对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝公钥到服务器"><span class="nav-number">2.</span> <span class="nav-text">拷贝公钥到服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置服务器文件权限"><span class="nav-number">3.</span> <span class="nav-text">设置服务器文件权限</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
