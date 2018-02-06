@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/02/06/python-class/</loc>
+    <lastmod>2018-02-06T08:52:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>python的面向对象</title>
+        <pubTime>2018-02-06T08:47:25.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python学习笔记" url="http://yoursite.com/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="3.面向对象" url="http://yoursite.com/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/02/02/python-string/</loc>
     <lastmod>2018-02-06T08:42:55.000Z</lastmod>
     <data>
