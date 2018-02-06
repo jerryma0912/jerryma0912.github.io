@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文主要记录了python的字符串处理与其特殊的函数。运行环境：macOS 10.12.6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T07:43:28.000Z">
+<meta property="og:updated_time" content="2018-02-06T07:50:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的字符串处理与特殊函数">
 <meta name="twitter:description" content="本文主要记录了python的字符串处理与其特殊的函数。运行环境：macOS 10.12.6">
@@ -446,21 +446,11 @@
 <ul>
 <li>调用函数时，如果缺省参数的值没有传入，则被认为是默认值.</li>
 <li><p>注意：缺省参数必须在最后！！</p>
-<pre><code class="bash">def show(a,b=<span class="string">'12345'</span>):
-  <span class="built_in">print</span> a
-  <span class="built_in">print</span> b
-  <span class="built_in">return</span>
-
-show(<span class="string">'1'</span>)
-
-<span class="comment">#结果：</span>
-1
-12345
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    def show(a,b=<span class="string">'12345'</span>):</span><br><span class="line">        <span class="built_in">print</span> a</span><br><span class="line">        <span class="built_in">print</span> b</span><br><span class="line">        <span class="built_in">return</span></span><br><span class="line">    </span><br><span class="line">    show(<span class="string">'1'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#结果：</span></span><br><span class="line">    1</span><br><span class="line">    12345</span><br><span class="line">    ```    </span><br><span class="line">- 不定长参数</span><br><span class="line">    -  如果需要一个函数能够处理比声明函数时更多的参数，需要使用不定长参数</span><br><span class="line">    ```bash</span><br><span class="line">    def function_suite([formal_args,] *var_args_tuple)</span><br><span class="line">        <span class="string">"函数_文档字符串"</span></span><br><span class="line">        function_suite</span><br><span class="line">        <span class="built_in">return</span> [expression]</span><br></pre></td></tr></table></figure>
+<p>加了星号（*）bi</p>
 </li>
 </ul>
 </li>
-<li>不定长参数</li>
 </ul>
 
       
