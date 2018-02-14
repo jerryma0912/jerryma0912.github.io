@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文记录了在vultr的服务器上安装sspanel的过程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-14T09:23:57.000Z">
+<meta property="og:updated_time" content="2018-02-14T10:16:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sspanel安装">
 <meta name="twitter:description" content="本文记录了在vultr的服务器上安装sspanel的过程。">
@@ -357,7 +357,7 @@
 <p>进行安装。分别输入：</p>
 <ul>
 <li>数据库密码</li>
-<li>y（开启InnoDB）</li>
+<li>n（不开启InnoDB）</li>
 <li>2 (安装mysql 5.5.42)</li>
 <li>5 (安装php 5.6.9)</li>
 <li>1 (不安装内存分配)</li>
@@ -375,7 +375,7 @@
 </ul>
 <p><br> 现在来对nginx做一些设置,进入以下路径：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/<span class="built_in">local</span>/nginx/conf/vhost/你的域名.conf</span><br></pre></td></tr></table></figure>
-<p>在access_log off之前添加以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cation / &#123;               </span><br><span class="line">            try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php<span class="variable">$is_args</span><span class="variable">$args</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在access_log off之前添加以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;               </span><br><span class="line">            try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php<span class="variable">$is_args</span><span class="variable">$args</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
 <p>接着往上看到root那一行在后面添加一个public。</p>
 <hr>
 
