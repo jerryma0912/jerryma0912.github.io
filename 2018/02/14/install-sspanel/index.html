@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文记录了在vultr的服务器上安装sspanel的过程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-14T12:47:51.000Z">
+<meta property="og:updated_time" content="2018-02-14T12:48:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sspanel安装">
 <meta name="twitter:description" content="本文记录了在vultr的服务器上安装sspanel的过程。">
@@ -384,7 +384,7 @@
 <p>重启nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure></p>
 <hr>
 
-<h3 id="配置php"><a href="#配置php" class="headerlink" title="配置php"></a>配置php</h3><p>通过浏览器打开我们的phpmyadmin：<a href="http://你VPS的IP/phpmyadmin/，进入以下目录新建一个用户并为这个用户创建一个同名的数据库。" target="_blank" rel="noopener">http://你VPS的IP/phpmyadmin/，进入以下目录新建一个用户并为这个用户创建一个同名的数据库。</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">用户-&gt;添加用户</span><br><span class="line">---</span><br><span class="line">user name: 用户名</span><br><span class="line">host: %</span><br><span class="line">密码：       密码</span><br><span class="line">重新输入：   密码</span><br><span class="line">生成密码：   点击生成</span><br><span class="line">勾选 【创建与用户同名的数据库并授予所有权限】</span><br></pre></td></tr></table></figure></p>
+<h3 id="配置php"><a href="#配置php" class="headerlink" title="配置php"></a>配置php</h3><p>通过浏览器打开我们的phpmyadmin：<a href="http://你VPS的IP/phpmyadmin/" target="_blank" rel="noopener">http://你VPS的IP/phpmyadmin/</a> ，进入以下目录新建一个用户并为这个用户创建一个同名的数据库。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">用户-&gt;添加用户</span><br><span class="line">---</span><br><span class="line">user name: 用户名</span><br><span class="line">host: %</span><br><span class="line">密码：       密码</span><br><span class="line">重新输入：   密码</span><br><span class="line">生成密码：   点击生成</span><br><span class="line">勾选 【创建与用户同名的数据库并授予所有权限】</span><br></pre></td></tr></table></figure></p>
 <p>打开ss-panel-v3-mod的官方Github：<a href="https://github.com/esdeathlove/ss-panel-v3-mod" target="_blank" rel="noopener">https://github.com/esdeathlove/ss-panel-v3-mod</a> ，将程序的zip压缩包下载到本地。解压压缩包找到sql目录中的glzjin_all.sql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">导入-&gt;要导入的文件</span><br><span class="line">---</span><br><span class="line">将上面的文件导入。</span><br></pre></td></tr></table></figure></p>
 
       
