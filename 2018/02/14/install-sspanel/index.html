@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文记录了在vultr的服务器上安装sspanel的过程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-14T09:13:22.000Z">
+<meta property="og:updated_time" content="2018-02-14T09:23:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sspanel安装">
 <meta name="twitter:description" content="本文记录了在vultr的服务器上安装sspanel的过程。">
@@ -362,6 +362,8 @@
 <li>5 (安装php 5.6.9)</li>
 <li>1 (不安装内存分配)</li>
 </ul>
+<hr>
+
 <h3 id="设置虚拟主机"><a href="#设置虚拟主机" class="headerlink" title="设置虚拟主机"></a>设置虚拟主机</h3><p>添加一个虚拟机<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp vhost add</span><br></pre></td></tr></table></figure></p>
 <p>进行设置，填写内容如下：</p>
 <ul>
@@ -375,6 +377,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/<span class="built_in">local</span>/nginx/conf/vhost/你的域名.conf</span><br></pre></td></tr></table></figure>
 <p>在access_log off之前添加以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cation / &#123;               </span><br><span class="line">            try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php<span class="variable">$is_args</span><span class="variable">$args</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
 <p>接着往上看到root那一行在后面添加一个public。</p>
+<hr>
+
+<h3 id="panel的下载及安装"><a href="#panel的下载及安装" class="headerlink" title="panel的下载及安装"></a>panel的下载及安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/你的站点域名</span><br><span class="line">yum install git -y</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/glzjin/ss-panel-v3-mod.git tmp -b new_master &amp;&amp; mv tmp/.git . &amp;&amp; rm -rf tmp &amp;&amp; git reset --hard</span><br><span class="line">chown -R root:root *</span><br><span class="line">chmod -R 777 *</span><br><span class="line">chown -R www:www storage</span><br></pre></td></tr></table></figure>
+<p>对网站目录进行修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chattr -i .user.ini</span><br><span class="line">mv .user.ini public</span><br><span class="line"><span class="built_in">cd</span> public</span><br><span class="line">chattr +i .user.ini</span><br></pre></td></tr></table></figure></p>
+<p>重启nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -547,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置lnmp环境"><span class="nav-number">1.</span> <span class="nav-text">配置lnmp环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置虚拟主机"><span class="nav-number">2.</span> <span class="nav-text">设置虚拟主机</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置lnmp环境"><span class="nav-number">1.</span> <span class="nav-text">配置lnmp环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置虚拟主机"><span class="nav-number">2.</span> <span class="nav-text">设置虚拟主机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#panel的下载及安装"><span class="nav-number">3.</span> <span class="nav-text">panel的下载及安装</span></a></li></ol></div>
             
 
           </div>
