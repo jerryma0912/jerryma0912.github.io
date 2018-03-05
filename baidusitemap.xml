@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/03/05/kali/</loc>
+    <lastmod>2018-03-05T15:44:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>kali的学习</title>
+        <pubTime>2018-03-05T15:38:53.000Z</pubTime>
+        
+        <tag>kali</tag>
+         
+         
+           
+             
+              <breadCrumb title="kali学习笔记" url="http://yoursite.com/categories/kali%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="1. kali的搭建与使用" url="http://yoursite.com/categories/kali%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1-kali%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/02/14/install-sspanel/</loc>
     <lastmod>2018-02-17T18:46:10.000Z</lastmod>
     <data>
