@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T13:43:12.000Z">
+<meta property="og:updated_time" content="2018-03-06T13:57:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali的学习">
 <meta name="twitter:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
@@ -388,10 +388,11 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp hamster.txt /root/   <span class="comment">#将第3步的流量信息文件放到/root目录下</span></span><br><span class="line">hamster <span class="comment">#启动软件</span></span><br></pre></td></tr></table></figure>
 <p>  打开浏览器，在浏览器中设置代理为<code>127.0.0.1:1234</code>，网站访问<code>127.0.0.1:1234</code>,左侧为cookie，点击重放即可。</p>
 <h5 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h5></li>
-<li>(1)<code>ferret -i eth0</code></li>
-<li>(2)<code>hamster</code></li>
-<li>(3)浏览器配置<code>127.0.0.1:1234</code>代理，并访问<code>127.0.0.1:1234</code></li>
-<li>(4)流量经过eth0时，浏览器中adapters中选择eth0,并提交，cookie会实时更新。</li>
+<li>(1)打开arp欺骗</li>
+<li>(2)进入<code>/usr/bin</code>目录下，执行<code>ferret -i eth0</code></li>
+<li>(3)进入<code>/usr/bin</code>目录下，执行<code>hamster</code></li>
+<li>(4)浏览器配置<code>127.0.0.1:1234</code>代理，并访问<code>127.0.0.1:1234</code></li>
+<li>(5)流量经过eth0时，浏览器中adapters中选择eth0,并提交，cookie会实时更新。</li>
 </ul>
 
       
