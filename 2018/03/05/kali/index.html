@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T13:22:37.000Z">
+<meta property="og:updated_time" content="2018-03-06T13:43:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali的学习">
 <meta name="twitter:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
@@ -378,7 +378,7 @@
 <h3 id="ettercap实现获取https密码"><a href="#ettercap实现获取https密码" class="headerlink" title="ettercap实现获取https密码"></a>ettercap实现获取https密码</h3><p>执行<code>nano /etc/ettercap/etter.conf</code>命令，修改配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在Linux下，将两个注释放开：</span><br><span class="line"><span class="comment"># if you use iptables:</span></span><br><span class="line">   redir_command_on = <span class="string">"iptables -t nat -A PREROUTING -i %iface -p tcp --dport ...</span></span><br><span class="line"><span class="string">   redir_command_off = "</span>iptables -t nat -D PREROUTING -i %iface -p tcp --dport...</span><br></pre></td></tr></table></figure></p>
 <p>使用sslstrip工具将https的链接还原为http, <a href="http://blog.csdn.net/daxueba/article/details/55190432" target="_blank" rel="noopener">sslstrip的原理</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sslstrip -afk</span><br></pre></td></tr></table></figure></p>
 <p>再执行http密码获取的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（1）开启ARP欺骗</span><br><span class="line">（2）ettercap -Tq -i eth0  <span class="comment">#T表示文本模式，q表示静默模式</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="会话劫持"><a href="#会话劫持" class="headerlink" title="会话劫持"></a>会话劫持</h3><ul>
+<h3 id="会话劫持"><a href="#会话劫持" class="headerlink" title="会话劫持"></a>会话劫持</h3><h5 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h5><ul>
 <li>(1）开启ARP欺骗</li>
 <li>(2) 打开wireshark软件，对ARP欺骗的网卡进行抓包，完成后保存格式为<code>Wireshark/tcpdump/...- pcap</code></li>
 <li><p>(3) 使用ferret，生成抓包后的流量信息文件</p>
@@ -387,7 +387,11 @@
 <li><p>(4) 使用hamster重放流量</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp hamster.txt /root/   <span class="comment">#将第3步的流量信息文件放到/root目录下</span></span><br><span class="line">hamster <span class="comment">#启动软件</span></span><br></pre></td></tr></table></figure>
 <p>  打开浏览器，在浏览器中设置代理为<code>127.0.0.1:1234</code>，网站访问<code>127.0.0.1:1234</code>,左侧为cookie，点击重放即可。</p>
-</li>
+<h5 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h5></li>
+<li>(1)<code>ferret -i eth0</code></li>
+<li>(2)<code>hamster</code></li>
+<li>(3)浏览器配置<code>127.0.0.1:1234</code>代理，并访问<code>127.0.0.1:1234</code></li>
+<li>(4)流量经过eth0时，浏览器中adapters中选择eth0,并提交，cookie会实时更新。</li>
 </ul>
 
       
@@ -561,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新源"><span class="nav-number">1.</span> <span class="nav-text">更新源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装vmware-tools工具"><span class="nav-number">2.</span> <span class="nav-text">安装vmware tools工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kali美化"><span class="nav-number">3.</span> <span class="nav-text">kali美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启ssh"><span class="nav-number">4.</span> <span class="nav-text">开启ssh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP欺骗"><span class="nav-number">5.</span> <span class="nav-text">ARP欺骗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片捕获"><span class="nav-number">6.</span> <span class="nav-text">图片捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ettercap实现获取http密码"><span class="nav-number">7.</span> <span class="nav-text">ettercap实现获取http密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ettercap实现获取https密码"><span class="nav-number">8.</span> <span class="nav-text">ettercap实现获取https密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话劫持"><span class="nav-number">9.</span> <span class="nav-text">会话劫持</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新源"><span class="nav-number">1.</span> <span class="nav-text">更新源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装vmware-tools工具"><span class="nav-number">2.</span> <span class="nav-text">安装vmware tools工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kali美化"><span class="nav-number">3.</span> <span class="nav-text">kali美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启ssh"><span class="nav-number">4.</span> <span class="nav-text">开启ssh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP欺骗"><span class="nav-number">5.</span> <span class="nav-text">ARP欺骗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片捕获"><span class="nav-number">6.</span> <span class="nav-text">图片捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ettercap实现获取http密码"><span class="nav-number">7.</span> <span class="nav-text">ettercap实现获取http密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ettercap实现获取https密码"><span class="nav-number">8.</span> <span class="nav-text">ettercap实现获取https密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话劫持"><span class="nav-number">9.</span> <span class="nav-text">会话劫持</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法1"><span class="nav-number">9.0.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法2"><span class="nav-number">9.0.2.</span> <span class="nav-text">方法2</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
