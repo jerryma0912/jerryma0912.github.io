@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/03/05/8-kali/</loc>
+    
+    <lastmod>2018-03-09T15:39:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/03/09/10-frp-install/</loc>
     
     <lastmod>2018-03-09T13:03:11.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/2018/03/09/9-DNS/</loc>
     
     <lastmod>2018-03-09T11:53:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/05/8-kali/</loc>
-    
-    <lastmod>2018-03-06T14:01:11.000Z</lastmod>
     
   </url>
   
