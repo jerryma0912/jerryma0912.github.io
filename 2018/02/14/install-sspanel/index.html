@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文记录了在vultr的服务器上部署ssr的前端ss-panel及后端的全部过程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T08:38:36.000Z">
+<meta property="og:updated_time" content="2018-03-09T08:39:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ss-panel安装">
 <meta name="twitter:description" content="本文记录了在vultr的服务器上部署ssr的前端ss-panel及后端的全部过程。">
@@ -419,8 +419,8 @@
 <h5 id="安装加速"><a href="#安装加速" class="headerlink" title="安装加速"></a>安装加速</h5><p>下载一键脚本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</span><br></pre></td></tr></table></figure></p>
 <p>执行脚本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x serverspeeder.sh</span><br><span class="line">bash serverspeeder.sh</span><br></pre></td></tr></table></figure></p>
 <p>安装完成。常见的命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">service serverSpeeder start <span class="comment">#启动</span></span><br><span class="line">service serverSpeeder stop <span class="comment">#停止</span></span><br><span class="line">service serverSpeeder reload <span class="comment">#重新加载配置</span></span><br><span class="line">service serverSpeeder restart <span class="comment">#重启</span></span><br><span class="line">service serverSpeeder status <span class="comment">#状态</span></span><br><span class="line">service serverSpeeder stats <span class="comment">#统计</span></span><br><span class="line">service serverSpeeder renewLic <span class="comment">#更新许可文件</span></span><br><span class="line">service serverSpeeder update <span class="comment">#更新</span></span><br><span class="line">chattr -i /serverspeeder/etc/apx* &amp;&amp; /serverspeeder/bin/serverSpeeder.sh uninstall -f <span class="comment">#卸载</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-
+<p><hr></p>
+<p>#### </p>
 <h3 id="进入管理员界面增加节点"><a href="#进入管理员界面增加节点" class="headerlink" title="进入管理员界面增加节点"></a>进入管理员界面增加节点</h3><p>添加节点的时候，节点名称务必要是这样的：“伯力 – Shadowsocks”（-号前后都有一个空格才行）,然后就是节点地址、加密方式、流量比例、节点状态、节点描述这些都是必填的。此处略。</p>
 <p><hr><br>一键脚本安装地址：<br>wget -N –no-check-certificate <a href="https://softs.fun/Bash/ssr.sh" target="_blank" rel="noopener">https://softs.fun/Bash/ssr.sh</a> &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</p>
 <p>备用脚本：<br>wget -N –no-check-certificate <a href="https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh</a> &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</p>
