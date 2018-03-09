@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/03/09/DNS/</loc>
+    <lastmod>2018-03-09T11:53:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>DNS的记录类型及配置的说明</title>
+        <pubTime>2018-03-09T11:28:33.000Z</pubTime>
+        
+        <tag>DNS</tag>
+         
+         
+           
+             
+              <breadCrumb title="科学上网" url="http://yoursite.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+          
+             
+              <breadCrumb title="2. DNS记录与配置" url="http://yoursite.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/2-DNS%E8%AE%B0%E5%BD%95%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/02/14/install-sspanel/</loc>
     <lastmod>2018-03-09T08:40:03.000Z</lastmod>
     <data>
