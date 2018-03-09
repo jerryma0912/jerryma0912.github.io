@@ -2,63 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/02/14/install-sspanel/</loc>
+    <loc>http://yoursite.com/2018/03/09/10-frp-install/</loc>
+    
+    <lastmod>2018-03-09T12:59:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/14/7-install-sspanel/</loc>
     
     <lastmod>2018-03-09T11:56:57.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/09/DNS/</loc>
+    <loc>http://yoursite.com/2018/03/09/9-DNS/</loc>
     
     <lastmod>2018-03-09T11:53:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/05/kali/</loc>
+    <loc>http://yoursite.com/2018/03/05/8-kali/</loc>
     
     <lastmod>2018-03-06T14:01:11.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/02/06/python-class/</loc>
+    <loc>http://yoursite.com/2018/02/06/6-python-class/</loc>
     
     <lastmod>2018-02-06T09:06:15.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/02/02/python-string/</loc>
+    <loc>http://yoursite.com/2018/02/02/5-python-string/</loc>
     
     <lastmod>2018-02-06T08:42:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/01/31/python-datastruct/</loc>
+    <loc>http://yoursite.com/2018/01/31/4-python-datastruct/</loc>
     
     <lastmod>2018-02-02T01:12:05.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/11/25/ssh-login-noPasswd/</loc>
+    <loc>http://yoursite.com/2017/11/25/2-ssh-login-noPasswd/</loc>
     
     <lastmod>2018-01-30T23:46:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/11/25/install-lnmpa/</loc>
+    <loc>http://yoursite.com/2017/11/25/1-install-lnmpa/</loc>
     
     <lastmod>2018-01-30T23:46:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/11/25/install-hexo/</loc>
+    <loc>http://yoursite.com/2017/11/25/3-install-hexo/</loc>
     
     <lastmod>2018-01-30T23:44:59.000Z</lastmod>
     
