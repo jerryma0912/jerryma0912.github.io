@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在搭建hexo博客的基础过程。服务器操作系统为CentOS 7.3，本机操作系统为macOS Sierra 10.12.6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T05:45:12.000Z">
+<meta property="og:updated_time" content="2018-03-13T07:33:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo的搭建">
 <meta name="twitter:description" content="本文讲述了在搭建hexo博客的基础过程。服务器操作系统为CentOS 7.3，本机操作系统为macOS Sierra 10.12.6">
@@ -379,7 +379,7 @@
 <h4 id="2-建立git裸库"><a href="#2-建立git裸库" class="headerlink" title="2.建立git裸库"></a>2.建立git裸库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">git init --bare blog.git</span><br></pre></td></tr></table></figure>
 <h4 id="3-同步网站根目录"><a href="#3-同步网站根目录" class="headerlink" title="3. 同步网站根目录"></a>3. 同步网站根目录</h4><p>进入<code>~/blog.git/hooks/</code>目录，新建<code>post-receive</code>文件，在文件中写以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">git --work-tree=/usr/share/nginx/html --git-dir=/home/git/blog.git checkout -f</span><br></pre></td></tr></table></figure></p>
 <p>设置文件执行权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x post-receive</span><br></pre></td></tr></table></figure></p>
-<h4 id="4-配置本地文件-config-yml"><a href="#4-配置本地文件-config-yml" class="headerlink" title="4. 配置本地文件_config.yml"></a>4. 配置本地文件_config.yml</h4><p>打开本地文件<code>~/Documents/blog/_config.yml</code>，找到<code>deploy</code>并改为以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@SERVER:/home/git/blog.git</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-配置本地文件-config-yml"><a href="#4-配置本地文件-config-yml" class="headerlink" title="4. 配置本地文件_config.yml"></a>4. 配置本地文件_config.yml</h4><p>打开本地文件<code>~/Documents/blog/_config.yml</code>，找到<code>deploy</code>并改为以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> <span class="built_in">type</span>: git</span><br><span class="line"> repo: git@SERVER:/home/git/blog.git</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h3 id="本地上传文件命令"><a href="#本地上传文件命令" class="headerlink" title="本地上传文件命令"></a>本地上传文件命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g --deploy</span><br></pre></td></tr></table></figure>
 <p>参考资料：<a href="https://segmentfault.com/a/1190000005723321" target="_blank" rel="noopener">阿里云VPS搭建自己的的Hexo博客</a></p>
