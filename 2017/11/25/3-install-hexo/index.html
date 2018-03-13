@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在搭建hexo博客的基础过程。服务器操作系统为CentOS 7.3，本机操作系统为macOS Sierra 10.12.6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T05:44:39.000Z">
+<meta property="og:updated_time" content="2018-03-13T05:45:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo的搭建">
 <meta name="twitter:description" content="本文讲述了在搭建hexo博客的基础过程。服务器操作系统为CentOS 7.3，本机操作系统为macOS Sierra 10.12.6">
@@ -370,7 +370,7 @@
 <p>(2) 找到并添加以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Allow root to run any commands anywhere</span></span><br><span class="line">root    ALL=(ALL)    ALL</span><br><span class="line">git     ALL=(ALL)      ALL</span><br></pre></td></tr></table></figure></p>
 <p>(3) 修改完内容后，改回原权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 400 /etc/sudoers</span><br></pre></td></tr></table></figure></p>
 <h4 id="4-设置git用户密码"><a href="#4-设置git用户密码" class="headerlink" title="4.设置git用户密码"></a>4.设置git用户密码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd git</span><br></pre></td></tr></table></figure>
-<h4 id="5-设置免密登录"><a href="#5-设置免密登录" class="headerlink" title="5.设置免密登录"></a>5.设置免密登录</h4><p>设置过程请参考博文:SSH通过密钥对链接<a href="/2017/11/25/2-ssh-login-noPasswd/" title="SSH通过密钥对链接">SSH通过密钥对链接</a></p>
+<h4 id="5-设置免密登录"><a href="#5-设置免密登录" class="headerlink" title="5.设置免密登录"></a>5.设置免密登录</h4><p>设置过程请参考博文:<a href="/2017/11/25/2-ssh-login-noPasswd/" title="SSH通过密钥对链接">SSH通过密钥对链接</a></p>
 <hr>
 <h3 id="本地环境搭建（macOS-10-12-6系统）"><a href="#本地环境搭建（macOS-10-12-6系统）" class="headerlink" title="本地环境搭建（macOS 10.12.6系统）"></a>本地环境搭建（macOS 10.12.6系统）</h3><h4 id="1-初始化hexo程序"><a href="#1-初始化hexo程序" class="headerlink" title="1. 初始化hexo程序"></a>1. 初始化hexo程序</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="built_in">cd</span> ~/Documents/blog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 <h4 id="2-安装deployer插件及本地server插件"><a href="#2-安装deployer插件及本地server插件" class="headerlink" title="2. 安装deployer插件及本地server插件"></a>2. 安装deployer插件及本地server插件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-server</span><br></pre></td></tr></table></figure>
