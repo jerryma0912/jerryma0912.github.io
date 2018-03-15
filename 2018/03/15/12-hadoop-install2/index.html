@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。(参考文献)[http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/]">
+<meta name="description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
 <meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop-2.7.1非分布式&#x2F;伪分布式&#x2F;集群安装与配置(CentOS-6.9)">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/12-hadoop-install2/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。(参考文献)[http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/]">
+<meta property="og:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T12:04:21.000Z">
+<meta property="og:updated_time" content="2018-03-15T12:05:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop-2.7.1非分布式&#x2F;伪分布式&#x2F;集群安装与配置(CentOS-6.9)">
-<meta name="twitter:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。(参考文献)[http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/]">
+<meta name="twitter:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
 
 
 
@@ -363,7 +363,7 @@
       
 
       
-        <p>本文讲述了在<code>CentOS-6.9 32bit</code>环境下搭建hadoop-2.7.1的过程。(参考文献)[<a href="http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/" target="_blank" rel="noopener">http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/</a>]<br><a id="more"></a></p>
+        <p>本文讲述了在<code>CentOS-6.9 32bit</code>环境下搭建hadoop-2.7.1的过程。<a href="http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/" target="_blank" rel="noopener">参考文献</a><br><a id="more"></a></p>
 <h3 id="创建hadoop用户"><a href="#创建hadoop用户" class="headerlink" title="创建hadoop用户"></a>创建hadoop用户</h3><p>在root用户下，执行以下命令，创建hadoop用户，并设定密码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -m hadoop -s /bin/bash</span><br><span class="line">passwd hadoop   <span class="comment">#根据提示指定密码</span></span><br></pre></td></tr></table></figure></p>
 <p>执行<code>visudo</code>命令，或直接<code>/etc/sudoers</code>文件，在文件中添加以下内容，增加管理员权限。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop ALL=(ALL) ALL</span><br></pre></td></tr></table></figure></p>
 <p>退出<code>root</code>用户，使用<code>hadoop</code>用户登录。</p>
