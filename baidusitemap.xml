@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/03/15/11-hadoop-install/</loc>
+    <lastmod>2018-03-15T10:34:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hadoop-0.20集群安装与配置(CentOS-6.9)</title>
+        <pubTime>2018-03-15T10:34:03.000Z</pubTime>
+        
+        <tag>大数据</tag>
+         
+         
+           
+             
+              <breadCrumb title="大数据" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+          
+             
+              <breadCrumb title="1. hadoop-0.20集群搭建" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/1-hadoop-0-20%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/03/09/10-frp-install/</loc>
     <lastmod>2018-03-14T03:39:48.000Z</lastmod>
     <data>
