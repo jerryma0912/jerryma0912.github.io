@@ -4,29 +4,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/03/09/11-hadoop-install/</loc>
-    <lastmod>2018-03-14T13:37:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS环境下搭建hadoop-0.20</title>
-        <pubTime>2018-03-09T11:28:33.000Z</pubTime>
-        
-        <tag>大数据</tag>
-         
-         
-           
-             
-              <breadCrumb title="大数据" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-          
-             
-              <breadCrumb title="1.hadoop-0.20环境的搭建（centOS）" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/1-hadoop-0-20%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA%EF%BC%88centOS%EF%BC%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2018/03/09/10-frp-install/</loc>
     <lastmod>2018-03-14T03:39:48.000Z</lastmod>
     <data>
