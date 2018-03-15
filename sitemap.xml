@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/03/15/12-hadoop-install2/</loc>
+    
+    <lastmod>2018-03-15T12:04:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/03/15/11-hadoop-install/</loc>
     
     <lastmod>2018-03-15T10:38:01.000Z</lastmod>

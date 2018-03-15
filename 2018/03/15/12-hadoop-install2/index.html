@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="大数据," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。(参考文献)[http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/]">
+<meta name="keywords" content="大数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop-2.7.1非分布式&#x2F;伪分布式&#x2F;集群安装与配置(CentOS-6.9)">
+<meta property="og:url" content="http://yoursite.com/2018/03/15/12-hadoop-install2/index.html">
+<meta property="og:site_name" content="JERRY HOME">
+<meta property="og:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。(参考文献)[http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/]">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-15T12:04:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hadoop-2.7.1非分布式&#x2F;伪分布式&#x2F;集群安装与配置(CentOS-6.9)">
+<meta name="twitter:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。(参考文献)[http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/]">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/15/12-hadoop-install2/"/>
+
+
+
+
+
+  <title>Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9) | JERRY HOME</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JERRY HOME</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/12-hadoop-install2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JERRY HOME">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T19:09:03+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/2-hadoop-2-7-1的搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">2. hadoop-2.7.1的搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文讲述了在<code>CentOS-6.9 32bit</code>环境下搭建hadoop-2.7.1的过程。(参考文献)[<a href="http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/" target="_blank" rel="noopener">http://dblab.xmu.edu.cn/blog/install-hadoop-in-centos/</a>]<br><a id="more"></a></p>
+<h3 id="创建hadoop用户"><a href="#创建hadoop用户" class="headerlink" title="创建hadoop用户"></a>创建hadoop用户</h3><p>在root用户下，执行以下命令，创建hadoop用户，并设定密码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -m hadoop -s /bin/bash</span><br><span class="line">passwd hadoop   <span class="comment">#根据提示指定密码</span></span><br></pre></td></tr></table></figure></p>
+<p>执行<code>visudo</code>命令，或直接<code>/etc/sudoers</code>文件，在文件中添加以下内容，增加管理员权限。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop ALL=(ALL) ALL</span><br></pre></td></tr></table></figure></p>
+<p>退出<code>root</code>用户，使用<code>hadoop</code>用户登录。</p>
+<h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><p>进入<code>/etc/sysconfig/network-scripts</code>目录,进入<code>ifcfg-Auto_eth0</code>文件。修改文件为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">BOOTPROTO=none</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=yes</span><br><span class="line">IPV6INIT=no</span><br><span class="line">NAME=<span class="string">"Auto eth0"</span></span><br><span class="line">UUID=87d0ac28-25df-496e-9ca3-052e968c825f</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=192.168.1.150        <span class="comment">#修改！</span></span><br><span class="line">PREFIX=24                   <span class="comment">#修改！</span></span><br><span class="line">GATEWAY=192.168.1.1         <span class="comment">#修改！</span></span><br><span class="line">HWADDR=00:0C:29:4B:0C:51</span><br><span class="line">DNS1=192.168.1.1            <span class="comment">#修改！</span></span><br><span class="line">LAST_CONNECT=1520822430</span><br></pre></td></tr></table></figure></p>
+<p>也可直接采用图形化界面进行修改。</p>
+<h3 id="安装ssh"><a href="#安装ssh" class="headerlink" title="安装ssh"></a>安装ssh</h3><p>执行<code>rpm -wq | grep ssh</code>命令，查看是否已经安装ssh-client和ssh-server，如果没有安装，则执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install openssh-clients</span><br><span class="line">sudo yum install openssh-server</span><br></pre></td></tr></table></figure></p>
+<p>执行以下命令，生成秘钥。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh/                     <span class="comment"># 若没有该目录，请先执行一次ssh localhost</span></span><br><span class="line">ssh-keygen -t rsa              <span class="comment"># 会有提示，都按回车就可以</span></span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys  <span class="comment"># 加入授权</span></span><br><span class="line">chmod 600 ./authorized_keys    <span class="comment"># 修改文件权限</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="安装java环境"><a href="#安装java环境" class="headerlink" title="安装java环境"></a>安装java环境</h3><p>执行以下命令，安装JDK 1。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install java-1.7.0-openjdk java-1.7.0-openjdk-devel</span><br></pre></td></tr></table></figure></p>
+<p>默认安装位置为 <code>/usr/lib/jvm/java-1.7.0-openjdk</code>（该路径可以通过执行<code>rpm -ql java-1.7.0-openjdk-devel | grep &#39;/bin/javac&#39;</code>命令确定，执行后会输出一个路径，除去路径末尾的 <code>“/bin/javac”</code>，剩下的就是正确的路径了）。OpenJDK 安装后就可以直接使用 java、javac 等命令了。<br><br>接着配置JAVA_HOME环境变量。执行<code>~/.bashrc</code>命令，在文件最后面添加以下内容。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk</span><br></pre></td></tr></table></figure></p>
+<p>执行<code>source ~/.bashrc</code>命令让环境变量生效。执行以下代码检查设置是否正确。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span>     <span class="comment"># 检验变量值</span></span><br><span class="line">java -version</span><br><span class="line"><span class="variable">$JAVA_HOME</span>/bin/java -version  <span class="comment"># 与直接执行 java -version 一样</span></span><br></pre></td></tr></table></figure></p>
+<p>如果设置正确，两次的输出相同。</p>
+<h3 id="安装hadoop2-7-1"><a href="#安装hadoop2-7-1" class="headerlink" title="安装hadoop2.7.1"></a>安装hadoop2.7.1</h3><p><a href="http://mirror.bit.edu.cn/apache/hadoop/common/" target="_blank" rel="noopener">下载文件</a>时，请下载 hadoop-2.x.y.tar.gz 这个格式的文件，这是编译好的，另一个包含 src 的则是 Hadoop 源代码，需要进行编译才可使用。<br><br>下载时强烈建议也下载 hadoop-2.x.y.tar.gz.mds 这个文件，该文件包含了检验值可用于检查 hadoop-2.x.y.tar.gz 的完整性，否则若文件发生了损坏或下载不完整，Hadoop 将无法正常运行。<br><br>这里默认下载目录为<code>~/Download</code>,下载完成后，执行以下命令，若两次输出结果差别很大，则需要重新下载。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head -n 6 ~/Download/hadoop-2.7.1.tar.gz.mds <span class="comment"># 2.7.1版本格式变了，可以用这种方式输出</span></span><br><span class="line">md5sum ~/Download/hadoop-2.6.0.tar.gz | tr <span class="string">"a-z"</span> <span class="string">"A-Z"</span> <span class="comment"># 计算md5值，并转化为大写，方便比较</span></span><br></pre></td></tr></table></figure></p>
+<p>将hadoop安装到<code>/usr/local</code>目录下，故执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxf ~/Download/hadoop-2.6.0.tar.gz -C /usr/<span class="built_in">local</span>    <span class="comment"># 解压到/usr/local中</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br><span class="line">sudo mv ./hadoop-2.6.0/ ./hadoop            <span class="comment"># 将文件夹名改为hadoop</span></span><br><span class="line">sudo chown -R hadoop:hadoop ./hadoop        <span class="comment"># 修改文件权限</span></span><br></pre></td></tr></table></figure></p>
+<p>输入如下命令来检查 Hadoop 是否可用，成功则会显示 Hadoop 版本信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/hadoop</span><br><span class="line">./bin/hadoop version</span><br></pre></td></tr></table></figure></p>
+<h3 id="hadoop的配置"><a href="#hadoop的配置" class="headerlink" title="hadoop的配置"></a>hadoop的配置</h3><h4 id="非分布式"><a href="#非分布式" class="headerlink" title="非分布式"></a>非分布式</h4><p>Hadoop 默认模式为非分布式模式，无需进行其他配置即可运行。非分布式即单 Java 进程，方便进行调试。<br><br>现在我们可以执行例子来感受下 Hadoop 的运行。Hadoop 附带了丰富的例子（运行 <code>./bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar</code> 可以看到所有例子），包括 wordcount、terasort、join、grep 等。<br><br>在此我们选择运行 grep 例子，我们将 input 文件夹中的所有文件作为输入，筛选当中符合正则表达式 dfs[a-z.]+ 的单词并统计出现的次数，最后输出结果到 output 文件夹中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/hadoop</span><br><span class="line">mkdir ./input</span><br><span class="line">cp ./etc/hadoop/*.xml ./input   <span class="comment"># 将配置文件作为输入文件</span></span><br><span class="line">./bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep ./input ./output <span class="string">'dfs[a-z.]+'</span></span><br><span class="line">cat ./output/*          <span class="comment"># 查看运行结果</span></span><br></pre></td></tr></table></figure></p>
+<p>若执行成功的话会输出很多作业的相关信息，最后的输出信息。作业的结果会输出在指定的 output 文件夹中，通过命令<code>cat ./output/*</code>查看结果<br><br>！！注意！！，Hadoop 默认不会覆盖结果文件，因此再次运行上面实例会提示出错，需要执行<code>rm -r ./output</code>命令先将 ./output 删除。<br><br>若出现提示 <code>WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform… using builtin-java classes where applicable</code>，该 WARN 提示可以忽略，不会影响 Hadoop 正常运行。<br><br>若出现提示 <code>“INFO metrics.MetricsUtil: Unable to obtain hostName java.net.UnknowHostException”</code>，这需要执行<code>sudo vim /etc/hosts</code>命令修改 hosts 文件，为你的主机名增加IP映射,在打开的文件中添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 主机名</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag"># 大数据</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/15/11-hadoop-install/" rel="next" title="Hadoop-0.20集群安装与配置(CentOS-6.9)">
+                <i class="fa fa-chevron-left"></i> Hadoop-0.20集群安装与配置(CentOS-6.9)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jerry</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建hadoop用户"><span class="nav-number">1.</span> <span class="nav-text">创建hadoop用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置网络"><span class="nav-number">2.</span> <span class="nav-text">配置网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ssh"><span class="nav-number">3.</span> <span class="nav-text">安装ssh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装java环境"><span class="nav-number">4.</span> <span class="nav-text">安装java环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hadoop2-7-1"><span class="nav-number">5.</span> <span class="nav-text">安装hadoop2.7.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop的配置"><span class="nav-number">6.</span> <span class="nav-text">hadoop的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#非分布式"><span class="nav-number">6.1.</span> <span class="nav-text">非分布式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jerry</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info"><a class="theme-link" target="_blank" href="http://www.miitbeian.gov.cn/">浙ICP备17055283号
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>

@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/03/15/12-hadoop-install2/</loc>
+    <lastmod>2018-03-15T12:04:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)</title>
+        <pubTime>2018-03-15T11:09:03.000Z</pubTime>
+        
+        <tag>大数据</tag>
+         
+         
+           
+             
+              <breadCrumb title="大数据" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+          
+             
+              <breadCrumb title="2. hadoop-2.7.1的搭建" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/2-hadoop-2-7-1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/03/15/11-hadoop-install/</loc>
     <lastmod>2018-03-15T10:38:01.000Z</lastmod>
     <data>
