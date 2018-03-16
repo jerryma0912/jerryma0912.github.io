@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T14:57:28.000Z">
+<meta property="og:updated_time" content="2018-03-16T14:59:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop-2.7.1非分布式&#x2F;伪分布式&#x2F;集群安装与配置(CentOS-6.9)">
 <meta name="twitter:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
@@ -405,12 +405,11 @@
 </li>
 <li><p>修改各个节点的主机名。执行<code>/etc/sysconfig/network</code>命令，将HOSTNAME改为上表的名称。</p>
 </li>
-<li>修改各主机的节点映射。执行<code>sudo vim /etc/hosts</code>命令，增加以下语句：（一般该文件中只有一个 127.0.0.1，其对应名为 localhost，如果有多余的应删除，特别是不能有 “127.0.0.1 Master” 这样的记录）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.150   Master</span><br><span class="line">192.168.1.151   Slave1</span><br><span class="line">192.168.1.152   Slave2</span><br></pre></td></tr></table></figure>
+<li><p>修改各主机的节点映射。执行<code>sudo vim /etc/hosts</code>命令，增加以下语句，修改完成后重启各节点。（一般该文件中只有一个 127.0.0.1，其对应名为 localhost，如果有多余的应删除，特别是不能有 “127.0.0.1 Master” 这样的记录）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.150   Master</span><br><span class="line">192.168.1.151   Slave1</span><br><span class="line">192.168.1.152   Slave2</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<p>修改完成后重启各节点。</p>
-<ol>
-<li>设置Master节点无密码SSH登录到各Slave上。因此，在 <code>Master</code> 节点上，执行以下命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh               # 如果没有该目录，先执行一次ssh localhost</span><br><span class="line">rm ./id_rsa*            # 删除之前生成的公匙（如果有）</span><br><span class="line">ssh-keygen -t rsa       # 一直按回车就可以</span><br></pre></td></tr></table></figure>
+<li><p>设置Master节点无密码SSH登录到各Slave上。因此，在 <code>Master</code> 节点上，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh               # 如果没有该目录，先执行一次ssh localhost</span><br><span class="line">rm ./id_rsa*            # 删除之前生成的公匙（如果有）</span><br><span class="line">ssh-keygen -t rsa       # 一直按回车就可以</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>让 Master 节点需能无密码 SSH 本机，在 Master 节点上执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ./id_rsa.pub &gt;&gt; ./authorized_keys</span><br></pre></td></tr></table></figure></p>
