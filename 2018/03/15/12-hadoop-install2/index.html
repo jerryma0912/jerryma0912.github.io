@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T14:59:05.000Z">
+<meta property="og:updated_time" content="2018-03-16T14:59:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop-2.7.1非分布式&#x2F;伪分布式&#x2F;集群安装与配置(CentOS-6.9)">
 <meta name="twitter:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
@@ -398,7 +398,7 @@
 <li>运行 Hadoop 程序时，为了防止覆盖结果，程序指定的输出目录（如 output）不能存在，否则会提示错误，因此运行前需要先删除输出目录。在实际开发应用程序时，可考虑在程序中加上如下代码，能在每次运行时自动删除输出目录： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">Job job = <span class="keyword">new</span> Job(conf);</span><br><span class="line"><span class="comment">/* 删除输出目录 */</span></span><br><span class="line">Path outputPath = <span class="keyword">new</span> Path(args[<span class="number">1</span>]);</span><br><span class="line">outputPath.getFileSystem(conf).delete(outputPath, <span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h4><h5 id="集群的搭建"><a href="#集群的搭建" class="headerlink" title="集群的搭建"></a>集群的搭建</h5><p>这里假设我们采用虚拟机建立集群，因此,在先完成<code>配置hadoop</code>之前的所有步骤后，关闭 Hadoop(<code>/usr/local/hadoop/sbin/stop-dfs.sh</code>)克隆虚拟机，这里我们将原先的节点叫做Master,克隆的两个节点叫做Slave1和Slave2.<br>在完成Slave1和Slave2的克隆后，在<code>各节点</code>上，需要进行以下内容的修改：</p>
+<h4 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h4><h5 id="集群的搭建"><a href="#集群的搭建" class="headerlink" title="集群的搭建"></a>集群的搭建</h5><p>这里假设我们采用虚拟机建立集群，因此,在先完成<code>配置hadoop</code>之前的所有步骤后，关闭 Hadoop(<code>/usr/local/hadoop/sbin/stop-dfs.sh</code>)，克隆虚拟机，这里我们将原先的节点叫做Master,克隆的两个节点叫做Slave1和Slave2.<br>在完成Slave1和Slave2的克隆后，在<code>各节点</code>上，需要进行以下内容的修改：</p>
 <ol>
 <li><p>网络配置。网络分配如下所示，修改内容参见上面。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">节点名           IP</span><br><span class="line">Master      192.168.1.150</span><br><span class="line">Slave1      192.168.1.151</span><br><span class="line">Slave2      192.168.1.152</span><br></pre></td></tr></table></figure>
