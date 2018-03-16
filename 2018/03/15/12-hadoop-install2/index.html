@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T14:59:30.000Z">
+<meta property="og:updated_time" content="2018-03-16T15:01:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop-2.7.1非分布式&#x2F;伪分布式&#x2F;集群安装与配置(CentOS-6.9)">
 <meta name="twitter:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
@@ -399,19 +399,19 @@
 </li>
 </ol>
 <h4 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h4><h5 id="集群的搭建"><a href="#集群的搭建" class="headerlink" title="集群的搭建"></a>集群的搭建</h5><p>这里假设我们采用虚拟机建立集群，因此,在先完成<code>配置hadoop</code>之前的所有步骤后，关闭 Hadoop(<code>/usr/local/hadoop/sbin/stop-dfs.sh</code>)，克隆虚拟机，这里我们将原先的节点叫做Master,克隆的两个节点叫做Slave1和Slave2.<br>在完成Slave1和Slave2的克隆后，在<code>各节点</code>上，需要进行以下内容的修改：</p>
-<ol>
-<li><p>网络配置。网络分配如下所示，修改内容参见上面。</p>
+<ul>
+<li><p>网络配置。<br><br>网络分配如下所示，修改内容参见上面。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">节点名           IP</span><br><span class="line">Master      192.168.1.150</span><br><span class="line">Slave1      192.168.1.151</span><br><span class="line">Slave2      192.168.1.152</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>修改各个节点的主机名。执行<code>/etc/sysconfig/network</code>命令，将HOSTNAME改为上表的名称。</p>
+<li><p>修改各个节点的主机名。<br><br>执行<code>/etc/sysconfig/network</code>命令，将HOSTNAME改为上表的名称。</p>
 </li>
-<li><p>修改各主机的节点映射。执行<code>sudo vim /etc/hosts</code>命令，增加以下语句，修改完成后重启各节点。（一般该文件中只有一个 127.0.0.1，其对应名为 localhost，如果有多余的应删除，特别是不能有 “127.0.0.1 Master” 这样的记录）</p>
+<li><p>修改各主机的节点映射。<br><br>执行<code>sudo vim /etc/hosts</code>命令，增加以下语句，修改完成后重启各节点。（一般该文件中只有一个 127.0.0.1，其对应名为 localhost，如果有多余的应删除，特别是不能有 “127.0.0.1 Master” 这样的记录）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.150   Master</span><br><span class="line">192.168.1.151   Slave1</span><br><span class="line">192.168.1.152   Slave2</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>设置Master节点无密码SSH登录到各Slave上。因此，在 <code>Master</code> 节点上，执行以下命令：</p>
+<li><p>设置Master节点无密码SSH登录到各Slave上。<br><br>因此，在 <code>Master</code> 节点上，执行以下命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh               # 如果没有该目录，先执行一次ssh localhost</span><br><span class="line">rm ./id_rsa*            # 删除之前生成的公匙（如果有）</span><br><span class="line">ssh-keygen -t rsa       # 一直按回车就可以</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
+</ul>
 <p>让 Master 节点需能无密码 SSH 本机，在 Master 节点上执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ./id_rsa.pub &gt;&gt; ./authorized_keys</span><br></pre></td></tr></table></figure></p>
 <p>完成后可执行 ssh Master 验证一下（可能需要输入 yes，成功后执行 exit 返回原来的终端）。接着在 Master 节点将上公匙传输到 Slave1 和 Slave2 节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_rsa.pub hadoop@Slave1:/home/hadoop/</span><br><span class="line">scp ~/.ssh/id_rsa.pub hadoop@Slave2:/home/hadoop/</span><br></pre></td></tr></table></figure></p>
 <p>接着，分别在 <code>Slave1</code> 节点 <code>Slave2</code> 节点和上，将 ssh 公匙加入授权，即分别执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh       # 如果不存在该文件夹需先创建，若已存在则忽略</span><br><span class="line">cat ~/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line">rm ~/id_rsa.pub    # 用完就可以删掉了</span><br></pre></td></tr></table></figure></p>
