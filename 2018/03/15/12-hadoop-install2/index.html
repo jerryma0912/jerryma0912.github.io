@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T14:35:15.000Z">
+<meta property="og:updated_time" content="2018-03-16T14:36:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop-2.7.1非分布式&#x2F;伪分布式&#x2F;集群安装与配置(CentOS-6.9)">
 <meta name="twitter:description" content="本文讲述了在CentOS-6.9 32bit环境下搭建hadoop-2.7.1的过程。参考文献">
@@ -392,12 +392,12 @@
 <p>结果与之前不同，这是因为刚才我们已经更改了配置文件，所以运行结果不同。我们也可以将运行结果取回到本地：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -r ./output    <span class="comment"># 先删除本地的 output 文件夹（如果存在）</span></span><br><span class="line">./bin/hdfs dfs -get output ./output     <span class="comment"># 将 HDFS 上的 output 文件夹拷贝到本机</span></span><br><span class="line">cat ./output/*</span><br></pre></td></tr></table></figure></p>
 <p>Hadoop 运行程序时，输出目录不能存在，否则会提示错误 “org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory hdfs://localhost:9000/user/hadoop/output already exists” ，因此若要再次执行，需要执行如下命令删除 output 文件夹:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/hdfs dfs -rm -r output    <span class="comment"># 删除 output 文件夹</span></span><br></pre></td></tr></table></figure></p>
 <p>若要关闭 Hadoop，则运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./sbin/stop-dfs.sh</span><br></pre></td></tr></table></figure></p>
-<p><code>注意</code>：</p>
-<ul>
+<p><strong>注意</strong>：</p>
+<ol>
 <li>下次启动 hadoop 时，无需进行 NameNode 的初始化，只需要运行 <code>./sbin/start-dfs.sh</code> 就可以！</li>
-<li>运行 Hadoop 程序时，为了防止覆盖结果，程序指定的输出目录（如 output）不能存在，否则会提示错误，因此运行前需要先删除输出目录。在实际开发应用程序时，可考虑在程序中加上如下代码，能在每次运行时自动删除输出目录：  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">Job job = <span class="keyword">new</span> Job(conf);</span><br><span class="line"><span class="comment">/* 删除输出目录 */</span></span><br><span class="line">Path outputPath = <span class="keyword">new</span> Path(args[<span class="number">1</span>]);</span><br><span class="line">outputPath.getFileSystem(conf).delete(outputPath, <span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+<li>运行 Hadoop 程序时，为了防止覆盖结果，程序指定的输出目录（如 output）不能存在，否则会提示错误，因此运行前需要先删除输出目录。在实际开发应用程序时，可考虑在程序中加上如下代码，能在每次运行时自动删除输出目录： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">Job job = <span class="keyword">new</span> Job(conf);</span><br><span class="line"><span class="comment">/* 删除输出目录 */</span></span><br><span class="line">Path outputPath = <span class="keyword">new</span> Path(args[<span class="number">1</span>]);</span><br><span class="line">outputPath.getFileSystem(conf).delete(outputPath, <span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+</ol>
 <h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3><p>这里假设我们采用虚拟机建立集群，因此，在完成 &gt;</p>
 
       
