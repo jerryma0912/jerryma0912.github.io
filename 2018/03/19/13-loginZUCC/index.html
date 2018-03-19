@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="JERRY HOME">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta name="description" content="本文阐述了利用python向校园网络发送认证请求的方法。操作系统:macOS-10.12.6">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用python发送校园网络认证请求">
+<meta property="og:url" content="http://yoursite.com/2018/03/19/13-loginZUCC/index.html">
 <meta property="og:site_name" content="JERRY HOME">
+<meta property="og:description" content="本文阐述了利用python向校园网络发送认证请求的方法。操作系统:macOS-10.12.6">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-19T08:30:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JERRY HOME">
+<meta name="twitter:title" content="使用python发送校园网络认证请求">
+<meta name="twitter:description" content="本文阐述了利用python向校园网络发送认证请求的方法。操作系统:macOS-10.12.6">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/19/13-loginZUCC/"/>
 
 
 
 
 
-  <title>JERRY HOME</title>
+  <title>使用python发送校园网络认证请求 | JERRY HOME</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -259,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/3-install-hexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/19/13-loginZUCC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry">
@@ -276,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/25/3-install-hexo/" itemprop="url">hexo的搭建</a></h1>
+          <h1 class="post-title" itemprop="name headline">使用python发送校园网络认证请求</h1>
         
 
         <div class="post-meta">
@@ -290,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T14:22:26+08:00">
-                2017-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T16:24:03+08:00">
+                2018-03-19
               </time>
             
 
@@ -313,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/" itemprop="url" rel="index">
-                    <span itemprop="name">建立博客</span>
+                  <a href="/categories/python学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">python学习笔记</span>
                   </a>
                 </span>
 
@@ -324,8 +326,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/3-hexo的搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">3. hexo的搭建</span>
+                  <a href="/categories/python学习笔记/实战·校园网络认证/" itemprop="url" rel="index">
+                    <span itemprop="name">实战·校园网络认证</span>
                   </a>
                 </span>
 
@@ -361,16 +363,19 @@
       
 
       
-        
-          <p>本文讲述了在搭建hexo博客的基础过程。服务器操作系统为CentOS 7.3，本机操作系统为macOS Sierra 10.12.6<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/25/3-install-hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>本文阐述了利用python向校园网络发送认证请求的方法。操作系统:macOS-10.12.6<br><a id="more"></a></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学校的网络从去年起，必须经过网络身份认证，才能接入互联网。每次认证后仅在当天有效。第二天凌晨3点后就必须重新认证。<br>因此，这对需要挂机下文件的用户/挂服务器的用户/每次开机想直接上网的用户而言造成了很大的麻烦。因此，我使用python写了一个认证小程序。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>学校的认证采用网页认证的方法，也就是说登录指定的url，输入账号和密码，即可完成认证。因此，通过brupsuite的抓包，发现该http数据包采用post请求，将数据体的指定内容发送到指定的url上。因此，利用python的http库，编写了程序。</p>
+<h3 id="认证程序"><a href="#认证程序" class="headerlink" title="认证程序"></a>认证程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line">import requests</span><br><span class="line">cs_url = <span class="string">"http://10.69.253.12/ac_portal/login.php"</span></span><br><span class="line">my_data=&#123;</span><br><span class="line">    <span class="string">"opr"</span> : <span class="string">"pwdLogin"</span>,</span><br><span class="line">    <span class="string">"userName"</span> : <span class="string">"-----"</span>,    <span class="comment">#输入账号</span></span><br><span class="line">    <span class="string">"pwd"</span> : <span class="string">"-----"</span>,    <span class="comment">#输入密码</span></span><br><span class="line">    <span class="string">"rememberPwd"</span> : <span class="string">"0"</span></span><br><span class="line">&#125;</span><br><span class="line">r = requests.post(cs_url,data=my_data)</span><br></pre></td></tr></table></figure>
+<p>我将python脚本放在<code>/usr/local/</code>路径下，文件名为<code>zucclogin.py</code>。</p>
+<h3 id="实现开机自动登陆（mac）"><a href="#实现开机自动登陆（mac）" class="headerlink" title="实现开机自动登陆（mac）"></a>实现开机自动登陆（mac）</h3><p>mac要做到开机自启动，需要通过plist脚本来实现。plist脚本可以设置执行的动作，时间间隔等其他一些信息。<br><br>plist脚本存放路径为<code>/Library/LaunchDaemons</code>或<code>/Library/LaunchAgents</code>，其区别是后一个路径的脚本当用户登陆系统后才会被执行，前一个只要系统启动了，哪怕用户不登陆系统也会被执行。<br><br>plist脚本如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE plist PUBLIC <span class="string">"-//Apple//DTD PLIST 1.0//EN"</span> <span class="string">"http://www.apple.com/DTDs/PropertyList-1.0.dtd"</span>&gt;</span><br><span class="line">&lt;plist version=<span class="string">"1.0"</span>&gt;</span><br><span class="line">&lt;dict&gt;</span><br><span class="line">	&lt;key&gt;Label&lt;/key&gt;</span><br><span class="line">	&lt;string&gt;com.zucc.netlogin.plist&lt;/string&gt;</span><br><span class="line">    &lt;key&gt;ProgramArguments&lt;/key&gt;</span><br><span class="line">    &lt;array&gt;</span><br><span class="line">        &lt;string&gt;/usr/<span class="built_in">local</span>/zucclogin.py&lt;/string&gt;</span><br><span class="line">    &lt;/array&gt;</span><br><span class="line">    &lt;key&gt;KeepAlive&lt;/key&gt;</span><br><span class="line">    &lt;<span class="literal">false</span>/&gt;</span><br><span class="line">    &lt;key&gt;RunAtLoad&lt;/key&gt;</span><br><span class="line">    &lt;<span class="literal">true</span>/&gt;</span><br><span class="line">    &lt;key&gt;StartCalendarInterval&lt;/key&gt;</span><br><span class="line">    &lt;dict&gt;</span><br><span class="line">        &lt;key&gt;Hour&lt;/key&gt;</span><br><span class="line">        &lt;<span class="built_in">integer</span>&gt;3&lt;/<span class="built_in">integer</span>&gt;</span><br><span class="line">    &lt;/dict&gt;</span><br><span class="line">&lt;/dict&gt;</span><br><span class="line">&lt;/plist&gt;</span><br></pre></td></tr></table></figure></p>
+<p>我将脚本放在<code>/Library/LaunchAgents</code>路径下,文件名为<code>com.zucc.netlogin.plist</code>。</p>
+<h3 id="实现开机自动登陆-windows"><a href="#实现开机自动登陆-windows" class="headerlink" title="实现开机自动登陆 (windows)"></a>实现开机自动登陆 (windows)</h3><p><a href="https://www.cnblogs.com/MikeZhang/archive/2013/02/04/pythonAutoRunWindows20130204.html" target="_blank" rel="noopener">参考文献</a></p>
+<ol>
+<li>在cmd中输入<code>gpedit.msc</code>打开组策略编辑器</li>
+<li>选择<code>计算机配置-&gt;windows设置-&gt;脚本-&gt;启动</code>，在<code>启动 属性</code>对话框中选择添加，找到python文件。</li>
+</ol>
+
       
     </div>
     
@@ -385,328 +390,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/2-ssh-login-noPasswd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jerry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JERRY HOME">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/25/2-ssh-login-noPasswd/" itemprop="url">SSH通过密钥对链接</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T11:13:34+08:00">
-                2017-11-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/" itemprop="url" rel="index">
-                    <span itemprop="name">建立博客</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/2-ssh免秘钥登录/" itemprop="url" rel="index">
-                    <span itemprop="name">2. ssh免秘钥登录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/python/" rel="tag"># python</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>通常，我们进行ssh连接时需要通过密码登录。但是对于远程服务器来说，在一定时间内没有操作，会自动断开连接，再次登录时需要再次输入密码，十分的不方便。为此，可以使用<code>密钥对</code>授权的方法，完成免密登录，从而提高效率。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/25/2-ssh-login-noPasswd/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/16/12-hadoop-install2/" rel="next" title="Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)">
+                <i class="fa fa-chevron-left"></i> Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/1-install-lnmpa/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jerry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JERRY HOME">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/25/1-install-lnmpa/" itemprop="url">CentOS 7.3下LNMPA环境安装</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T11:00:51+08:00">
-                2017-11-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/" itemprop="url" rel="index">
-                    <span itemprop="name">建立博客</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建立博客/1-服务器环境搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">1. 服务器环境搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>本文主要讲述了在centOS 7.3环境下，搭建LNMPA环境的方法。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/25/1-install-lnmpa/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -716,14 +429,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -731,6 +441,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -751,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -814,6 +537,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#认证程序"><span class="nav-number">3.</span> <span class="nav-text">认证程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现开机自动登陆（mac）"><span class="nav-number">4.</span> <span class="nav-text">实现开机自动登陆（mac）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现开机自动登陆-windows"><span class="nav-number">5.</span> <span class="nav-text">实现开机自动登陆 (windows)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -955,6 +694,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
