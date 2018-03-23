@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文主要记录了使用git的基本方法。操作系统:macOS-10.12.6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-23T13:31:43.000Z">
+<meta property="og:updated_time" content="2018-03-23T13:33:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用教程">
 <meta name="twitter:description" content="本文主要记录了使用git的基本方法。操作系统:macOS-10.12.6">
@@ -399,9 +399,9 @@
 <li>master分支是主分支，因此要时刻与远程同步；</li>
 <li>dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</li>
 <li>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</li>
-<li>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。<h4 id="查看远程库："><a href="#查看远程库：" class="headerlink" title="查看远程库："></a>查看远程库：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote -v   <span class="comment">#查看远程库详细信息</span></span><br><span class="line">git remote      <span class="comment">#查看远程库信息</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</li>
 </ol>
+<h4 id="查看远程库："><a href="#查看远程库：" class="headerlink" title="查看远程库："></a>查看远程库：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote -v   <span class="comment">#查看远程库详细信息</span></span><br><span class="line">git remote      <span class="comment">#查看远程库信息</span></span><br></pre></td></tr></table></figure>
 <h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:jerryma0912/testgit.git    <span class="comment">#远程库的名字就是origin,可以修改</span></span><br></pre></td></tr></table></figure>
 <h4 id="删除远程库"><a href="#删除远程库" class="headerlink" title="删除远程库"></a>删除远程库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm 远程库名</span><br></pre></td></tr></table></figure>
 <h4 id="本地库的所有内容推送到远程库"><a href="#本地库的所有内容推送到远程库" class="headerlink" title="本地库的所有内容推送到远程库"></a>本地库的所有内容推送到远程库</h4><p>把本地库的内容推送到远程，用<code>git push</code>命令，实际上是把当前分支推送到远程。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push -u &lt;远程库名称，默认origin&gt; 分支名    <span class="comment">#第一次推送分支时，加上了-u参数，Git不但会把本地的分支内容推送的远程新的分支，还会把本地的分支和远程的master分支关联起来</span></span><br><span class="line">git push &lt;远程库名称，默认origin&gt; 分支名       <span class="comment">#以后的推送</span></span><br></pre></td></tr></table></figure></p>
