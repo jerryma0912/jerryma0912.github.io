@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/03/23/14-Git/</loc>
-    <lastmod>2018-03-23T13:31:26.000Z</lastmod>
+    <lastmod>2018-03-23T13:31:43.000Z</lastmod>
     <data>
         <display>
         <title>git使用教程</title>
@@ -19,7 +19,7 @@
               <breadCrumb title="建立博客" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
           
              
-              <breadCrumb title="4.git使用教程" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/4-git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+              <breadCrumb title="4. git使用教程" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/4-git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
