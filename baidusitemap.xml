@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/03/24/15-CountFile/</loc>
+    <lastmod>2018-03-23T16:59:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用python统计提交文件并生成报表</title>
+        <pubTime>2018-03-23T16:54:03.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python学习笔记" url="http://yoursite.com/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="4. 实战·统计文件" url="http://yoursite.com/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/4-%E5%AE%9E%E6%88%98%C2%B7%E7%BB%9F%E8%AE%A1%E6%96%87%E4%BB%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/03/23/14-Git/</loc>
     <lastmod>2018-03-23T16:33:18.000Z</lastmod>
     <data>
