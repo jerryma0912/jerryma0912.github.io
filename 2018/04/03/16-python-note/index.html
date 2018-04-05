@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="我在学习完C++后开始学习的python，因此本文主要记录了在学习python时的笔记，以及python语法与c++的一些区别。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-03T14:48:08.000Z">
+<meta property="og:updated_time" content="2018-04-05T04:39:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记">
 <meta name="twitter:description" content="我在学习完C++后开始学习的python，因此本文主要记录了在学习python时的笔记，以及python语法与c++的一些区别。">
@@ -372,6 +372,49 @@
 <li>变量可以是任何数据类型，使用时不需要先声明。<code>=</code>可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量。<b>这种变量本身类型不固定的语言称之为动态语言<b></b></b></li>
 <li>在Python中，通常用全部大写的变量名表示常量，如<code>PI = 3.14159265359</code>。但事实上它仍然是一个变量，Python根本没有任何机制保证其不会被改变。</li>
 <li><code>/</code>除法计算结果是浮点数，即使是两个整数恰好整除，结果也是浮点数。<code>//</code>称为地板除，是两个整数的除法仍然是整数。</li>
+<li>python中，字符串是以Unicode编码的，<code>b&#39;abc&#39;</code>表示bytes类型的数据，<code>ord(str)</code>将获取字符的整数表示，<code>char(num)</code>把编码转换为对应的字符.<code>字符串.encode(&#39;类型&#39;)</code>用于编码，<code>字符串.decode(&#39;类型&#39;)</code>用于解码</li>
+<li>字符格式化：%d 整数 %f 浮点数 %s 字符串 %x 十六进制整数，还可以指定是否补0和整数与小数的位数：<code>print(&#39;%2d-%05d&#39; % (3, 1))</code>-&gt;<code>3-00001</code>,<code>print(&#39;%.2f&#39; % 3.1415926)</code>-&gt;<code>3.14</code>,</li>
+<li><code>%%</code>为转义<code>%</code></li>
+<li>使用format也可以格式化。<code>&#39;Hello, {0}, 成绩提升了 {1:.1f}%&#39;.format(&#39;小明&#39;, 17.125)</code></li>
+<li>set是一组没有重复key的集合，不存储value，不可以放入可变对象。要创建一个set，需要提供一个list作为输入集合.通过<code>add(key)</code>添加元素，<code>remove(key)</code>删除元素。<code>s1 &amp; s2</code>做交集，<code>s1 | s2</code>做并集</li>
+<li><p>对于不变对象来说，调用对象自身的任意方法，也不会改变该对象自身的内容。相反，这些方法会创建新的对象并返回。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = &apos;abc&apos;</span><br><span class="line">&gt;&gt;&gt; b = a.replace(&apos;a&apos;, &apos;A&apos;)</span><br><span class="line">&gt;&gt;&gt; b</span><br><span class="line">&apos;Abc&apos;</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&apos;abc&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>[l.lower() for l in L1 if isinstance(l ,str)]</code>  <code>[m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;]</code>列表生成式。前面写要生成的元素，后面写条件，中的的循环可以有多个。</p>
+</li>
+<li>生成器的两种方法：(1)按列表生成式的方法，把中括号换为小括号。(2)函数中使用<code>yield</code>,此时要注意，函数在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。此外，但是用for循环调用generator时，发现拿不到generator的return语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">g = fib(6)</span><br><span class="line">while True:</span><br><span class="line">    try:</span><br><span class="line">        x = next(g)</span><br><span class="line">        print(&apos;g:&apos;, x)</span><br><span class="line">    except StopIteration as e:</span><br><span class="line">        print(&apos;Generator return value:&apos;, e.value)</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><ol>
+<li><p>if语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if &lt;条件判断1&gt;:</span><br><span class="line">    &lt;执行1&gt;</span><br><span class="line">elif &lt;条件判断2&gt;:</span><br><span class="line">    &lt;执行2&gt;</span><br><span class="line">elif &lt;条件判断3&gt;:</span><br><span class="line">    &lt;执行3&gt;</span><br><span class="line">else:</span><br><span class="line">    &lt;执行4&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环语句(只有for语句和while语句)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1) for x in ...:</span><br><span class="line">(2) while ...:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认情况下，dict迭代的是key。如果要迭代value，可以用<code>for value in d.values()</code>，如果要同时迭代key和value，可以用<code>for k, v in d.items()</code>。</p>
+</li>
+<li><p>可以通过collections模块的Iterable类型判断对象是否可迭代：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from collections import Iterable</span><br><span class="line">isinstance(&apos;abc&apos;, Iterable) # str是否可迭代</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以内置的enumerate函数可以把一个list变成索引-元素对，这样就可以在for循环中同时迭代索引和元素本身。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for i, value in enumerate([&apos;A&apos;, &apos;B&apos;, &apos;C&apos;]):</span><br><span class="line">    print(i, value)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
+<li>函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”。</li>
+<li><p>如果想定义一个什么事也不做的空函数，可以用pass语句：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def nop():</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据类型检查可以用内置函数isinstance()实现：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def my_abs(x):</span><br><span class="line">    if not isinstance(x, (int, float)):</span><br><span class="line">        raise TypeError(&apos;bad operand type&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以返回多个值！但事实上，返回值是一个tuple！但是，在语法上，返回一个tuple可以省略括号，而多个变量可以同时接收一个tuple，按位置赋给对应的值，所以，Python的函数返回多值其实就是返回一个tuple，但写起来更方便。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x, y = move(100, 100, 60, math.pi / 6)</span><br><span class="line">&gt;&gt;&gt; print(x, y)</span><br><span class="line">151.96152422706632 70.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>def power(x, n=2):</code>：默认参数，<b>!!默认参数必须指向不变对象!!</b>调用时如果不按顺序提供部分默认参数时，需要把参数名写上。<br><code>def calc(*numbers):</code>:可变参数，此时，参数numbers接收到的是一个tuple。如果实参为list或tuple，可以在list或tuple实参前加<code>*</code>,把它变为可变参数传进去。<br><code>def person(name, age, **kw):</code>: 关键字参数，允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict。可以扩展函数的功能。<br><code>def person(name, age, *, city, job):</code>:命名关键字参数，用<em>分隔，调用方式同上，但此时被限制了关键字参数的名字。命名关键字参数可以有缺省值。如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符</em>了：<code>def person(name, age, *args, city, job):</code><br><b>参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数。</b></p>
+</li>
+<li>解决递归调用栈溢出的方法是通过尾递归优化，尾递归是指，在函数返回的时候，调用自身本身，并且，return语句不能包含表达式。这样，编译器或者解释器就可以把尾递归做优化，使递归本身无论调用多少次，都只占用一个栈帧，不会出现栈溢出的情况。</li>
 </ol>
 
       
@@ -545,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语句"><span class="nav-number">2.</span> <span class="nav-text">语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a></li></ol></div>
             
 
           </div>
