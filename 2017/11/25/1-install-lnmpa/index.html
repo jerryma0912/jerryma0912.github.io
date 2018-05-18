@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文主要讲述了在centOS 7.3环境下，搭建LNMPA环境的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-30T23:46:00.000Z">
+<meta property="og:updated_time" content="2018-05-18T06:21:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7.3下LNMPA环境安装">
 <meta name="twitter:description" content="本文主要讲述了在centOS 7.3环境下，搭建LNMPA环境的方法。">
@@ -364,7 +364,7 @@
 
       
         <p>本文主要讲述了在centOS 7.3环境下，搭建LNMPA环境的方法。<br><a id="more"></a></p>
-<h3 id="安装php7-0"><a href="#安装php7-0" class="headerlink" title="安装php7.0"></a>安装php7.0</h3><h4 id="1-更新yum安装包"><a href="#1-更新yum安装包" class="headerlink" title="1.更新yum安装包"></a>1.更新yum安装包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="安装php7-0"><a href="#安装php7-0" class="headerlink" title="安装php7.0"></a>安装php7.0</h3><h4 id="1-更新yum安装包"><a href="#1-更新yum安装包" class="headerlink" title="1.更新yum安装包"></a>1.更新yum安装包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm</span><br><span class="line">rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</span><br></pre></td></tr></table></figure>
 <h4 id="2-通过yum安装php及其他组件"><a href="#2-通过yum安装php及其他组件" class="headerlink" title="2.通过yum安装php及其他组件"></a>2.通过yum安装php及其他组件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install php70w.x86_64 php70w-cli.x86_64 php70w-common.x86_64 php70w-gd.x86_64 php70w-ldap.x86_64 php70w-mbstring.x86_64 php70w-mcrypt.x86_64 php70w-mysql.x86_64 php70w-pdo.x86_64</span><br><span class="line"></span><br><span class="line">yum install php70w-fpm</span><br></pre></td></tr></table></figure>
 <h4 id="3-验证是否安装成功"><a href="#3-验证是否安装成功" class="headerlink" title="3.验证是否安装成功"></a>3.验证是否安装成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php -v</span><br></pre></td></tr></table></figure>
 <p>参考文章：<a href="https://www.cnblogs.com/719907411hl/p/6891061.html" target="_blank" rel="noopener">CentOS通过yum安装php7.0</a></p>
