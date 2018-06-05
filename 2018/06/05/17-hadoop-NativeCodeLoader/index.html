@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文主要介绍了解决异常util.NativeCodeLoader: Unable to load native-hadoop library for your platform的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-05T23:50:12.000Z">
+<meta property="og:updated_time" content="2018-06-05T23:51:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop异常解决(util.NativeCodeLoader)">
 <meta name="twitter:description" content="本文主要介绍了解决异常util.NativeCodeLoader: Unable to load native-hadoop library for your platform的方法。">
@@ -384,7 +384,8 @@
 <h3 id="编译源码"><a href="#编译源码" class="headerlink" title="编译源码"></a>编译源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hadoop-2.6.5-src</span><br><span class="line">mvn clean package -Pdist,native,src -DskipTests -Dtar -Dmaven.javadoc.skip=true</span><br></pre></td></tr></table></figure>
 <p>等待编译完成。编译好的文件在<code>/usr/local/hadoop-2.6.5-src/hadoop-dist/target/hadoop-2.6.5.tar.gz</code>下。</p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="已安装情况"><a href="#已安装情况" class="headerlink" title="已安装情况"></a>已安装情况</h4><p>若已经完成了hadoop的安装，则将<code>/usr/local/hadoop-2.6.5-src/hadoop-dist/target/hadoop-2.6.5.tar.gz</code>文件解压后，将其中的<code>lib/native</code>替换原安装目录下的文件。</p>
-<h4 id="未安装情况"><a href="#未安装情况" class="headerlink" title="未安装情况"></a>未安装情况</h4><p>若还未安装，则将该tar文件安装即可。</p>
+<h4 id="未安装情况"><a href="#未安装情况" class="headerlink" title="未安装情况"></a>未安装情况</h4><p>若还未安装，则将该tar文件安装即可。<a href="/2018/03/16/12-hadoop-install2/" title="Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)">Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)</a>。</p>
+
       
     </div>
     
