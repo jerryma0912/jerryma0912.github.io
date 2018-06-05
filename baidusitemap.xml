@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/03/16/12-hadoop-install2/</loc>
+    <lastmod>2018-06-01T06:08:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)</title>
+        <pubTime>2018-03-16T11:09:03.000Z</pubTime>
+        
+        <tag>大数据</tag>
+         
+         
+           
+             
+              <breadCrumb title="大数据" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+          
+             
+              <breadCrumb title="2. hadoop-2.7.1的搭建" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/2-hadoop-2-7-1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/11/25/3-install-hexo/</loc>
     <lastmod>2018-05-18T15:14:08.000Z</lastmod>
     <data>
@@ -181,29 +204,6 @@
           
              
               <breadCrumb title="1. 数据结构" url="http://yoursite.com/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/03/16/12-hadoop-install2/</loc>
-    <lastmod>2018-03-16T15:24:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)</title>
-        <pubTime>2018-03-16T11:09:03.000Z</pubTime>
-        
-        <tag>大数据</tag>
-         
-         
-           
-             
-              <breadCrumb title="大数据" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-          
-             
-              <breadCrumb title="2. hadoop-2.7.1的搭建" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/2-hadoop-2-7-1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>
