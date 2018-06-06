@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文主要介绍了解决异常util.NativeCodeLoader: Unable to load native-hadoop library for your platform的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-05T23:51:38.000Z">
+<meta property="og:updated_time" content="2018-06-06T00:41:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop异常解决(util.NativeCodeLoader)">
 <meta name="twitter:description" content="本文主要介绍了解决异常util.NativeCodeLoader: Unable to load native-hadoop library for your platform的方法。">
@@ -368,10 +368,13 @@
 <ol>
 <li>卸载原先安装的java <code>yum remote java-1.8.0</code></li>
 <li><a href="http://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html" target="_blank" rel="noopener">下载JDK 8</a>后安装</li>
-<li>在<code>/etc/profile</code>中配置环境变量，并使用<code>source /etc/profile</code>生效<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/home/hadoop/jdk1.8.0_101</span><br><span class="line">export CLASSPATH=$JAVA_HOME/lib/</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:/usr/bin:/usr/sbin:/bin:/sbin</span><br></pre></td></tr></table></figure>
+<li><p>在<code>/etc/profile</code>中配置环境变量，并使用<code>source /etc/profile</code>生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/home/hadoop/jdk1.8.0_101</span><br><span class="line">export CLASSPATH=$JAVA_HOME/lib/</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:/usr/bin:/usr/sbin:/bin:/sbin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用命令<code>yum install java-1.8.0-openjdk-devel</code>安装devel.</p>
+<h4 id="下载hadoop源码"><a href="#下载hadoop源码" class="headerlink" title="下载hadoop源码"></a>下载hadoop源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf hadoop-2.6.5-src.tar.gz</span><br><span class="line">mv hadoop-2.6.5-src /usr/local/hadoop-2.6.5-src/</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="下载hadoop源码"><a href="#下载hadoop源码" class="headerlink" title="下载hadoop源码"></a>下载hadoop源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf hadoop-2.6.5-src.tar.gz</span><br><span class="line">mv hadoop-2.6.5-src /usr/local/hadoop-2.6.5-src/</span><br></pre></td></tr></table></figure>
 <h4 id="安装各种库"><a href="#安装各种库" class="headerlink" title="安装各种库"></a>安装各种库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install svn ncurses-devel gcc*</span><br><span class="line">yum -y install lzo-devel zlib-devel autoconf automake libtool cmake openssl-devel</span><br></pre></td></tr></table></figure>
 <h4 id="安装maven"><a href="#安装maven" class="headerlink" title="安装maven"></a>安装maven</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf apache-maven-3.3.9-bin.tar.gz</span><br><span class="line">mv apache-maven-3.3.9  /usr/local/hadoop-2.6.5-src/labc/apache-maven-3.3.9</span><br></pre></td></tr></table></figure>
 <p>在<code>/etc/profile</code>中配置环境变量，并使用<code>source /etc/profile</code>生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export MAVEN_HOME=/usr/local/hadoop-2.6.5-src/labc/apache-maven-3.3.9</span><br><span class="line">export MAVEN_OPTS=&quot;-Xms256m -Xmx512m&quot;</span><br><span class="line">export PATH=$PATH:$MAVEN_HOME/bin</span><br></pre></td></tr></table></figure></p>
@@ -383,7 +386,8 @@
 <p>使用<code>findbugs -version</code>检查配置是否正确。</p>
 <h3 id="编译源码"><a href="#编译源码" class="headerlink" title="编译源码"></a>编译源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hadoop-2.6.5-src</span><br><span class="line">mvn clean package -Pdist,native,src -DskipTests -Dtar -Dmaven.javadoc.skip=true</span><br></pre></td></tr></table></figure>
 <p>等待编译完成。编译好的文件在<code>/usr/local/hadoop-2.6.5-src/hadoop-dist/target/hadoop-2.6.5.tar.gz</code>下。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="已安装情况"><a href="#已安装情况" class="headerlink" title="已安装情况"></a>已安装情况</h4><p>若已经完成了hadoop的安装，则将<code>/usr/local/hadoop-2.6.5-src/hadoop-dist/target/hadoop-2.6.5.tar.gz</code>文件解压后，将其中的<code>lib/native</code>替换原安装目录下的文件。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在<code>/etc/profile</code>中配置环境变量，并使用<code>source /etc/profile</code>生效。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export  HADOOP_OPTS=&quot;-Djava.library.path=$HADOOP_HOME/lib:$HADOOP_COMMON_LIB_NATIVE_DIR&quot;</span><br></pre></td></tr></table></figure></p>
+<h4 id="已安装情况"><a href="#已安装情况" class="headerlink" title="已安装情况"></a>已安装情况</h4><p>若已经完成了hadoop的安装，则将<code>/usr/local/hadoop-2.6.5-src/hadoop-dist/target/hadoop-2.6.5.tar.gz</code>文件解压后，将其中的<code>lib/native</code>替换原安装目录下的文件。</p>
 <h4 id="未安装情况"><a href="#未安装情况" class="headerlink" title="未安装情况"></a>未安装情况</h4><p>若还未安装，则将该tar文件安装即可。<a href="/2018/03/16/12-hadoop-install2/" title="Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)">Hadoop-2.7.1非分布式/伪分布式/集群安装与配置(CentOS-6.9)</a>。</p>
 
       
