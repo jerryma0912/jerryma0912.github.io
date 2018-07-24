@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/07/24/18-linuxCommand/</loc>
+    <lastmod>2018-07-24T02:35:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>OverTheWire答案 & Linux命令笔记</title>
+        <pubTime>2018-07-24T02:33:00.000Z</pubTime>
+        
+        <tag>OverTheWire</tag>
+         
+         
+           
+             
+              <breadCrumb title="网络安全学习笔记" url="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="2. OverTheWire" url="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2-OverTheWire/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/03/05/8-kali/</loc>
+    <lastmod>2018-07-24T02:35:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>kali学习笔记</title>
+        <pubTime>2018-03-05T15:38:53.000Z</pubTime>
+        
+        <tag>kali</tag>
+         
+         
+           
+             
+              <breadCrumb title="网络安全学习笔记" url="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="1. kali的搭建与使用" url="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1-kali%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/06/05/17-hadoop-NativeCodeLoader/</loc>
     <lastmod>2018-06-06T00:41:52.000Z</lastmod>
     <data>
@@ -273,29 +319,6 @@
           
              
               <breadCrumb title="3. 内网穿透" url="http://yoursite.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/3-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/03/05/8-kali/</loc>
-    <lastmod>2018-03-09T15:55:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>kali学习笔记</title>
-        <pubTime>2018-03-05T15:38:53.000Z</pubTime>
-        
-        <tag>kali</tag>
-         
-         
-           
-             
-              <breadCrumb title="kali学习笔记" url="http://yoursite.com/categories/kali%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-             
-              <breadCrumb title="1. kali的搭建与使用" url="http://yoursite.com/categories/kali%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1-kali%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
           
         </display>
     </data>

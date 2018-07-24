@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="DNS," />
+  <meta name="keywords" content="OverTheWire," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="本文简述了配置DNS服务器时常用的各记录类型的含义以及常用的配置方法。本文转自dns和常见dns记录类型介绍">
-<meta name="keywords" content="DNS">
+<meta name="description" content="本文主要记录了OverTheWire Bandit答案以及使用的linux命令。">
+<meta name="keywords" content="OverTheWire">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DNS的记录类型及配置的说明">
-<meta property="og:url" content="http://yoursite.com/2018/03/09/9-DNS/index.html">
+<meta property="og:title" content="OverTheWire答案 &amp; Linux命令笔记">
+<meta property="og:url" content="http://yoursite.com/2018/07/24/18-linuxCommand/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本文简述了配置DNS服务器时常用的各记录类型的含义以及常用的配置方法。本文转自dns和常见dns记录类型介绍">
+<meta property="og:description" content="本文主要记录了OverTheWire Bandit答案以及使用的linux命令。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T11:53:40.000Z">
+<meta property="og:updated_time" content="2018-07-24T02:35:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DNS的记录类型及配置的说明">
-<meta name="twitter:description" content="本文简述了配置DNS服务器时常用的各记录类型的含义以及常用的配置方法。本文转自dns和常见dns记录类型介绍">
+<meta name="twitter:title" content="OverTheWire答案 &amp; Linux命令笔记">
+<meta name="twitter:description" content="本文主要记录了OverTheWire Bandit答案以及使用的linux命令。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/09/9-DNS/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/24/18-linuxCommand/"/>
 
 
 
 
 
-  <title>DNS的记录类型及配置的说明 | JERRY HOME</title>
+  <title>OverTheWire答案 & Linux命令笔记 | JERRY HOME</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/9-DNS/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/18-linuxCommand/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DNS的记录类型及配置的说明</h1>
+          <h1 class="post-title" itemprop="name headline">OverTheWire答案 & Linux命令笔记</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T19:28:33+08:00">
-                2018-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T10:33:00+08:00">
+                2018-07-24
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/科学上网/" itemprop="url" rel="index">
-                    <span itemprop="name">科学上网</span>
+                  <a href="/categories/网络安全学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">网络安全学习笔记</span>
                   </a>
                 </span>
 
@@ -326,8 +326,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/科学上网/2-DNS记录与配置/" itemprop="url" rel="index">
-                    <span itemprop="name">2. DNS记录与配置</span>
+                  <a href="/categories/网络安全学习笔记/2-OverTheWire/" itemprop="url" rel="index">
+                    <span itemprop="name">2. OverTheWire</span>
                   </a>
                 </span>
 
@@ -363,20 +363,141 @@
       
 
       
-        <p>本文简述了配置DNS服务器时常用的各记录类型的含义以及常用的配置方法。本文转自<a href="http://blog.csdn.net/u013920085/article/details/42552987" target="_blank" rel="noopener">dns和常见dns记录类型介绍</a><br><a id="more"></a></p>
-<h3 id="DNS常用的记录类型"><a href="#DNS常用的记录类型" class="headerlink" title="DNS常用的记录类型"></a>DNS常用的记录类型</h3><h4 id="A记录"><a href="#A记录" class="headerlink" title="A记录"></a>A记录</h4><p>A（Address）记录是将指定的域名解析到指定的IP地址。</p>
-<h4 id="AAAA记录"><a href="#AAAA记录" class="headerlink" title="AAAA记录"></a>AAAA记录</h4><p>AAAA记录是将指定的域名解析到指定的IPV6的IP地址。</p>
-<h4 id="CNAME记录"><a href="#CNAME记录" class="headerlink" title="CNAME记录"></a>CNAME记录</h4><p>CNAME记录是将一个域名的别名指定到一个域名上。这样的好处在于方便更换IP地址。</p>
-<h3 id="NS记录"><a href="#NS记录" class="headerlink" title="NS记录"></a>NS记录</h3><p>NS（Name Server）记录是域名服务器记录，用来指定该域名由哪个DNS服务器来进行解析。</p>
-<h4 id="MX记录"><a href="#MX记录" class="headerlink" title="MX记录"></a>MX记录</h4><p>MX（Mail Exchanger）记录是邮件交换记录，它指向一个邮件服务器，用于电子邮件系统发邮件时根据收信人的地址后缀来定位邮件服务器。例如，当Internet上的某用户要发一封信给 user@mydomain.com 时，该用户的邮件系统通过DNS查找mydomain.com这个域名的MX记录，如果MX记录存在， 用户计算机就将邮件发送到MX记录所指定的邮件服务器上。</p>
-<h4 id="TXT记录"><a href="#TXT记录" class="headerlink" title="TXT记录"></a>TXT记录</h4><p>TXT记录指的是某个主机名或域名的说明，https利用txt记录来验证主机就是txt的应用之一。</p>
-<hr>
-
-<h3 id="DNS配置方法"><a href="#DNS配置方法" class="headerlink" title="DNS配置方法"></a>DNS配置方法</h3><p>在<a href="https://my.freenom.com/clientarea.php" target="_blank" rel="noopener">注册域名</a>后,在域名管理中填写DNS解析服务器的地址。在DNS解析服务器的管理界面中，针对域名根据需要配填写DNS的条目。通常的格式为<code>TYPE   NAME    DATA    TTL</code></p>
-<ul>
-<li>如果解析本域名，则<code>NAME</code>填写<code>@</code></li>
-<li>如果需要设置域名泛解析，即对所有的次级域名进行解析，则<code>NAME</code>填写<code>*</code></li>
-</ul>
+        <p>本文主要记录了OverTheWire Bandit答案以及使用的linux命令。<br><a id="more"></a></p>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p> ls [-alrtAFR] [name…]</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td style="text-align:center">显示所有文件及目录 (ls内定将文件名或目录名称开头为”.”的视为隐藏档，不会列出)</td>
+</tr>
+<tr>
+<td>-l</td>
+<td style="text-align:center">除文件名称外，亦将文件型态、权限、拥有者、文件大小等资讯详细列出</td>
+</tr>
+<tr>
+<td>-r</td>
+<td style="text-align:center">将文件以相反次序显示(原定依英文字母次序)</td>
+</tr>
+<tr>
+<td>-t</td>
+<td style="text-align:center">将文件依建立时间之先后次序列出</td>
+</tr>
+<tr>
+<td>-A</td>
+<td style="text-align:center">同 -a ，但不列出 “.” (目前目录) 及 “..” (父目录)</td>
+</tr>
+<tr>
+<td>-F</td>
+<td style="text-align:center">在列出的文件名称后加一符号；例如可执行档则加 “*”, 目录则加 “/“</td>
+</tr>
+<tr>
+<td>-R</td>
+<td style="text-align:center">若目录下有文件，则以下之文件亦皆依序列出</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>cat [-AbeEnstTuv] [–help] [–version] fileName</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-n 或 –number</td>
+<td style="text-align:center">由 1 开始对所有输出的行数编号。</td>
+</tr>
+<tr>
+<td>-b 或 –number-nonblank</td>
+<td style="text-align:center">和 -n 相似，只不过对于空白行不编号。</td>
+</tr>
+<tr>
+<td>-s 或 –squeeze-blank</td>
+<td style="text-align:center">当遇到有连续两行以上的空白行，就代换为一行的空白行。</td>
+</tr>
+<tr>
+<td>-v 或 –show-nonprinting</td>
+<td style="text-align:center">使用 ^ 和 M- 符号，除了 LFD 和 TAB 之外。</td>
+</tr>
+<tr>
+<td>-E 或 –show-ends</td>
+<td style="text-align:center">在每行结束处显示 $。</td>
+</tr>
+<tr>
+<td>-T 或 –show-tabs</td>
+<td style="text-align:center">将 TAB 字符显示为 ^I。</td>
+</tr>
+<tr>
+<td>-e</td>
+<td style="text-align:center">等价于 -vE。</td>
+</tr>
+<tr>
+<td>-A, –show-all</td>
+<td style="text-align:center">等价于 -vET。</td>
+</tr>
+<tr>
+<td>-e</td>
+<td style="text-align:center">等价于”-vE”选项；</td>
+</tr>
+<tr>
+<td>-t</td>
+<td style="text-align:center">等价于”-vT”选项；</td>
+</tr>
+</tbody>
+</table>
+<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p>file [-bcLvz][-f &lt;名称文件&gt;][-m &lt;魔法数字文件&gt;…][文件或目录…]</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b</td>
+<td style="text-align:center">　列出辨识结果时，不显示文件名称。</td>
+</tr>
+<tr>
+<td>-c</td>
+<td style="text-align:center">　详细显示指令执行过程，便于排错或分析程序执行的情形。</td>
+</tr>
+<tr>
+<td>-f&lt;名称文件&gt; 　</td>
+<td style="text-align:center">指定名称文件，其内容有一个或多个文件名称时，让file依序辨识这些文件，格式为每列一个文件名称。</td>
+</tr>
+<tr>
+<td>-L</td>
+<td style="text-align:center">　直接显示符号连接所指向的文件的类别。</td>
+</tr>
+<tr>
+<td>-m&lt;魔法数字文件&gt;</td>
+<td style="text-align:center">　指定魔法数字文件。</td>
+</tr>
+<tr>
+<td>-v</td>
+<td style="text-align:center">　显示版本信息。</td>
+</tr>
+<tr>
+<td>-z</td>
+<td style="text-align:center">　尝试去解读压缩文件的内容。</td>
+</tr>
+<tr>
+<td>[文件或目录…]</td>
+<td style="text-align:center">要确定类型的文件列表，多个文件之间使用空格分开，可以使用shell通配符匹配多个文件。</td>
+</tr>
+</tbody>
+</table>
+<p>  du, find</p>
 
       
     </div>
@@ -394,7 +515,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DNS/" rel="tag"># DNS</a>
+            <a href="/tags/OverTheWire/" rel="tag"># OverTheWire</a>
           
         </div>
       
@@ -407,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/05/8-kali/" rel="next" title="kali学习笔记">
-                <i class="fa fa-chevron-left"></i> kali学习笔记
+              <a href="/2018/06/05/17-hadoop-NativeCodeLoader/" rel="next" title="Hadoop异常解决(util.NativeCodeLoader)">
+                <i class="fa fa-chevron-left"></i> Hadoop异常解决(util.NativeCodeLoader)
               </a>
             
           </div>
@@ -416,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/09/10-frp-install/" rel="prev" title="在局域网内利用frp及SSR搭建局域网代理服务器">
-                在局域网内利用frp及SSR搭建局域网代理服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS常用的记录类型"><span class="nav-number">1.</span> <span class="nav-text">DNS常用的记录类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A记录"><span class="nav-number">1.1.</span> <span class="nav-text">A记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AAAA记录"><span class="nav-number">1.2.</span> <span class="nav-text">AAAA记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CNAME记录"><span class="nav-number">1.3.</span> <span class="nav-text">CNAME记录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NS记录"><span class="nav-number">2.</span> <span class="nav-text">NS记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MX记录"><span class="nav-number">2.1.</span> <span class="nav-text">MX记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TXT记录"><span class="nav-number">2.2.</span> <span class="nav-text">TXT记录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS配置方法"><span class="nav-number">3.</span> <span class="nav-text">DNS配置方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-number">1.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-number">2.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file"><span class="nav-number">3.</span> <span class="nav-text">file</span></a></li></ol></div>
             
 
           </div>

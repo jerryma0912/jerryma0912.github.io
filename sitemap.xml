@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/07/24/18-linuxCommand/</loc>
+    
+    <lastmod>2018-07-24T02:35:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/05/8-kali/</loc>
+    
+    <lastmod>2018-07-24T02:35:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/06/05/17-hadoop-NativeCodeLoader/</loc>
     
     <lastmod>2018-06-06T00:41:52.000Z</lastmod>
@@ -82,13 +96,6 @@
     <loc>http://yoursite.com/2018/03/09/10-frp-install/</loc>
     
     <lastmod>2018-03-14T03:39:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/05/8-kali/</loc>
-    
-    <lastmod>2018-03-09T15:55:22.000Z</lastmod>
     
   </url>
   
