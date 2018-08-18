@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文主要记录了OverTheWire Bandit答案以及使用的linux命令。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-24T02:50:08.000Z">
+<meta property="og:updated_time" content="2018-07-27T06:17:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OverTheWire答案 &amp; Linux命令笔记">
 <meta name="twitter:description" content="本文主要记录了OverTheWire Bandit答案以及使用的linux命令。">
@@ -403,27 +403,27 @@
 </tr>
 <tr>
 <td>Level7</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs</td>
 </tr>
 <tr>
 <td>Level8</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">cvX2JJa4CFALtqS87jk27qwqGhBM9plV</td>
 </tr>
 <tr>
 <td>Level9</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR</td>
 </tr>
 <tr>
 <td>Level10</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk</td>
 </tr>
 <tr>
 <td>Level11</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR</td>
 </tr>
 <tr>
 <td>Level12</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu</td>
 </tr>
 <tr>
 <td>Level13</td>
@@ -716,6 +716,14 @@
 <td>-pid n</td>
 <td style="text-align:center">process id 是 n 的文件</td>
 </tr>
+<tr>
+<td>-user name</td>
+<td style="text-align:center">name 是文件所属的用户</td>
+</tr>
+<tr>
+<td>-group group</td>
+<td style="text-align:center">group 是文件所属的组</td>
+</tr>
 </tbody>
 </table>
 <h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><p>grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][–help][范本样式][文件或目录…]</p>
@@ -830,6 +838,318 @@
 <tr>
 <td>-y</td>
 <td style="text-align:center">此参数的效果和指定”-i”参数相同。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h4><p>uniq [-cdu][-f&lt;栏位&gt;][-s&lt;字符位置&gt;][-w&lt;字符位置&gt;][–help][–version][输入文件][输出文件]</p>
+<p>注：uniq only filter adjacent matching lines from INPUT</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c或–count</td>
+<td style="text-align:center">在每列旁边显示该行重复出现的次数。</td>
+</tr>
+<tr>
+<td>-d或–repeated</td>
+<td style="text-align:center">仅显示重复出现的行列。</td>
+</tr>
+<tr>
+<td>-f&lt;栏位&gt;或–skip-fields=&lt;栏位&gt;</td>
+<td style="text-align:center">忽略比较指定的栏位。</td>
+</tr>
+<tr>
+<td>-s&lt;字符位置&gt;或–skip-chars=&lt;字符位置&gt;</td>
+<td style="text-align:center">忽略比较指定的字符。</td>
+</tr>
+<tr>
+<td>-u或–unique</td>
+<td style="text-align:center">仅显示出一次的行列。</td>
+</tr>
+<tr>
+<td>-w&lt;字符位置&gt;或–check-chars=&lt;字符位置&gt;</td>
+<td style="text-align:center">指定要比较的字符。</td>
+</tr>
+<tr>
+<td>–help</td>
+<td style="text-align:center">显示帮助。</td>
+</tr>
+<tr>
+<td>–version</td>
+<td style="text-align:center">显示版本信息。</td>
+</tr>
+<tr>
+<td>[输入文件]</td>
+<td style="text-align:center">指定已排序好的文本文件。</td>
+</tr>
+<tr>
+<td>[输出文件]</td>
+<td style="text-align:center">指定输出的文件。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><p>sort [-bcdfimMnr][-o&lt;输出文件&gt;][-t&lt;分隔字符&gt;][+&lt;起始栏位&gt;-&lt;结束栏位&gt;][–help][–verison][文件]</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b</td>
+<td style="text-align:center">忽略每行前面开始出的空格字符。</td>
+</tr>
+<tr>
+<td>-c</td>
+<td style="text-align:center">检查文件是否已经按照顺序排序。</td>
+</tr>
+<tr>
+<td>-d</td>
+<td style="text-align:center">排序时，处理英文字母、数字及空格字符外，忽略其他的字符。</td>
+</tr>
+<tr>
+<td>-f</td>
+<td style="text-align:center">排序时，将小写字母视为大写字母。</td>
+</tr>
+<tr>
+<td>-i</td>
+<td style="text-align:center">排序时，除了040至176之间的ASCII字符外，忽略其他的字符。</td>
+</tr>
+<tr>
+<td>-m</td>
+<td style="text-align:center">将几个排序好的文件进行合并。</td>
+</tr>
+<tr>
+<td>-M</td>
+<td style="text-align:center">将前面3个字母依照月份的缩写进行排序。</td>
+</tr>
+<tr>
+<td>-n</td>
+<td style="text-align:center">依照数值的大小排序。</td>
+</tr>
+<tr>
+<td>-o</td>
+<td style="text-align:center">&lt;输出文件&gt; 将排序后的结果存入指定的文件。</td>
+</tr>
+<tr>
+<td>-r</td>
+<td style="text-align:center">以相反的顺序来排序。</td>
+</tr>
+<tr>
+<td>-t</td>
+<td style="text-align:center">&lt;分隔字符&gt; 指定排序时所用的栏位分隔字符。</td>
+</tr>
+<tr>
+<td>+&lt;起始栏位&gt;-&lt;结束栏位&gt;</td>
+<td style="text-align:center">以指定的栏位来排序，范围由起始栏位到结束栏位的前一栏位。</td>
+</tr>
+<tr>
+<td>–help</td>
+<td style="text-align:center">显示帮助。</td>
+</tr>
+<tr>
+<td>–version</td>
+<td style="text-align:center">显示版本信息。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="strings"><a href="#strings" class="headerlink" title="strings"></a>strings</h4><p>Usage: strings [option(s)] [file(s)]</p>
+<p>Display printable strings in [file(s)] (stdin by default)</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  -a - –all</td>
+<td style="text-align:center">Scan the entire file, not just the data section [default]</td>
+</tr>
+<tr>
+<td>  -d –data</td>
+<td style="text-align:center">Only scan the data sections in the file</td>
+</tr>
+<tr>
+<td>  -f –print-file-name</td>
+<td style="text-align:center">Print the name of the file before each string</td>
+</tr>
+<tr>
+<td>  -n –bytes=[number]</td>
+<td style="text-align:center">Locate &amp; print any NUL-terminated sequence of at</td>
+</tr>
+<tr>
+<td>  -\<number\></number\></td>
+<td style="text-align:center">least [number] characters (default 4).</td>
+</tr>
+<tr>
+<td>  -t –radix={o,d,x}</td>
+<td style="text-align:center">Print the location of the string in base 8, 10 or 16</td>
+</tr>
+<tr>
+<td>  -w –include-all-whitespace</td>
+<td style="text-align:center">Include all whitespace as valid string characters</td>
+</tr>
+<tr>
+<td>  -o</td>
+<td style="text-align:center">An alias for –radix=o</td>
+</tr>
+<tr>
+<td>  -T –target=<bfdname></bfdname></td>
+<td style="text-align:center">Specify the binary file format</td>
+</tr>
+<tr>
+<td>  -e –encoding={s,S,b,l,B,L}</td>
+<td style="text-align:center">Select character size and endianness: s = 7-bit, S = 8-bit, {b,l} = 16-bit, {B,L} = 32-bit</td>
+</tr>
+<tr>
+<td>  -s –output-separator=\<string\></string\></td>
+<td style="text-align:center">String used to separate strings in output.</td>
+</tr>
+<tr>
+<td>  @\<file\></file\></td>
+<td style="text-align:center">Read options from \<file></file></td>
+</tr>
+<tr>
+<td>  -h –help</td>
+<td style="text-align:center">Display this information</td>
+</tr>
+<tr>
+<td>  -v -V –version</td>
+<td style="text-align:center">Print the program’s version number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tr"><a href="#tr" class="headerlink" title="tr"></a>tr</h4><p>tr [-cdst][–help][–version][第一字符集][第二字符集]<br>tr [OPTION]…SET1[SET2] </p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>-c, –complement：反选设定字符。也就是符合 SET1 的部份不做处理，不符合的剩余部份才进行转换<br>-d, –delete：删除指令字符<br>-s, –squeeze-repeats：缩减连续重复的字符成指定的单个字符<br>-t, –truncate-set1：削减 SET1 指定范围，使之与 SET2 设定长度相等<br>–help：显示程序用法信息<br>–version：显示程序本身的版本信息</p>
+<table>
+<thead>
+<tr>
+<th>字符集合的范围</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\NNN</td>
+<td style="text-align:center">八进制值的字符 NNN (1 to 3 为八进制值的字符)</td>
+</tr>
+<tr>
+<td>\</td>
+<td style="text-align:center">反斜杠</td>
+</tr>
+<tr>
+<td>\a</td>
+<td style="text-align:center">Ctrl-G 铃声</td>
+</tr>
+<tr>
+<td>\b</td>
+<td style="text-align:center">Ctrl-H 退格符</td>
+</tr>
+<tr>
+<td>\f</td>
+<td style="text-align:center">Ctrl-L 走行换页</td>
+</tr>
+<tr>
+<td>\n</td>
+<td style="text-align:center">Ctrl-J 新行</td>
+</tr>
+<tr>
+<td>\r</td>
+<td style="text-align:center">Ctrl-M 回车</td>
+</tr>
+<tr>
+<td>\t</td>
+<td style="text-align:center">Ctrl-I tab键</td>
+</tr>
+<tr>
+<td>\v</td>
+<td style="text-align:center">Ctrl-X 水平制表符</td>
+</tr>
+<tr>
+<td>CHAR1-CHAR2</td>
+<td style="text-align:center">字符范围从 CHAR1 到 CHAR2 的指定，范围的指定以 ASCII 码的次序为基础，只能由小到大，不能由大到小。</td>
+</tr>
+<tr>
+<td>[CHAR*]</td>
+<td style="text-align:center">这是 SET2 专用的设定，功能是重复指定的字符到与 SET1 相同长度为止</td>
+</tr>
+<tr>
+<td>[CHAR*REPEAT]</td>
+<td style="text-align:center">这也是 SET2 专用的设定，功能是重复指定的字符到设定的 REPEAT 次数为止(REPEAT 的数字采 8 进位制计算，以 0 为开始)</td>
+</tr>
+<tr>
+<td>[:alnum:]</td>
+<td style="text-align:center">所有字母字符与数字</td>
+</tr>
+<tr>
+<td>[:alpha:]</td>
+<td style="text-align:center">所有字母字符</td>
+</tr>
+<tr>
+<td>[:blank:]</td>
+<td style="text-align:center">所有水平空格</td>
+</tr>
+<tr>
+<td>[:cntrl:]</td>
+<td style="text-align:center">所有控制字符</td>
+</tr>
+<tr>
+<td>[:digit:]</td>
+<td style="text-align:center">所有数字</td>
+</tr>
+<tr>
+<td>[:graph:]</td>
+<td style="text-align:center">所有可打印的字符(不包含空格符)</td>
+</tr>
+<tr>
+<td>[:lower:]</td>
+<td style="text-align:center">所有小写字母</td>
+</tr>
+<tr>
+<td>[:print:]</td>
+<td style="text-align:center">所有可打印的字符(包含空格符)</td>
+</tr>
+<tr>
+<td>[:punct:]</td>
+<td style="text-align:center">所有标点字符</td>
+</tr>
+<tr>
+<td>[:space:]</td>
+<td style="text-align:center">所有水平与垂直空格符</td>
+</tr>
+<tr>
+<td>[:upper:]</td>
+<td style="text-align:center">所有大写字母</td>
+</tr>
+<tr>
+<td>[:xdigit:]</td>
+<td style="text-align:center">所有 16 进位制的数字</td>
+</tr>
+<tr>
+<td>[=CHAR=]</td>
+<td style="text-align:center">所有符合指定的字符(等号里的 CHAR，代表你可自订的字符)</td>
 </tr>
 </tbody>
 </table>
@@ -1005,7 +1325,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bandit答案"><span class="nav-number">1.</span> <span class="nav-text">Bandit答案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用linux命令"><span class="nav-number">2.</span> <span class="nav-text">常用linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ls"><span class="nav-number">2.1.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat"><span class="nav-number">2.2.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file"><span class="nav-number">2.3.</span> <span class="nav-text">file</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#du"><span class="nav-number">2.4.</span> <span class="nav-text">du</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find"><span class="nav-number">2.5.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep"><span class="nav-number">2.6.</span> <span class="nav-text">grep</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bandit答案"><span class="nav-number">1.</span> <span class="nav-text">Bandit答案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用linux命令"><span class="nav-number">2.</span> <span class="nav-text">常用linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ls"><span class="nav-number">2.1.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat"><span class="nav-number">2.2.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file"><span class="nav-number">2.3.</span> <span class="nav-text">file</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#du"><span class="nav-number">2.4.</span> <span class="nav-text">du</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find"><span class="nav-number">2.5.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep"><span class="nav-number">2.6.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uniq"><span class="nav-number">2.7.</span> <span class="nav-text">uniq</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sort"><span class="nav-number">2.8.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strings"><span class="nav-number">2.9.</span> <span class="nav-text">strings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tr"><span class="nav-number">2.10.</span> <span class="nav-text">tr</span></a></li></ol></li></ol></div>
             
 
           </div>
