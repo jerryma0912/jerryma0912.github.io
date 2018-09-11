@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-11T01:16:26.000Z">
+<meta property="og:updated_time" content="2018-09-11T01:17:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="短信嗅探及伪基站">
 <meta name="twitter:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
@@ -378,12 +378,13 @@
 <h4 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h4><ul>
 <li>安装harkRF所需的工具和库文件。<br>执行<code>sudo apt-get install hackrf libhackrf-dev libhackrf0</code>，利用<code>hackrf_info</code>命令验证是否安装成功。</li>
 <li>安装软件gnuradio，利用它可以解码射频信号，并安装工具gqrx，利用该工具可以将特定频率信号的功率可视化，以及一切需要的东西。<br>执行<code>sudo apt-get install gnuradio gnuradio-dev gr-osmosdr gr-osmosdr gqrx-sdr wireshark</code>，</li>
-<li>安装gr-gsm，以解码GSM数据包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git cmake libboost-all-dev libcppunit-dev swig doxygen liblog4cpp5-dev python-scipy</span><br><span class="line">git clone https://github.com/ptrkrysik/gr-gsm.git</span><br><span class="line">cd gr-gsm</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<li><p>安装gr-gsm，以解码GSM数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git cmake libboost-all-dev libcppunit-dev swig doxygen liblog4cpp5-dev python-scipy</span><br><span class="line">git clone https://github.com/ptrkrysik/gr-gsm.git</span><br><span class="line">cd gr-gsm</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<p>  创建文件~/.gnuradio/config.conf，并将下面的内容粘贴在该文件中：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[grc]å</span><br><span class="line">local_blocks_path=/usr/local/share/gnuradio/grc/blocks</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>创建文件~/.gnuradio/config.conf，并将下面的内容粘贴在该文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[grc]</span><br><span class="line">local_blocks_path=/usr/local/share/gnuradio/grc/blocks</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>安装kalibrate-harkrf,它能够在已知的GSM频率之间跳动，并能够识别到你的国家所使用的频率：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/scateu/kalibrate-hackrf.git</span><br><span class="line">cd kalibrate-hackrf</span><br><span class="line">./bootstrap</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure></li>
+<li><p>安装kalibrate-harkrf,它能够在已知的GSM频率之间跳动，并能够识别到你的国家所使用的频率：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/scateu/kalibrate-hackrf.git</span><br><span class="line">cd kalibrate-hackrf</span><br><span class="line">./bootstrap</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
