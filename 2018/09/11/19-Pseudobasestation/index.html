@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-11T01:03:37.000Z">
+<meta property="og:updated_time" content="2018-09-11T01:16:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="短信嗅探及伪基站">
 <meta name="twitter:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
@@ -365,6 +365,26 @@
       
         <p>本文短信嗅探和伪基站环境的搭建方法、使用方法。<br><a id="more"></a><br>最近关于利用短信嗅探盗刷银行卡的新闻闹得沸沸扬扬，因此我也蹭一个热点，学习一下短信嗅探的相关技术，同时探究一下伪基站是如何搭建的。本文主要介绍三个内容：利用hackRF嗅探GSM网络流量、利用C118嗅探GSM网络流量、利用C118搭建伪基站。</p>
 <h3 id="利用hackRF嗅探GSM网络流量"><a href="#利用hackRF嗅探GSM网络流量" class="headerlink" title="利用hackRF嗅探GSM网络流量"></a>利用hackRF嗅探GSM网络流量</h3><p><a href="http://www.freebuf.com/articles/wireless/68736.html" target="_blank" rel="noopener">参考文献</a></p>
+<h4 id="硬件需求"><a href="#硬件需求" class="headerlink" title="硬件需求"></a>硬件需求</h4><ul>
+<li>hackRF</li>
+</ul>
+<h4 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h4><ul>
+<li><a href="https://github.com/scateu/kalibrate-hackrf" target="_blank" rel="noopener">kalibrate-hackrf</a></li>
+<li><a href="https://gnuradio.org/redmine/projects/gnuradio/wiki/GNURadioCompanion" target="_blank" rel="noopener">gnuradio-companion</a></li>
+<li><a href="https://github.com/csete/gqrx" target="_blank" rel="noopener">gqrx</a></li>
+<li>wireshark</li>
+<li><a href="https://github.com/ptrkrysik/gr-gsm" target="_blank" rel="noopener">gr-gsm</a></li>
+</ul>
+<h4 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h4><ul>
+<li>安装harkRF所需的工具和库文件。<br>执行<code>sudo apt-get install hackrf libhackrf-dev libhackrf0</code>，利用<code>hackrf_info</code>命令验证是否安装成功。</li>
+<li>安装软件gnuradio，利用它可以解码射频信号，并安装工具gqrx，利用该工具可以将特定频率信号的功率可视化，以及一切需要的东西。<br>执行<code>sudo apt-get install gnuradio gnuradio-dev gr-osmosdr gr-osmosdr gqrx-sdr wireshark</code>，</li>
+<li>安装gr-gsm，以解码GSM数据包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git cmake libboost-all-dev libcppunit-dev swig doxygen liblog4cpp5-dev python-scipy</span><br><span class="line">git clone https://github.com/ptrkrysik/gr-gsm.git</span><br><span class="line">cd gr-gsm</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>创建文件~/.gnuradio/config.conf，并将下面的内容粘贴在该文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[grc]</span><br><span class="line">local_blocks_path=/usr/local/share/gnuradio/grc/blocks</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>安装kalibrate-harkrf,它能够在已知的GSM频率之间跳动，并能够识别到你的国家所使用的频率：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/scateu/kalibrate-hackrf.git</span><br><span class="line">cd kalibrate-hackrf</span><br><span class="line">./bootstrap</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -537,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用hackRF嗅探GSM网络流量"><span class="nav-number">1.</span> <span class="nav-text">利用hackRF嗅探GSM网络流量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用hackRF嗅探GSM网络流量"><span class="nav-number">1.</span> <span class="nav-text">利用hackRF嗅探GSM网络流量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件需求"><span class="nav-number">1.1.</span> <span class="nav-text">硬件需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件需求"><span class="nav-number">1.2.</span> <span class="nav-text">软件需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装过程"><span class="nav-number">1.3.</span> <span class="nav-text">安装过程</span></a></li></ol></li></ol></div>
             
 
           </div>
