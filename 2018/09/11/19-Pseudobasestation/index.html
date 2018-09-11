@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-11T01:51:59.000Z">
+<meta property="og:updated_time" content="2018-09-11T01:52:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="短信嗅探及伪基站">
 <meta name="twitter:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
@@ -393,14 +393,13 @@
 </li>
 <li><p>启动嗅探</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd gr-gsm/apps/</span><br><span class="line">gnuradio-companion grgsm-livemon_user.grc</span><br></pre></td></tr></table></figure>
+<p>  在弹出的对话框中，点击运行，然后开始调节扫描频率（步进为200kHz）,直到控制台窗口上持续打印数据为止，此时说明已经捕获该频率。</p>
+</li>
+<li><p>启动wireshark</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo wireshark -k -Y &apos;gsm_sms&apos; -i lo</span><br></pre></td></tr></table></figure>
+<p>  此时可以在wireshark中看到解码后的gsm_sms信息。</p>
 </li>
 </ul>
-<p>在弹出的对话框中，点击运行，然后开始调节扫描频率（步进为200kHz）,直到控制台窗口上持续打印数据为止，此时说明已经捕获该频率。</p>
-<ul>
-<li>启动wireshark<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo wireshark -k -Y &apos;gsm_sms&apos; -i lo</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>此时可以在wireshark中看到解码后的gsm_sms信息。</p>
 
       
     </div>
