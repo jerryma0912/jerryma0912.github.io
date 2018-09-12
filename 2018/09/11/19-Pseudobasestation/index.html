@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-12T09:55:46.000Z">
+<meta property="og:updated_time" content="2018-09-12T09:56:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="短信嗅探及伪基站">
 <meta name="twitter:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
@@ -405,10 +405,16 @@
 <h4 id="硬件要求"><a href="#硬件要求" class="headerlink" title="硬件要求"></a>硬件要求</h4><ul>
 <li>MOTOROLA c118手机 (手机+电池+充电器) </li>
 <li>CP2302模块</li>
-<li>C118数据线<h4 id="软件要求"><a href="#软件要求" class="headerlink" title="软件要求"></a>软件要求</h4></li>
+<li>C118数据线</li>
+</ul>
+<h4 id="软件要求"><a href="#软件要求" class="headerlink" title="软件要求"></a>软件要求</h4><ul>
 <li>Linux系统（实验采用ubantu 16.04）</li>
 <li>OsmocomBB 等</li>
-<li>Wireshark<h4 id="硬件组装"><a href="#硬件组装" class="headerlink" title="硬件组装"></a>硬件组装</h4>电脑 &lt;– cp2303模块  –&gt; c118数据线  –&gt; C118<h4 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h4>环境安装可能会遇到各类错误，只需要根据错误去谷歌即可。。或者直接使用我<code>已经配置好的环境</code></li>
+<li>Wireshark</li>
+</ul>
+<h4 id="硬件组装"><a href="#硬件组装" class="headerlink" title="硬件组装"></a>硬件组装</h4><p>电脑 &lt;– cp2303模块  –&gt; c118数据线  –&gt; C118</p>
+<h4 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h4><p>环境安装可能会遇到各类错误，只需要根据错误去谷歌即可。。或者直接使用我<code>已经配置好的环境</code></p>
+<ul>
 <li><p>安装依赖（建议一个一个包安装）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get install libusb-0.1-4 libpcsclite1 libccid pcscd</span><br><span class="line">sudo apt-get install libtool shtool autoconf git-core pkg-config make gcc build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-dev texinfo flex bison libncurses5 libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev zlibc zlib1g-dev libmpfr4 libmpc-dev libpcsclite-dev</span><br></pre></td></tr></table></figure>
 </li>
