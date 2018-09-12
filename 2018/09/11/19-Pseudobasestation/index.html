@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-11T01:52:35.000Z">
+<meta property="og:updated_time" content="2018-09-12T09:55:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="短信嗅探及伪基站">
 <meta name="twitter:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
@@ -369,6 +369,7 @@
 <li>hackRF</li>
 </ul>
 <h4 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h4><ul>
+<li>linux系统 （实验环境为kali）</li>
 <li><a href="https://gnuradio.org/redmine/projects/gnuradio/wiki/GNURadioCompanion" target="_blank" rel="noopener">gnuradio-companion</a></li>
 <li><a href="https://github.com/csete/gqrx" target="_blank" rel="noopener">gqrx</a></li>
 <li><a href="https://www.wireshark.org/" target="_blank" rel="noopener">wireshark</a></li>
@@ -399,6 +400,22 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo wireshark -k -Y &apos;gsm_sms&apos; -i lo</span><br></pre></td></tr></table></figure>
 <p>  此时可以在wireshark中看到解码后的gsm_sms信息。</p>
 </li>
+</ul>
+<h3 id="利用c118-OsmocomBB进行短信嗅探"><a href="#利用c118-OsmocomBB进行短信嗅探" class="headerlink" title="利用c118+OsmocomBB进行短信嗅探"></a>利用c118+OsmocomBB进行短信嗅探</h3><p><a href="http://www.freebuf.com/sectool/107755.html" target="_blank" rel="noopener">参考文献</a></p>
+<h4 id="硬件要求"><a href="#硬件要求" class="headerlink" title="硬件要求"></a>硬件要求</h4><ul>
+<li>MOTOROLA c118手机 (手机+电池+充电器) </li>
+<li>CP2302模块</li>
+<li>C118数据线<h4 id="软件要求"><a href="#软件要求" class="headerlink" title="软件要求"></a>软件要求</h4></li>
+<li>Linux系统（实验采用ubantu 16.04）</li>
+<li>OsmocomBB 等</li>
+<li>Wireshark<h4 id="硬件组装"><a href="#硬件组装" class="headerlink" title="硬件组装"></a>硬件组装</h4>电脑 &lt;– cp2303模块  –&gt; c118数据线  –&gt; C118<h4 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h4>环境安装可能会遇到各类错误，只需要根据错误去谷歌即可。。或者直接使用我<code>已经配置好的环境</code></li>
+<li><p>安装依赖（建议一个一个包安装）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get install libusb-0.1-4 libpcsclite1 libccid pcscd</span><br><span class="line">sudo apt-get install libtool shtool autoconf git-core pkg-config make gcc build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-dev texinfo flex bison libncurses5 libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev zlibc zlib1g-dev libmpfr4 libmpc-dev libpcsclite-dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装OsmocomBB</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mkdir osmocombb</span><br><span class="line">cd osmocombb</span><br><span class="line">mkdir build install src</span><br><span class="line">wget http://bb.osmocom.org/trac/raw-attachment/wiki/GnuArmToolchain/gnu-arm-build.3.sh</span><br><span class="line">cd src</span><br><span class="line">wget http://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.bz2</span><br><span class="line">wget http://ftp.gnu.org/gnu/binutils/binutils-2.21.1a.tar.bz2</span><br><span class="line">wget ftp://sources.redhat.com/pub/newlib/newlib-1.19.0.tar.gz</span><br><span class="line">cd ..</span><br><span class="line">chmod +x gnu-arm-build.3.sh</span><br><span class="line">./gnu-arm-build.3.sh</span><br></pre></td></tr></table></figure>
+<p>  等待安装完成，此处会报错，请直接谷歌直接使用我<code>已经配置好的环境</code>，之后配置环境变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd install/bin</span><br><span class="line">pwd</span><br><span class="line">vi ~/./.bashrc</span><br><span class="line">(最后一行加入,保存退出)export PATH=$PATH:/osmocombb/install/binå</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -572,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用hackRF嗅探GSM网络流量"><span class="nav-number">1.</span> <span class="nav-text">利用hackRF嗅探GSM网络流量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件需求"><span class="nav-number">1.1.</span> <span class="nav-text">硬件需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件需求"><span class="nav-number">1.2.</span> <span class="nav-text">软件需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装过程"><span class="nav-number">1.3.</span> <span class="nav-text">安装过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验过程"><span class="nav-number">1.4.</span> <span class="nav-text">实验过程</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用hackRF嗅探GSM网络流量"><span class="nav-number">1.</span> <span class="nav-text">利用hackRF嗅探GSM网络流量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件需求"><span class="nav-number">1.1.</span> <span class="nav-text">硬件需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件需求"><span class="nav-number">1.2.</span> <span class="nav-text">软件需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装过程"><span class="nav-number">1.3.</span> <span class="nav-text">安装过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验过程"><span class="nav-number">1.4.</span> <span class="nav-text">实验过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用c118-OsmocomBB进行短信嗅探"><span class="nav-number">2.</span> <span class="nav-text">利用c118+OsmocomBB进行短信嗅探</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件要求"><span class="nav-number">2.1.</span> <span class="nav-text">硬件要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件要求"><span class="nav-number">2.2.</span> <span class="nav-text">软件要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件组装"><span class="nav-number">2.3.</span> <span class="nav-text">硬件组装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件安装"><span class="nav-number">2.4.</span> <span class="nav-text">软件安装</span></a></li></ol></li></ol></div>
             
 
           </div>
