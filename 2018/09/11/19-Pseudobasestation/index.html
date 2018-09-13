@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-13T07:15:53.000Z">
+<meta property="og:updated_time" content="2018-09-13T07:17:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="短信嗅探及伪基站">
 <meta name="twitter:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
@@ -504,8 +504,10 @@
 <li><p>打开OpenBTS控制台</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd openbts/trunk/apps</span><br><span class="line">./OpenBTSCLI</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>（彩蛋）<br>  为了便于使用，将实验过程写成了bash脚本。只需输入参数即可开启实验。具体步骤如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop/apps</span><br><span class="line">sudo ./jz_start.sh</span><br><span class="line">@@@@@@</span><br><span class="line">[以下根据提示输入：]</span><br><span class="line">1. 选择cp2302模块所在的ttyUSB端口。例如输入【0】</span><br><span class="line">2. 按下【c118开机键】，开始烧录程序</span><br><span class="line">3. 等待烧录完成后，输入【y】,开启服务。</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>-（彩蛋）<br>    为了便于使用，将实验过程写成了bash脚本。只需输入参数即可开启实验。具体步骤如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop/apps</span><br><span class="line">sudo ./jz_start.sh</span><br><span class="line">@@@@@@</span><br><span class="line">[以下根据提示输入：]</span><br><span class="line">1. 选择cp2302模块所在的ttyUSB端口。例如输入【0】</span><br><span class="line">2. 按下【c118开机键】，开始烧录程序</span><br><span class="line">3. 等待烧录完成后，输入【y】,开启服务。</span><br></pre></td></tr></table></figure></p>
 <h4 id="实验效果"><a href="#实验效果" class="headerlink" title="实验效果"></a>实验效果</h4><ul>
 <li><p>连接伪基站<br>  手机可以搜索到伪基站的信号，并可以进行连接，连接成功后会收到一条欢迎短信，信息内容可在数据库内进行编辑。</p>
 </li>
