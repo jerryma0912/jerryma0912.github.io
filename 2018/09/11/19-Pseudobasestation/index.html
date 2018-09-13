@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-13T07:27:37.000Z">
+<meta property="og:updated_time" content="2018-09-13T07:28:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="短信嗅探及伪基站">
 <meta name="twitter:description" content="本文短信嗅探和伪基站环境的搭建方法、使用方法。">
@@ -363,7 +363,7 @@
       
 
       
-        <p>本文短信嗅探和伪基站环境的搭建方法、使用方法。<br><a id="more"></a><br>最近关于<a href="http://finance.ifeng.com/a/20180818/16457103_0.shtml" target="_blank" rel="noopener">利用短信嗅探盗刷银行卡</a>的新闻闹得沸沸扬扬，因此我也蹭一个热点，学习一下短信嗅探的相关技术，同时探究一下伪基站是如何搭建的。本文主要介绍三个内容：利用hackRF嗅探GSM网络流量、利用C118嗅探GSM网络流量、利用C118搭建伪基站。</p>
+        <p>本文短信嗅探和伪基站环境的搭建方法、使用方法。<br><a id="more"></a><br>最近关于<a href="http://finance.ifeng.com/a/20180818/16457103_0.shtml" target="_blank" rel="noopener">利用短信嗅探盗刷银行卡</a>的新闻闹得沸沸扬扬，因此我也蹭一个热点，学习一下短信嗅探的相关技术，同时探究一下伪基站是如何搭建的。本文主要介绍三个内容：利用hackRF嗅探GSM网络流量、利用C118嗅探GSM网络流量、利用C118搭建伪基站。<br><br></p>
 <h3 id="利用hackRF嗅探GSM网络流量"><a href="#利用hackRF嗅探GSM网络流量" class="headerlink" title="利用hackRF嗅探GSM网络流量"></a>利用hackRF嗅探GSM网络流量</h3><p><a href="http://www.freebuf.com/articles/wireless/68736.html" target="_blank" rel="noopener">参考文献</a></p>
 <h4 id="硬件需求"><a href="#硬件需求" class="headerlink" title="硬件需求"></a>硬件需求</h4><ul>
 <li>hackRF</li>
@@ -398,7 +398,7 @@
 </li>
 <li><p>启动wireshark</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo wireshark -k -Y &apos;gsm_sms&apos; -i lo</span><br></pre></td></tr></table></figure>
-<p>  此时可以在wireshark中看到解码后的gsm_sms信息。</p>
+<p>  此时可以在wireshark中看到解码后的gsm_sms信息。<br><br></p>
 </li>
 </ul>
 <h3 id="利用c118-OsmocomBB进行短信嗅探"><a href="#利用c118-OsmocomBB进行短信嗅探" class="headerlink" title="利用c118+OsmocomBB进行短信嗅探"></a>利用c118+OsmocomBB进行短信嗅探</h3><p><a href="http://www.freebuf.com/sectool/107755.html" target="_blank" rel="noopener">参考文献</a></p>
@@ -451,6 +451,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop/apps</span><br><span class="line">sudo ./sms_start.sh</span><br><span class="line">@@@@@@</span><br><span class="line">[以下根据提示输入（使用2台设备进行嗅探）：]</span><br><span class="line">1. 选择第一台cp2302模块所在的ttyUSB端口。例如输入【0】</span><br><span class="line">2. 按下【c118开机键】，开始烧录程序</span><br><span class="line">3. 等待烧录完成后，输入所需监听的信道，如输入【80】，然后进入下一步。 </span><br><span class="line">4. 选择第二台cp2302模块所在的ttyUSB端口。例如输入【1】</span><br><span class="line">5. 按下【c118开机键】，开始烧录程序</span><br><span class="line">6. 等待烧录完成后，输入所需监听的信道，如输入【18】。</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<p><br></p>
 <h3 id="利用C118搭建伪基站"><a href="#利用C118搭建伪基站" class="headerlink" title="利用C118搭建伪基站"></a>利用C118搭建伪基站</h3><p><a href="https://www.fucksec.com/hardware/509.html" target="_blank" rel="noopener">参考文献</a></p>
 <h4 id="硬件要求-1"><a href="#硬件要求-1" class="headerlink" title="硬件要求"></a>硬件要求</h4><ul>
 <li>MOTOROLA c118手机 (手机+电池+充电器) </li>
