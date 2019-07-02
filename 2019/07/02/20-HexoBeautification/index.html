@@ -88,7 +88,8 @@
 <meta property="og:description" content="本文记录了hexo的美化方法及流程，持续更新。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190702224235.png">
-<meta property="og:updated_time" content="2019-07-02T14:47:45.109Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190702224920.png">
+<meta property="og:updated_time" content="2019-07-02T14:50:29.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo美化">
 <meta name="twitter:description" content="本文记录了hexo的美化方法及流程，持续更新。">
@@ -400,9 +401,9 @@
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为阿里云vps到期，所以最近<a href="https://blog.csdn.net/m0_38064214/article/details/84504904" target="_blank" rel="noopener">将hexo博客迁移至了github</a>,同时，使用<a href="https://www.jianshu.com/p/dd00fa227c45" target="_blank" rel="noopener">PicGo + github创建了图床</a>。看了别人的博客，希望也能够进行一些博客美化，所以查阅了一些资料，美化的过程记录在本文中，后续，如果有其他的美化，也将持续记录于本文。</p>
 <h3 id="增加字数统计-阅读时长"><a href="#增加字数统计-阅读时长" class="headerlink" title="增加字数统计/阅读时长"></a>增加字数统计/阅读时长</h3><p>（1）安装插件<br>进入本地blog仓库，执行以下命令安装hexo-wordcount插件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount</span><br></pre></td></tr></table></figure></p>
 <p>（2）博客配置<br>NexT 主题默认已经集成了文章<code>字数统计</code>、<code>阅读时长</code>的统计功能，如果我们需要使用，只需在本地的blog目录下，进入主题配置文件 _config.yml 进行配置即可，路径为：<code>blog目录/themes/next/_config.yml</code>,配置文件修改为如下：<br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190702224235.png" alt="修改后配置文件"></p>
-<p>（3）优化显示<br>因为默认显示结果没有单位，所以需要对显示进行优化。修改<code>blog目录/themes/next/layout/_macro/post.swig</code>文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在&#123;&#123; wordcount(post.content) &#125;&#125;后面加“字”，在&#123;&#123; min2read(post.content) &#125;&#125;后面加“分钟”</span><br></pre></td></tr></table></figure></p>
+<p>（3）优化显示<br>因为默认显示结果没有单位，所以需要对显示进行优化。修改<code>blog目录/themes/next/layout/_macro/post.swig</code>文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在&#123;&#123; wordcount(post.content) &#125;&#125; 后面加“字”</span><br><span class="line">在&#123;&#123; min2read(post.content) &#125;&#125; 后面加“分钟”</span><br></pre></td></tr></table></figure></p>
 <p>（4）重新生成网站并上传<br>执行以下hexo命令，完成hexo的重新生成及上传。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure></p>
-<p>(5)修改后效果：</p>
+<p>(5)修改后效果：<br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190702224920.png" alt="hexo 字数统计/阅读时间效果图"></p>
 
       
     </div>
