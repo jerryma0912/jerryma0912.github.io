@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2019/07/02/20-HexoBeautification/</loc>
+    <lastmod>2019-07-02T14:47:45.109Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo美化</title>
+        <pubTime>2019-07-02T14:21:44.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="建立博客" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
+          
+             
+              <breadCrumb title="5. hexo美化" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/5-hexo%E7%BE%8E%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/03/23/14-Git/</loc>
     <lastmod>2019-07-02T13:24:18.820Z</lastmod>
     <data>
