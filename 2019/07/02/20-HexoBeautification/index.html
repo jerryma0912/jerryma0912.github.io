@@ -96,7 +96,8 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703001926.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703002041.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703002143.png">
-<meta property="og:updated_time" content="2019-07-02T16:36:20.456Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703010707.png">
+<meta property="og:updated_time" content="2019-07-02T17:07:39.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo美化">
 <meta name="twitter:description" content="本文记录了hexo的美化方法及流程，持续更新。">
@@ -387,7 +388,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  718 字
+                  1.1k 字
                 </span>
               
 
@@ -403,7 +404,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -458,6 +459,16 @@ var _hmt = _hmt || [];
 <li><p>代码检查<br>进入百度统计后台，进入代码检查页面。<br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703001926.png" alt=""><br>可分别检查首页和子页面是否配置成功。首页检测成功如下所示：<br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703002041.png" alt=""><br>子页面检测成功如下所示：<br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703002143.png" alt=""></p>
 </li>
 <li>enjoy!<br>等待约20分钟后，即可进入后台查看站点访问量，或查看实时访问量。</li>
+</ol>
+<hr>
+
+<h4 id="页脚添加网站运行时间"><a href="#页脚添加网站运行时间" class="headerlink" title="页脚添加网站运行时间"></a>页脚添加网站运行时间</h4><ol>
+<li>添加代码<br>在<code>blog目录/themes/next/layout/_partials/footer.swig</code>文件中添加以下代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;sitetime&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;script language=javascript&gt;</span><br><span class="line">  function siteTime()&#123;</span><br><span class="line">    window.setTimeout(&quot;siteTime()&quot;, 1000);</span><br><span class="line">    var seconds = 1000;</span><br><span class="line">    var minutes = seconds * 60;</span><br><span class="line">    var hours = minutes * 60;</span><br><span class="line">    var days = hours * 24;</span><br><span class="line">    var years = days * 365;</span><br><span class="line">    var today = new Date();</span><br><span class="line">    var todayYear = today.getFullYear();</span><br><span class="line">    var todayMonth = today.getMonth()+1;</span><br><span class="line">    var todayDate = today.getDate();</span><br><span class="line">    var todayHour = today.getHours();</span><br><span class="line">    var todayMinute = today.getMinutes();</span><br><span class="line">    var todaySecond = today.getSeconds();</span><br><span class="line">    /*Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)</span><br><span class="line">    year - 作为date对象的年份，为4位年份值</span><br><span class="line">    month - 0-11之间的整数，做为date对象的月份</span><br><span class="line">    day - 1-31之间的整数，做为date对象的天数</span><br><span class="line">    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数</span><br><span class="line">    minutes - 0-59之间的整数，做为date对象的分钟数</span><br><span class="line">    seconds - 0-59之间的整数，做为date对象的秒数</span><br><span class="line">    microseconds - 0-999之间的整数，做为date对象的毫秒数*/</span><br><span class="line">    var t1 = Date.UTC(2018,03,09,19,54,57); //北京时间2018-2-13 00:00:00</span><br><span class="line">    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);</span><br><span class="line">    var diff = t2-t1;</span><br><span class="line">    var diffYears = Math.floor(diff/years);</span><br><span class="line">    var diffDays = Math.floor((diff/days)-diffYears*365);</span><br><span class="line">    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);</span><br><span class="line">    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);</span><br><span class="line">    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);</span><br><span class="line">    document.getElementById(&quot;sitetime&quot;).innerHTML=&quot; 已运行&quot;+diffYears+&quot; 年 &quot;+diffDays+&quot; 天 &quot;+diffHours+&quot; 小时 &quot;+diffMinutes+&quot; 分钟 &quot;+diffSeconds+&quot; 秒&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  siteTime();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703010707.png" alt=""></p>
+<ol>
+<li>重新生成网站并上传<br>执行以下hexo命令，完成hexo的重新生成及上传。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -631,7 +642,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加字数统计-阅读时长"><span class="nav-number">2.</span> <span class="nav-text">增加字数统计/阅读时长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加百度统计"><span class="nav-number">3.</span> <span class="nav-text">增加百度统计</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加字数统计-阅读时长"><span class="nav-number">2.</span> <span class="nav-text">增加字数统计/阅读时长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加百度统计"><span class="nav-number">3.</span> <span class="nav-text">增加百度统计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页脚添加网站运行时间"><span class="nav-number">3.1.</span> <span class="nav-text">页脚添加网站运行时间</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -665,9 +676,48 @@ var _hmt = _hmt || [];
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">39.7k</span>
+    <span title="Site words total count">40.1k</span>
   
 </div>
+
+
+<span id="sitetime"></span>
+<script language=javascript>
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /*Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数*/
+    var t1 = Date.UTC(2018,03,09,19,54,57); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+<br>
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
@@ -676,43 +726,6 @@ var _hmt = _hmt || [];
 
   <span class="post-meta-divider">|</span>
 
-
-<span id="sitetime"></span>
-<script language=javascript>
-	function siteTime(){
-		window.setTimeout("siteTime()", 1000);
-		var seconds = 1000;
-		var minutes = seconds * 60;
-		var hours = minutes * 60;
-		var days = hours * 24;
-		var years = days * 365;
-		var today = new Date();
-		var todayYear = today.getFullYear();
-		var todayMonth = today.getMonth()+1;
-		var todayDate = today.getDate();
-		var todayHour = today.getHours();
-		var todayMinute = today.getMinutes();
-		var todaySecond = today.getSeconds();
-		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)//
-		year - 作为date对象的年份，为4位年份值
-		month - 0-11之间的整数，做为date对象的月份
-		day - 1-31之间的整数，做为date对象的天数
-		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-		minutes - 0-59之间的整数，做为date对象的分钟数
-		seconds - 0-59之间的整数，做为date对象的秒数
-		microseconds - 0-999之间的整数，做为date对象的毫秒数 //
-		var t1 = Date.UTC(2018,03,09,19,54,57); //北京时间2018-2-13 00:00:00
-		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-		var diff = t2-t1;
-		var diffYears = Math.floor(diff/years);
-		var diffDays = Math.floor((diff/days)-diffYears*365);
-		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
-		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
-		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
-	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
-	siteTime();
-</script>
 
 
 
