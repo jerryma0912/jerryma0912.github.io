@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703021711.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703021915.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703023908.png">
-<meta property="og:updated_time" content="2019-07-07T15:47:40.832Z">
+<meta property="og:updated_time" content="2019-07-13T07:38:00.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo美化">
 <meta name="twitter:description" content="本文记录了hexo的美化方法及流程，持续更新。">
@@ -445,8 +445,7 @@ var _hmt = _hmt || [];
 <li><p>修改后效果：<br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190702224920.png" alt="hexo 字数统计/阅读时间效果图"></p>
 </li>
 </ol>
-<hr>
-
+<p><hr></p>
 <h3 id="增加百度统计"><a href="#增加百度统计" class="headerlink" title="增加百度统计"></a>增加百度统计</h3><p>通过百度统计，可以很好的查看博客的访问量。因此，我在博客中部署了百度统计。</p>
 <ol>
 <li><p>注册百度统计<br>进入<a href="https://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>注册账号。</p>
@@ -463,8 +462,7 @@ var _hmt = _hmt || [];
 </li>
 <li>enjoy!<br>等待约20分钟后，即可进入后台查看站点访问量，或查看实时访问量。</li>
 </ol>
-<hr>
-
+<p><hr></p>
 <h3 id="页脚添加网站运行时间"><a href="#页脚添加网站运行时间" class="headerlink" title="页脚添加网站运行时间"></a>页脚添加网站运行时间</h3><ol>
 <li><p>添加代码<br>在<code>blog目录/themes/next/layout/_partials/footer.swig</code>文件中添加以下代码：<br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190703010707.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;sitetime&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;script language=javascript&gt;</span><br><span class="line">  function siteTime()&#123;</span><br><span class="line">    window.setTimeout(&quot;siteTime()&quot;, 1000);</span><br><span class="line">    var seconds = 1000;</span><br><span class="line">    var minutes = seconds * 60;</span><br><span class="line">    var hours = minutes * 60;</span><br><span class="line">    var days = hours * 24;</span><br><span class="line">    var years = days * 365;</span><br><span class="line">    var today = new Date();</span><br><span class="line">    var todayYear = today.getFullYear();</span><br><span class="line">    var todayMonth = today.getMonth()+1;</span><br><span class="line">    var todayDate = today.getDate();</span><br><span class="line">    var todayHour = today.getHours();</span><br><span class="line">    var todayMinute = today.getMinutes();</span><br><span class="line">    var todaySecond = today.getSeconds();</span><br><span class="line">    /*Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)</span><br><span class="line">    year - 作为date对象的年份，为4位年份值</span><br><span class="line">    month - 0-11之间的整数，做为date对象的月份</span><br><span class="line">    day - 1-31之间的整数，做为date对象的天数</span><br><span class="line">    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数</span><br><span class="line">    minutes - 0-59之间的整数，做为date对象的分钟数</span><br><span class="line">    seconds - 0-59之间的整数，做为date对象的秒数</span><br><span class="line">    microseconds - 0-999之间的整数，做为date对象的毫秒数*/</span><br><span class="line">    var t1 = Date.UTC(2018,03,09,19,54,57); //北京时间2018-2-13 00:00:00</span><br><span class="line">    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);</span><br><span class="line">    var diff = t2-t1;</span><br><span class="line">    var diffYears = Math.floor(diff/years);</span><br><span class="line">    var diffDays = Math.floor((diff/days)-diffYears*365);</span><br><span class="line">    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);</span><br><span class="line">    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);</span><br><span class="line">    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);</span><br><span class="line">    document.getElementById(&quot;sitetime&quot;).innerHTML=&quot; 已运行&quot;+diffYears+&quot; 年 &quot;+diffDays+&quot; 天 &quot;+diffHours+&quot; 小时 &quot;+diffMinutes+&quot; 分钟 &quot;+diffSeconds+&quot; 秒&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  siteTime();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure>
@@ -473,8 +471,7 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<hr>
-
+<p><hr></p>
 <h3 id="开启评论区"><a href="#开启评论区" class="headerlink" title="开启评论区"></a>开启评论区</h3><p>由于政策原因，许多原先支持的评论插件需要先进行身份认证，比较麻烦。因此这里选择了一款韩国软件<a href="https://www.livere.com" target="_blank" rel="noopener">来必力</a></p>
 <ol>
 <li><p>注册来必力<br><a href="https://www.livere.com/" target="_blank" rel="noopener">点击</a>进入来必力官网，进行注册。之后选择开通city版本，<code>名称</code>可根据需要自行填写，<code>网站URL</code>填写自己的网站地址。</p>
@@ -485,8 +482,7 @@ var _hmt = _hmt || [];
 <li>重新生成网站并上传<br>执行以下hexo命令，完成hexo的重新生成及上传。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<hr>
-
+<p><hr></p>
 <h3 id="开启文章末尾版权声明"><a href="#开启文章末尾版权声明" class="headerlink" title="开启文章末尾版权声明"></a>开启文章末尾版权声明</h3><ol>
 <li><p>新建<code>my-copyright.swig</code>文件<br>目录：<code>blog目录/themes/next/layout/_macro/</code>,添加内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.copyright %&#125;</span><br><span class="line">&lt;div class=&quot;my_post_copyright&quot;&gt;</span><br><span class="line">  &lt;script src=&quot;//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;!-- JS库 sweetalert 可修改路径 --&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot; src=&quot;https://code.jquery.com/jquery-1.7.1.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;&lt;span&gt;本文标题:&lt;/span&gt;&#123;&#123; page.title &#125;&#125;&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;文章作者:&lt;/span&gt;&#123;&#123; theme.author &#125;&#125;&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;发布时间:&lt;/span&gt;&#123;&#123; page.date.format(&quot;YYYY年MM月DD日 - HH:mm:ss&quot;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;最后更新:&lt;/span&gt;&#123;&#123; page.updated.format(&quot;YYYY年MM月DD日 - HH:mm:ss&quot;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;原始链接:&lt;/span&gt;&lt;a href=&quot;&#123;&#123; url_for(page.path) &#125;&#125;&quot; title=&quot;&#123;&#123; page.title &#125;&#125;&quot;&gt;&#123;&#123; page.permalink &#125;&#125;&lt;/a&gt;</span><br><span class="line">    &lt;span class=&quot;copy-path&quot;  title=&quot;点击复制文章链接&quot;&gt;&lt;i class=&quot;fa fa-clipboard&quot; data-clipboard-text=&quot;&#123;&#123; page.permalink &#125;&#125;&quot;  aria-label=&quot;复制成功！&quot;&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;许可协议:&lt;/span&gt;&lt;i class=&quot;fa fa-creative-commons&quot;&gt;&lt;/i&gt; &lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/&quot; target=&quot;_blank&quot; title=&quot;Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)&quot;&gt;署名-非商业性使用-禁止演绎 4.0 国际&lt;/a&gt; 转载请保留原文链接及作者。&lt;/p&gt;  </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt; </span><br><span class="line">    var clipboard = new Clipboard(&apos;.fa-clipboard&apos;);</span><br><span class="line">    clipboard.on(&apos;success&apos;, $(function()&#123;</span><br><span class="line">      $(&quot;.fa-clipboard&quot;).click(function()&#123;</span><br><span class="line">        swal(&#123;   </span><br><span class="line">          title: &quot;&quot;,   </span><br><span class="line">          text: &apos;复制成功&apos;,   </span><br><span class="line">          html: false,</span><br><span class="line">          timer: 500,   </span><br><span class="line">          showConfirmButton: false</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;));  </span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
@@ -507,7 +503,8 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><b>注：如果偷懒不想写<code>copyright</code>，或希望以前写的文章都含有版权说明，则可以修改<code>blog目录/themes/next/layout/_macro/my-copyright.swig</code>第一句判断语句为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.copyright or not page.copyright%&#125;</span><br></pre></td></tr></table></figure></b></p>
+<p><b>注：如果偷懒不想写<code>copyright</code>，或希望以前写的文章都含有版权说明，则可以修改<code>blog目录/themes/next/layout/_macro/my-copyright.swig</code>第一句判断语句为：</b></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.copyright or not page.copyright%&#125;</span><br></pre></td></tr></table></figure>
 <p></p>
 
       
@@ -530,7 +527,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>Hexo美化</a></p>
   <p><span>文章作者:</span>Jerry</a></p>
   <p><span>发布时间:</span>2019年07月02日 - 22:21:44</p>
-  <p><span>最后更新:</span>2019年07月07日 - 23:47:40</p>
+  <p><span>最后更新:</span>2019年07月13日 - 15:38:00</p>
   <p><span>原始链接:</span><a href="/2019/07/02/20-HexoBeautification/" title="Hexo美化">http://yoursite.com/2019/07/02/20-HexoBeautification/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/07/02/20-HexoBeautification/"  aria-label="复制成功！"></i></span>
   </p>
