@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/11/25/3-install-hexo/</loc>
+    
+    <lastmod>2019-07-14T15:54:51.736Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/07/02/20-HexoBeautification/</loc>
     
     <lastmod>2019-07-13T07:38:00.513Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>http://yoursite.com/2018/03/16/12-hadoop-install2/</loc>
     
     <lastmod>2018-06-01T06:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/11/25/3-install-hexo/</loc>
-    
-    <lastmod>2018-05-18T15:14:08.000Z</lastmod>
     
   </url>
   

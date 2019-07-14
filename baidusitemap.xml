@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/11/25/3-install-hexo/</loc>
+    <lastmod>2019-07-14T15:54:51.736Z</lastmod>
+    <data>
+        <display>
+        <title>hexo的搭建</title>
+        <pubTime>2017-11-25T06:22:26.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="建立博客" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
+          
+             
+              <breadCrumb title="3. hexo的搭建" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/3-hexo%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2019/07/02/20-HexoBeautification/</loc>
     <lastmod>2019-07-13T07:38:00.513Z</lastmod>
     <data>
@@ -159,29 +182,6 @@
           
              
               <breadCrumb title="2. hadoop-2.7.1的搭建" url="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/2-hadoop-2-7-1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/11/25/3-install-hexo/</loc>
-    <lastmod>2018-05-18T15:14:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo的搭建</title>
-        <pubTime>2017-11-25T06:22:26.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="建立博客" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
-          
-             
-              <breadCrumb title="3. hexo的搭建" url="http://yoursite.com/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/3-hexo%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>
