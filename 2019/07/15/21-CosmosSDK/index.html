@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="本文Cosmos的SDK用法。">
+<meta name="description" content="本文记录了我对Cosmos的一些理解。">
 <meta name="keywords" content="区块链">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CosmosSDK记录">
+<meta property="og:title" content="Cosmos的理解">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/21-CosmosSDK/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本文Cosmos的SDK用法。">
+<meta property="og:description" content="本文记录了我对Cosmos的一些理解。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-15T15:41:43.432Z">
+<meta property="og:updated_time" content="2019-07-16T03:49:16.799Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CosmosSDK记录">
-<meta name="twitter:description" content="本文Cosmos的SDK用法。">
+<meta name="twitter:title" content="Cosmos的理解">
+<meta name="twitter:description" content="本文记录了我对Cosmos的一些理解。">
 
 
 
@@ -136,7 +136,7 @@ var _hmt = _hmt || [];
 
 
 
-  <title>CosmosSDK记录 | JERRY HOME</title>
+  <title>Cosmos的理解 | JERRY HOME</title>
   
 
 
@@ -300,7 +300,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">CosmosSDK记录</h1>
+          <h1 class="post-title" itemprop="name headline">Cosmos的理解</h1>
         
 
         <div class="post-meta">
@@ -344,7 +344,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6 字
+                  1.4k 字
                 </span>
               
 
@@ -360,7 +360,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -381,7 +381,51 @@ var _hmt = _hmt || [];
       
 
       
-        <p>本文Cosmos的SDK用法。<br><a id="more"></a></p>
+        <p>本文记录了我对Cosmos的一些理解。<br><a id="more"></a></p>
+<h2 id="Cosmos的治理模式"><a href="#Cosmos的治理模式" class="headerlink" title="Cosmos的治理模式"></a>Cosmos的治理模式</h2><h3 id="Cosmos治理中的成员分类"><a href="#Cosmos治理中的成员分类" class="headerlink" title="Cosmos治理中的成员分类"></a>Cosmos治理中的成员分类</h3><p>Cosmos是一个基于PoS (Proof-of-Stake)的项目，即，每个ATOM持有者（ATOM：Cosmos网络的原生Token）都可以参与到网络治理中并可获得奖励。首先介绍两个概念：</p>
+<ol>
+<li><p>Cosmos参与者：加入Cosmos 网络并持有ATOM的人。它分成两类：</p>
+<ul>
+<li><p>第一类是具有计算资源(带宽和磁盘空间)并愿意运行完整节点的参与者。</p>
+</li>
+<li><p>第二类是没有资源或对运行完整节点不感兴趣的参与者。</p>
+</li>
+</ul>
+</li>
+<li><p>Cosmos验证者：负责保证网络验证节点稳定运行以及治理的cosmos参与者。由于目前Cosmos网络最多可有100个验证节点，因此想要成为验证者，必须通过独立选举。所有的<strong>第一类Cosmos参与者</strong>均可以参与选举。</p>
+</li>
+</ol>
+<p>正是因为选举的存在，所以又引申出了两个概念：</p>
+<ol>
+<li>Cosmos候选人：参与竞选Cosmos验证者的参与者。</li>
+<li>Cosmos委托人：第二类Cosmos参与者，他们可以将自己的ATOM委托给自己信任的Cosmos候选人。</li>
+</ol>
+<p>那么，Cosmos候选人如何才能成为验证者呢？其过程是：Cosmos委托人可以通过将他们的Atom 代理给他们信任的候选人。然后根据候选人的总权益（候选人自己抵押的 Atom +委托人代理 Atom 的总量）进行排名，选出具有最高标记数的100个Cosmos候选人的节点成为网络的验证节点。注意，<code>网络中验证者的数量以每年 13% 的比例增加，最大数量为 300</code>，当验证者的权益量跌出前 100 后，就会失去验证者的特权，变为候选人。</p>
+<h3 id="Cosmos验证者的职责"><a href="#Cosmos验证者的职责" class="headerlink" title="Cosmos验证者的职责"></a>Cosmos验证者的职责</h3><p>验证者在Cosmos网络治理系统中扮演着重要角色。它主要有两类责任。</p>
+<h5 id="负责验证事务和生成块"><a href="#负责验证事务和生成块" class="headerlink" title="负责验证事务和生成块"></a>负责验证事务和生成块</h5><p>验证事务和生成块的目的是确保网络的安全性和分类账的一致性。作为回报，它们将获得块奖励，其中一些奖励将分发给ATOM持有者。</p>
+<p>提交出块的验证者称为提议人（Proposer）。Cosmos 网络遵循固定的规则选举每个区块的提议人，而验证者的权益量排名决定了验证者的出块频率和获取的利润。例如，网络总共有 100 个 Atom，持有 10 个 Atom 的验证者就会有 10% 可能性成为出块验证者。</p>
+<p>当验证节点恶意攻击网络或无法主动验证事务时，将受到惩罚。恶意验证节点和支持它们的ATOM持有者有丢失Token的风险。这激励验证者勤奋地履行他们的职责，并且Token持有者将他们的Coin与最好的验证节点连接起来。</p>
+<h5 id="参与链上治理"><a href="#参与链上治理" class="headerlink" title="参与链上治理"></a>参与链上治理</h5><p>验证者不仅要保证网络验证节点稳定运行，同时也要积极参与治理。Cosmos Hub 的验证者和委托人可以对 Cosmos 网络参数变更的提案(例如区块 gas 数值)进行投票，进行节点联合升级，也可以对 Cosmos Hub 的基本规则进行修订。作为网络的基石，验证者要对每个提案进行投票。如果在规定时间内委托人未投票，则他的投票会与验证人投票选项保持一致。最重要的是如果验证人缺席一次投票，其代理的选票会被“销毁”一定比例。</p>
+<h3 id="Cosmos验证者的选择"><a href="#Cosmos验证者的选择" class="headerlink" title="Cosmos验证者的选择"></a>Cosmos验证者的选择</h3><p>如果您是ATOM投资者，如何选择最佳验证器呢？LongHash主要考察了6个关键因素。<a href="https://www.8btc.com/article/412866" target="_blank" rel="noopener">分析文章跳转</a></p>
+<ol>
+<li><p><strong>表决权</strong>：验证者持有的ATOM数量（包括由常规ATOM所有者委托给该验证节点的验证）。</p>
+<p>验证者持有的ATOM越多，它的级别就越高，并且它被剥夺验证器角色的可能性就越小。</p>
+</li>
+<li><p><strong>佣金率</strong>：验证者向参与者返回奖励时，验证者从中扣除的费用。</p>
+<p>当验证节点生成一个块奖励时，它们将该奖励的一部分返回给每个ATOM所有者，每个ATOM所有者都将该奖励的一部分与所有者所押注的Token数量成比例。然而，大多数验证节点都会从这个金额中减去一笔费用来支付它们的运营成本并产生一些利润。佣金率越高，委托令牌所有者得到的金额就越低。</p>
+</li>
+<li><p><strong>自委托原子</strong>：验证者自身拥有的验证器ATOM总数的比例。</p>
+<p>这个数字越大，它就越有可能正常工作，因为它在网络中拥有更大的股份。</p>
+</li>
+<li><p><strong>最小自委托</strong>：最小自我授权是一项相关措施，它反映了验证节点承诺的最小令牌数目。</p>
+<p>当这个数字接近自委托ATOM的数量时，我们认为这可能意味着稳定性，因为验证节点不太可能突然收回令牌并将其降至最小值以下。</p>
+</li>
+<li><p><strong>总委托人</strong>：指的是有多少委托人选择将把他们Token与该验证者绑定在一起。</p>
+</li>
+<li><p><strong>委托人24小时变更</strong>：委托方群体在一天内的变化情况。</p>
+<p>高委托人数量和新用户的加入，表明这个验证节点很受欢迎。</p>
+</li>
+</ol>
 
       
     </div>
@@ -400,11 +444,11 @@ var _hmt = _hmt || [];
   <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
 
-  <p><span>本文标题:</span>CosmosSDK记录</a></p>
+  <p><span>本文标题:</span>Cosmos的理解</a></p>
   <p><span>文章作者:</span>Jerry</a></p>
   <p><span>发布时间:</span>2019年07月15日 - 23:37:37</p>
-  <p><span>最后更新:</span>2019年07月15日 - 23:41:43</p>
-  <p><span>原始链接:</span><a href="/2019/07/15/21-CosmosSDK/" title="CosmosSDK记录">http://yoursite.com/2019/07/15/21-CosmosSDK/</a>
+  <p><span>最后更新:</span>2019年07月16日 - 11:49:16</p>
+  <p><span>原始链接:</span><a href="/2019/07/15/21-CosmosSDK/" title="Cosmos的理解">http://yoursite.com/2019/07/15/21-CosmosSDK/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/07/15/21-CosmosSDK/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -515,8 +559,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -579,6 +632,22 @@ var _hmt = _hmt || [];
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cosmos的治理模式"><span class="nav-number">1.</span> <span class="nav-text">Cosmos的治理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos治理中的成员分类"><span class="nav-number">1.1.</span> <span class="nav-text">Cosmos治理中的成员分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos验证者的职责"><span class="nav-number">1.2.</span> <span class="nav-text">Cosmos验证者的职责</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#负责验证事务和生成块"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">负责验证事务和生成块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参与链上治理"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">参与链上治理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos验证者的选择"><span class="nav-number">1.3.</span> <span class="nav-text">Cosmos验证者的选择</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -606,7 +675,7 @@ var _hmt = _hmt || [];
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">41.2k</span>
+    <span title="Site words total count">42.6k</span>
   
 </div>
 
