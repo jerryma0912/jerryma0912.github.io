@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文记录了我对Cosmos的一些理解。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-16T03:49:16.799Z">
+<meta property="og:updated_time" content="2019-07-16T04:47:49.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cosmos的理解">
 <meta name="twitter:description" content="本文记录了我对Cosmos的一些理解。">
@@ -402,10 +402,10 @@ var _hmt = _hmt || [];
 </ol>
 <p>那么，Cosmos候选人如何才能成为验证者呢？其过程是：Cosmos委托人可以通过将他们的Atom 代理给他们信任的候选人。然后根据候选人的总权益（候选人自己抵押的 Atom +委托人代理 Atom 的总量）进行排名，选出具有最高标记数的100个Cosmos候选人的节点成为网络的验证节点。注意，<code>网络中验证者的数量以每年 13% 的比例增加，最大数量为 300</code>，当验证者的权益量跌出前 100 后，就会失去验证者的特权，变为候选人。</p>
 <h3 id="Cosmos验证者的职责"><a href="#Cosmos验证者的职责" class="headerlink" title="Cosmos验证者的职责"></a>Cosmos验证者的职责</h3><p>验证者在Cosmos网络治理系统中扮演着重要角色。它主要有两类责任。</p>
-<h5 id="负责验证事务和生成块"><a href="#负责验证事务和生成块" class="headerlink" title="负责验证事务和生成块"></a>负责验证事务和生成块</h5><p>验证事务和生成块的目的是确保网络的安全性和分类账的一致性。作为回报，它们将获得块奖励，其中一些奖励将分发给ATOM持有者。</p>
+<h4 id="负责验证事务和生成块"><a href="#负责验证事务和生成块" class="headerlink" title="负责验证事务和生成块"></a>负责验证事务和生成块</h4><p>验证事务和生成块的目的是确保网络的安全性和分类账的一致性。作为回报，它们将获得块奖励，其中一些奖励将分发给ATOM持有者。</p>
 <p>提交出块的验证者称为提议人（Proposer）。Cosmos 网络遵循固定的规则选举每个区块的提议人，而验证者的权益量排名决定了验证者的出块频率和获取的利润。例如，网络总共有 100 个 Atom，持有 10 个 Atom 的验证者就会有 10% 可能性成为出块验证者。</p>
 <p>当验证节点恶意攻击网络或无法主动验证事务时，将受到惩罚。恶意验证节点和支持它们的ATOM持有者有丢失Token的风险。这激励验证者勤奋地履行他们的职责，并且Token持有者将他们的Coin与最好的验证节点连接起来。</p>
-<h5 id="参与链上治理"><a href="#参与链上治理" class="headerlink" title="参与链上治理"></a>参与链上治理</h5><p>验证者不仅要保证网络验证节点稳定运行，同时也要积极参与治理。Cosmos Hub 的验证者和委托人可以对 Cosmos 网络参数变更的提案(例如区块 gas 数值)进行投票，进行节点联合升级，也可以对 Cosmos Hub 的基本规则进行修订。作为网络的基石，验证者要对每个提案进行投票。如果在规定时间内委托人未投票，则他的投票会与验证人投票选项保持一致。最重要的是如果验证人缺席一次投票，其代理的选票会被“销毁”一定比例。</p>
+<h4 id="参与链上治理"><a href="#参与链上治理" class="headerlink" title="参与链上治理"></a>参与链上治理</h4><p>验证者不仅要保证网络验证节点稳定运行，同时也要积极参与治理。Cosmos Hub 的验证者和委托人可以对 Cosmos 网络参数变更的提案(例如区块 gas 数值)进行投票，进行节点联合升级，也可以对 Cosmos Hub 的基本规则进行修订。作为网络的基石，验证者要对每个提案进行投票。如果在规定时间内委托人未投票，则他的投票会与验证人投票选项保持一致。最重要的是如果验证人缺席一次投票，其代理的选票会被“销毁”一定比例。</p>
 <h3 id="Cosmos验证者的选择"><a href="#Cosmos验证者的选择" class="headerlink" title="Cosmos验证者的选择"></a>Cosmos验证者的选择</h3><p>如果您是ATOM投资者，如何选择最佳验证器呢？LongHash主要考察了6个关键因素。<a href="https://www.8btc.com/article/412866" target="_blank" rel="noopener">分析文章跳转</a></p>
 <ol>
 <li><p><strong>表决权</strong>：验证者持有的ATOM数量（包括由常规ATOM所有者委托给该验证节点的验证）。</p>
@@ -447,7 +447,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>Cosmos的理解</a></p>
   <p><span>文章作者:</span>Jerry</a></p>
   <p><span>发布时间:</span>2019年07月15日 - 23:37:37</p>
-  <p><span>最后更新:</span>2019年07月16日 - 11:49:16</p>
+  <p><span>最后更新:</span>2019年07月16日 - 12:47:49</p>
   <p><span>原始链接:</span><a href="/2019/07/15/21-CosmosSDK/" title="Cosmos的理解">http://yoursite.com/2019/07/15/21-CosmosSDK/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/07/15/21-CosmosSDK/"  aria-label="复制成功！"></i></span>
   </p>
@@ -641,7 +641,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cosmos的治理模式"><span class="nav-number">1.</span> <span class="nav-text">Cosmos的治理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos治理中的成员分类"><span class="nav-number">1.1.</span> <span class="nav-text">Cosmos治理中的成员分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos验证者的职责"><span class="nav-number">1.2.</span> <span class="nav-text">Cosmos验证者的职责</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#负责验证事务和生成块"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">负责验证事务和生成块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参与链上治理"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">参与链上治理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos验证者的选择"><span class="nav-number">1.3.</span> <span class="nav-text">Cosmos验证者的选择</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cosmos的治理模式"><span class="nav-number">1.</span> <span class="nav-text">Cosmos的治理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos治理中的成员分类"><span class="nav-number">1.1.</span> <span class="nav-text">Cosmos治理中的成员分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos验证者的职责"><span class="nav-number">1.2.</span> <span class="nav-text">Cosmos验证者的职责</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#负责验证事务和生成块"><span class="nav-number">1.2.1.</span> <span class="nav-text">负责验证事务和生成块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参与链上治理"><span class="nav-number">1.2.2.</span> <span class="nav-text">参与链上治理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cosmos验证者的选择"><span class="nav-number">1.3.</span> <span class="nav-text">Cosmos验证者的选择</span></a></li></ol></li></ol></div>
             
 
           </div>
