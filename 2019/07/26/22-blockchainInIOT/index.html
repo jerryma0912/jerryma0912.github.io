@@ -79,20 +79,28 @@
 
 
 
-<meta name="description" content="本文将按照区块链的架构，阐述区块链不同层次在物联网中所扮演的不同角色。">
+<meta name="description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
 <meta name="keywords" content="区块链">
 <meta property="og:type" content="article">
-<meta property="og:title" content="区块链在物联网中的应用">
+<meta property="og:title" content="区块链在IOT设备安全认证中的应用">
 <meta property="og:url" content="https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本文将按照区块链的架构，阐述区块链不同层次在物联网中所扮演的不同角色。">
+<meta property="og:description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190727155430.png">
-<meta property="og:updated_time" content="2019-07-27T10:33:44.070Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729104146.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729105311.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729112202.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729105555.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729112856.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729140552.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729144853.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729144639.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729162730.png">
+<meta property="og:updated_time" content="2019-07-29T08:35:24.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="区块链在物联网中的应用">
-<meta name="twitter:description" content="本文将按照区块链的架构，阐述区块链不同层次在物联网中所扮演的不同角色。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190727155430.png">
+<meta name="twitter:title" content="区块链在IOT设备安全认证中的应用">
+<meta name="twitter:description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729104146.png">
 
 
 
@@ -138,7 +146,7 @@ var _hmt = _hmt || [];
 
 
 
-  <title>区块链在物联网中的应用 | JERRY HOME</title>
+  <title>区块链在IOT设备安全认证中的应用 | JERRY HOME</title>
   
 
 
@@ -302,7 +310,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">区块链在物联网中的应用</h1>
+          <h1 class="post-title" itemprop="name headline">区块链在IOT设备安全认证中的应用</h1>
         
 
         <div class="post-meta">
@@ -346,7 +354,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  803 字
+                  2.2k 字
                 </span>
               
 
@@ -362,7 +370,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -383,20 +391,73 @@ var _hmt = _hmt || [];
       
 
       
-        <p>本文将按照区块链的架构，阐述区块链不同层次在物联网中所扮演的不同角色。<br><a id="more"></a></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们都知道，区块链自2008年以来，目前已经进入了2.0时代。它也在各行各业都有不同的应用。它的组织架构图如下图所示：<img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190727155430.png" alt></p>
-<ul>
-<li>数据层：它是区块链技术中最底层的数据结构，它会从创世区块起，将每一个区块按照链式结构进行连接。因为每一个全节点都会保留一份数据，因此与中心化的数据存储相比，具有信息不可篡改、可追溯的特性。</li>
-<li>网络层：它是通过 P2P 技术实现在分布式网络上的通信，本质是一个 P2P 的网络，因此，区块链节点之间可通过维护一个共同的区块链结构来保持通信，具有快速、及时、安全的特点。</li>
-<li>共识层：它是通过共识算法以及共识机制，让高度分散的节点在去中心化的区块链网络中高效地针对区块数据的有效性达成共识，它是区块链的核心技术之一，也是区块链社群的治理机制，具备可在存在不可信节点的情况下快速建立信任、去第三方的特点。</li>
-<li>激励层：它是将经济因素纳入到区块链技术体系中，通过设置一定的激励/惩罚措施，激励遵守规则参与记账的节点，并惩罚不遵守规则的节点。具备促进生态建立的作用。</li>
-<li>合约层：它是将代码嵌入区块链或是令牌中，实现可以自定义的智能合约，并在达到某个确定的约束条件的情况下，就能够自动执行，具备自动化执行的特点，是实现应用的基础。</li>
-<li>应用层：它类似于电脑操作系统上的应用程序，封装了各种应用场景和案例，帮助部署在区块链技术上的应用部署在现实生活场景中落地。具有使用户使用应用而无需关心底层实现的特点。</li>
+        <p>本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。<br><a id="more"></a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>目前，物联网（IOT）几乎涉及我们日常生活中包括工业、农业、智慧交通、医疗健康等所有领域。由于物联网的理念是将世界用各种IOT设备连接起来，使它们能够相互交流和合作，以提供广泛的服务，因此，未来依旧会有大量的物联网设备被部署。根据<em>Gartner</em>在2016年的一项研究显示，预计到2020年，全世界将部署500亿台物联网设备。    //物联网的发展前景</li>
+<li>然而对于每个无论其除在什么位置的物理设备或虚拟设备，如果它们都能够被其他设备任意访问，检索其中的内容，将会出现许多安全隐患，如信息窃取，数据更改和身份篡改等；此外，一些用例场景要求只有受信任的用户才能使用提供的服务。因此，对物联网设备进行身份认证和授权是十分重要。  //身份认证的重要性</li>
+<li>通常，有效的解决方案是中心化的，例如，公钥基础设施（PKI），但如果环境中有数千个节点，那么可能导致巨大的伸缩性问题。此外，一般的解决方案需要多种安全技术和解决方案的组合，这也导致额外的高成本。//传统身份认证的不足</li>
+<li>因此，有必要为整个系统系统提出新的安全解决方案，他需要满足：（1）允许轻松集成新设备和新服务; （2）完全适应物联网的要求和需求; （3）不依赖于设备的类型，也不依赖于用例架构和设计。  //新的解决方案的要求</li>
 </ul>
-<p>从区块链的结构上看，它的每一层都有其独特的特点。如果将区块链与物联网相结合，那么其中数据层、网络层、共识层的特点是可以被具体应用加以利用、从而解决具体问题的，合约层、应用层则是构建区块链、应用区块链时需要用到的。而激励层因为涉及到token发行的问题，目前没有被应用。</p>
-<h2 id="数据层的应用"><a href="#数据层的应用" class="headerlink" title="数据层的应用"></a>数据层的应用</h2><h2 id="网络层的应用"><a href="#网络层的应用" class="headerlink" title="网络层的应用"></a>网络层的应用</h2><p>Management and Monitoring of IoT Devices Using Blockchain</p>
-<p>A Blockchain-Based PKI Management Framework</p>
-<h2 id="共识层的应用"><a href="#共识层的应用" class="headerlink" title="共识层的应用"></a>共识层的应用</h2><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>综上所述，目前区块链在物联网中的主要应用点主要在于，在某个具体的应用上，引入了区块链的概念，然后与该应用中的其他技术一起，解决了某一类问题。因此，区块链与物联网结合主要是提升而非替代。</p>
+<h2 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案-1"></a>解决方案-1</h2><h3 id="文章题目"><a href="#文章题目" class="headerlink" title="文章题目"></a>文章题目</h3><p>Bubbles of Trust: A decentralized blockchain-based authentication system for IoT <a href="https://github.com/jerryma0912/BlogFileRepo/raw/master/Bubbles%20of%20Trust_A%20decentralized%20blockchain-based%20authentication%20system%20for%20IoT.pdf" target="_blank" rel="noopener">原文获取</a></p>
+<p>信任泡：基于区块链的去中心化认证系统</p>
+<h3 id="简要介绍"><a href="#简要介绍" class="headerlink" title="简要介绍"></a>简要介绍</h3><p>提出了一种叫做<strong>信任泡</strong>的有效的分布式认证机制，其主要目标是在物联网环境中创建安全的虚拟区域，使该区域内的成员能够进行通信，而区域外的成员无法进行访问。实施环境为以太坊。</p>
+<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><ol start="0">
+<li><p>基本知识</p>
+<p>一个信任泡中，有两类角色：一个Master和n个follower，它们各自拥有自己的公/私钥对。</p>
+</li>
+<li><p>Master设备首先选择信任泡标识符groupID，然后，Master向每一个follower颁发ticket，标识为<code>ticket:{groupID||followerID||PubKey_F}_SignedWith(PriKey_M)</code>：其中，groupID表示信任泡标识符，objectID表示follower的ID，pubAddr表示follower的公钥，Signature代表Master节点使用其私钥利用椭圆曲线数字签名算法对groupID、objectID、pubAddr信息的哈希的签名。</p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729104146.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729105311.png" alt></p>
+</li>
+<li><p>然后，Master向区块链发送包含MasterID、Master公钥以及它想要创建的groupID的一笔交易，正式创建一个信任泡。具体算法如下：智能合约检查groupID、Master公钥和MasterID的唯一性，如果区块链中MasterID、Master公钥或groupID已经存在，则不创建。如果创建成功，此时区块链将持把groupID、MasterID、Master公钥进行绑定。</p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729112202.png" alt></p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729105555.png" alt></p>
+<ol start="3">
+<li>之后，follower依次发送包含followerID和ticket的交易<code>transaction_1:{ticket}_signedWith(PriKey_F)</code>，与信任泡相关联。具体算法如下：智能合约利用follower交易中携带的公钥验证完整性，利用Master公钥检查ticket的有效性，再验证follower信息的唯一性，如果区块链中已经存在followerID、addrID,或者groupID不存在,或者Ticket验证不通过，则该follower不会被关联至该信任泡。而一旦follower的关联请求成功，则区块链将会把groupID、followerID和follower公钥向绑定，以后不再需要使用ticket来验证。<img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729112856.png" alt></li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729140552.png" alt></p>
+<ol start="4">
+<li><p>未来，follower发送交易时，只需要发送<code>transacation_n:{data||groupID||followerID}_signedWith(PriKeyF)</code>，当区块链收到交易时，通过follower的公钥验证签名来验证其完整性，如果验证通过，区块链将验证交易中groupID、followerID和Follower公钥是否与存储的信息一致，如果一致，则设备认证成功。</p>
+</li>
+<li><p>数据通信规则的算法如下：如果区块链中发送者的id不存在或者接收者的id不存在，则禁止通信；如果发送者的groupID与接收者的groupID不同，则禁止通信；如果对发送者新的的验证失败，则禁止通信。因此，Master 5E可以创建39组，而Master BB不能创建0A组；0A组的1B与DE可以相互通信，而F9组的50不能与0A组的6F通信；未经授权的F9组79不能与已经授权的F9组41进行通信。</p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729144853.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729144639.png" alt></p>
+</li>
+</ol>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
+<li>使物联网系统的认证体系从中心化系统转变为有弹性的分散系统。</li>
+<li>由于公链是由参与记账的节点共同维护，通过共识机制等确保其自主运行，因此，具备可追溯、可抵抗恶意攻击等特性。</li>
+<li>一旦部署了智能合约，用户就无法对其进行修改。</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>限制信任泡之间的通信。这是因为如果信任泡之前的通信被授权，同时又有一个恶意的用户创建了一个新的信任泡，试图与一个特定的信任泡进行通信，那么他将成功。</li>
+<li>以太坊中，验证一个区块需要14秒，因此设备发送的消息需要在14s后进行验证，许多物联网方案对此是无法容忍的。但是，可以通过搭建私链解决该问题。</li>
+<li>需要初始化阶段，这需要服务供应商的干预。</li>
+<li>加密货币利率的演变：该方法依赖于公共区块链，涉及的成本取决于区块链系统使用的加密货币。然而，作者认为所提供的每项安全服务都应该需要成本，而且加密货币利率的变化正随着时间的推移变得更加稳定。</li>
+</ul>
+<h3 id="安全性评估"><a href="#安全性评估" class="headerlink" title="安全性评估"></a>安全性评估</h3><ol>
+<li>相互身份验证和消息完整性：每个设备都使用一个ticket，且只在初始阶段使用。此外通过使用ECDSA算法使用与这些票证关联的私钥对所有交互信息进行签名，因此可以保证设备的身份认证以及消息的完整性。</li>
+<li>认证：每个设备都拥有一个身份(ID,groupID,公钥)。且通过Master的私钥对ticket进行签名，其私钥对每条消息进行签名，因此可以轻松的进行识别。</li>
+<li>不可否认性：由于消息是使用私钥进行签名的，而私钥只有所有者自己知道，所以所有者不能否认签署消息的事实。</li>
+<li>可扩展性：该系统依赖于公链，公链又依赖于p2p网络，而p2p网络是满足大规模扩展性的最佳解决方案之一。</li>
+<li>女巫攻击：每个对象只能有一个身份，而每个身份在给定时间只能有一个密钥对。每条通信消息必须由与此标识关联的私钥签名。此外，所有身份必须得到系统的批准，因此，攻击者不能使用虚假身份。</li>
+<li>欺骗攻击：如女巫攻击，攻击者因为没有私钥，所以无法欺骗其他对象。</li>
+<li>消息替换：由于所有消息已经签名，如果攻击者更改或替换消息，则必须使用有效的私钥进行签名，而在初始化阶段，只有可信的对象被赋予Ticket。</li>
+<li>消息重放：所有的消息都被视为交易，而每个交易都有一个时间戳，而且需要经过共识机制的确认后才能生效，因此，攻击者无法获得回复信息，因为共识机制会拒绝它。</li>
+<li>DDos攻击：完全分散的区块链架构能够抵御DDos攻击，这是因为区块链服务是分布在不同的网络节点上。因此，攻击者无法阻塞。</li>
+</ol>
+<p><br></p>
+<h2 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案-2"></a>解决方案-2</h2><h3 id="文章题目-1"><a href="#文章题目-1" class="headerlink" title="文章题目"></a>文章题目</h3><p>A Novel IoT Authorization Architecture on Hyperledger Fabric with Optimal Consensus using Genetic Algorithm <a href="https://github.com/jerryma0912/BlogFileRepo/raw/master/A Novel IoT Authorization Architecture on Hyperledger Fabric with Optimal Consensus using Genetic Algorithm.pdf" target="_blank" rel="noopener">原文获取</a></p>
+<h3 id="简要介绍-1"><a href="#简要介绍-1" class="headerlink" title="简要介绍"></a>简要介绍</h3><p>在Hyperledger Fabric上搭建了一套IOT认证架构，并通过遗传算法对Kafka共识组件的参数进行了优化。</p>
+<h3 id="基本原理-1"><a href="#基本原理-1" class="headerlink" title="基本原理"></a>基本原理</h3><ol>
+<li><p>认证架构</p>
+<p>以User1和User2需要访问发布/订阅系统为例，User1</p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729162730.png" alt></p>
+</li>
+</ol>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>综上所述，目前区块链在物联网中的主要应用点主要在于，在某个具体的应用上，引入了区块链的概念，然后与该应用中的其他技术一起，解决了某一类问题。因此，区块链与物联网结合主要是提升而非替代。</p>
 
       
     </div>
@@ -415,11 +476,11 @@ var _hmt = _hmt || [];
   <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
 
-  <p><span>本文标题:</span>区块链在物联网中的应用</p>
+  <p><span>本文标题:</span>区块链在IOT设备安全认证中的应用</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年07月26日 - 23:55:15</p>
-  <p><span>最后更新:</span>2019年07月27日 - 18:33:44</p>
-  <p><span>原始链接:</span><a href="/2019/07/26/22-blockchainInIOT/" title="区块链在物联网中的应用">https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/</a>
+  <p><span>最后更新:</span>2019年07月29日 - 16:35:24</p>
+  <p><span>原始链接:</span><a href="/2019/07/26/22-blockchainInIOT/" title="区块链在IOT设备安全认证中的应用">https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -612,7 +673,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据层的应用"><span class="nav-number">2.</span> <span class="nav-text">数据层的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络层的应用"><span class="nav-number">3.</span> <span class="nav-text">网络层的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共识层的应用"><span class="nav-number">4.</span> <span class="nav-text">共识层的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">5.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-1"><span class="nav-number">2.</span> <span class="nav-text">解决方案-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目"><span class="nav-number">2.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍"><span class="nav-number">2.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理"><span class="nav-number">2.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势"><span class="nav-number">2.4.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性评估"><span class="nav-number">2.6.</span> <span class="nav-text">安全性评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-2"><span class="nav-number">3.</span> <span class="nav-text">解决方案-2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目-1"><span class="nav-number">3.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍-1"><span class="nav-number">3.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理-1"><span class="nav-number">3.3.</span> <span class="nav-text">基本原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">4.</span> <span class="nav-text">结论</span></a></li></ol></div>
             
 
           </div>
@@ -646,7 +707,7 @@ var _hmt = _hmt || [];
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.4k</span>
+    <span title="Site words total count">44.8k</span>
   
 </div>
 
