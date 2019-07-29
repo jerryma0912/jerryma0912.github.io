@@ -97,13 +97,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729144639.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729162730.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729173517.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729192441.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729195608.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729201216.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729201241.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729201304.png">
-<meta property="og:image" content="https://jerryma0912.github.io/Users/jerry/Library/Application%20Support/typora-user-images/image-20190729201329501.png">
-<meta property="og:updated_time" content="2019-07-29T12:22:44.497Z">
+<meta property="og:updated_time" content="2019-07-29T13:08:10.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="区块链在IOT设备安全认证中的应用">
 <meta name="twitter:description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
@@ -361,7 +355,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k 字
+                  2.4k 字
                 </span>
               
 
@@ -377,7 +371,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -474,47 +468,9 @@ var _hmt = _hmt || [];
 </ol>
 </li>
 </ol>
-<h3 id="遗传算法对Kafka共识组件的改进"><a href="#遗传算法对Kafka共识组件的改进" class="headerlink" title="遗传算法对Kafka共识组件的改进"></a>遗传算法对Kafka共识组件的改进</h3><ol>
-<li><p>传统kafka共识组件原理</p>
-<p>Kafka共识组件实质是由1个kafka集群及它自己对应的ZooKeeper、排序服务节点的集合组成。Orderer排序节点充当Kafka集群的消息生产者和消费者，即先将Peer节点提交的交易信息转发给Kafka服务端，同时从指定主题的Kafka分区按顺序获取排序后的交易消息。从而达到同时接受处理多个客户端发送的交易信息请求，能够有效的提高Orderer节点处理交易消息的并发能力。然而，Orderer节点会根据特定的策略（如块的大小、创建新块前等待的时间、每个块的交易数目限制等）将kafka集群中的交易打包成块，并分发至peer节点，从而完成写入账本的过程。</p>
-<p>而这些策略的参数仅在启动时执行一次并且用于整个生命周期，因此，无法确定最佳策略配置。</p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729192441.png" alt></p>
-</li>
-<li><p>改进算法</p>
-<ul>
-<li><p>基因定义：为基因变量选择三个主要参数：块大小，创建新块前等待的时间、每个块的交易数目限制</p>
-</li>
-<li><p>运算符：<code>两点交叉</code>和<code>随机突变</code></p>
-</li>
-<li><p>适应度函数：Fitness=(r/d)*s  </p>
-<p>r=每秒交易数，d=每秒默认交易数，s=交易转移成功率</p>
-</li>
-<li><p>算法流程：<img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729195608.png" alt></p>
-<ol>
-<li>首先根据配置生成初始值，这里限制实验大小为25。</li>
-<li>之后，限制代数的阈值α = 6</li>
-<li>发送多个交易（5000）来执行测试，以计算适合度的值。</li>
-<li>在父选择过程中选择适合度值前五个染色体，执行两点交叉和随机变异</li>
-<li>迭代继续该过程。</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>实验结果</p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729201216.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729201241.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729201304.png" alt></p>
-<p><img src="/Users/jerry/Library/Application Support/typora-user-images/image-20190729201329501.png" alt="image-20190729201329501"></p>
-<ul>
-<li>传统每秒交易转移数有19.3，成功率有23.93%，而改进后的每秒交易转移数有32.7，成功率有45.22%</li>
-<li>通过迭代，可以确定配置的最佳值。</li>
-</ul>
-</li>
-</ol>
 <h3 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h3><ul>
 <li>可以防止单点故障</li>
 </ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>综上所述，目前区块链在物联网中的主要应用点主要在于，在某个具体的应用上，引入了区块链的概念，然后与该应用中的其他技术一起，解决了某一类问题。因此，区块链与物联网结合主要是提升而非替代。</p>
 
       
     </div>
@@ -536,7 +492,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>区块链在IOT设备安全认证中的应用</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年07月26日 - 23:55:15</p>
-  <p><span>最后更新:</span>2019年07月29日 - 20:22:44</p>
+  <p><span>最后更新:</span>2019年07月29日 - 21:08:10</p>
   <p><span>原始链接:</span><a href="/2019/07/26/22-blockchainInIOT/" title="区块链在IOT设备安全认证中的应用">https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/" aria-label="复制成功！"></i></span>
   </p>
@@ -730,7 +686,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-1"><span class="nav-number">2.</span> <span class="nav-text">解决方案-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目"><span class="nav-number">2.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍"><span class="nav-number">2.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理"><span class="nav-number">2.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势"><span class="nav-number">2.4.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性评估"><span class="nav-number">2.6.</span> <span class="nav-text">安全性评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-2"><span class="nav-number">3.</span> <span class="nav-text">解决方案-2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目-1"><span class="nav-number">3.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍-1"><span class="nav-number">3.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理-1"><span class="nav-number">3.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遗传算法对Kafka共识组件的改进"><span class="nav-number">3.4.</span> <span class="nav-text">遗传算法对Kafka共识组件的改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势-1"><span class="nav-number">3.5.</span> <span class="nav-text">优势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">4.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-1"><span class="nav-number">2.</span> <span class="nav-text">解决方案-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目"><span class="nav-number">2.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍"><span class="nav-number">2.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理"><span class="nav-number">2.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势"><span class="nav-number">2.4.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性评估"><span class="nav-number">2.6.</span> <span class="nav-text">安全性评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-2"><span class="nav-number">3.</span> <span class="nav-text">解决方案-2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目-1"><span class="nav-number">3.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍-1"><span class="nav-number">3.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理-1"><span class="nav-number">3.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势-1"><span class="nav-number">3.4.</span> <span class="nav-text">优势</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -764,7 +720,7 @@ var _hmt = _hmt || [];
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.5k</span>
+    <span title="Site words total count">45k</span>
   
 </div>
 
