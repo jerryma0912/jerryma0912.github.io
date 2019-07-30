@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
+<meta name="description" content="本文首先对IOT设备访问控制进行了总结，然后翻译了两篇物联网与IOT设备访问控制相结合的论文。">
 <meta name="keywords" content="区块链">
 <meta property="og:type" content="article">
-<meta property="og:title" content="区块链在IOT设备可信接入中的应用">
+<meta property="og:title" content="区块链在IOT设备访问控制中的应用">
 <meta property="og:url" content="https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
+<meta property="og:description" content="本文首先对IOT设备访问控制进行了总结，然后翻译了两篇物联网与IOT设备访问控制相结合的论文。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729104146.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729105311.png">
@@ -97,10 +97,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729144639.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729162730.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729173517.png">
-<meta property="og:updated_time" content="2019-07-30T11:03:12.305Z">
+<meta property="og:updated_time" content="2019-07-30T11:37:24.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="区块链在IOT设备可信接入中的应用">
-<meta name="twitter:description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
+<meta name="twitter:title" content="区块链在IOT设备访问控制中的应用">
+<meta name="twitter:description" content="本文首先对IOT设备访问控制进行了总结，然后翻译了两篇物联网与IOT设备访问控制相结合的论文。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729104146.png">
 
 
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
 
 
 
-  <title>区块链在IOT设备可信接入中的应用 | JERRY HOME</title>
+  <title>区块链在IOT设备访问控制中的应用 | JERRY HOME</title>
   
 
 
@@ -311,7 +311,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">区块链在IOT设备可信接入中的应用</h1>
+          <h1 class="post-title" itemprop="name headline">区块链在IOT设备访问控制中的应用</h1>
         
 
         <div class="post-meta">
@@ -355,7 +355,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k 字
+                  2.6k 字
                 </span>
               
 
@@ -371,7 +371,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8 分钟
+                  9 分钟
                 </span>
               
             </div>
@@ -392,12 +392,27 @@ var _hmt = _hmt || [];
       
 
       
-        <p>本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。<br><a id="more"></a></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>目前，物联网（IOT）几乎涉及我们日常生活中包括工业、农业、智慧交通、医疗健康等所有领域。由于物联网的理念是将世界用各种IOT设备连接起来，使它们能够相互交流和合作，以提供广泛的服务，因此，未来依旧会有大量的物联网设备被部署。根据<em>Gartner</em>在2016年的一项研究显示，预计到2020年，全世界将部署500亿台物联网设备。    //物联网的发展前景</li>
-<li>然而对于每个无论其除在什么位置的物理设备或虚拟设备，如果它们都能够被其他设备任意访问，检索其中的内容，将会出现许多安全隐患，如信息窃取，数据更改和身份篡改等；此外，一些用例场景要求只有受信任的用户才能使用提供的服务。因此，对物联网设备进行身份认证和授权是十分重要。  //身份认证的重要性</li>
-<li>通常，有效的解决方案是中心化的，例如，公钥基础设施（PKI），但如果环境中有数千个节点，那么可能导致巨大的伸缩性问题。此外，一般的解决方案需要多种安全技术和解决方案的组合，这也导致额外的高成本。//传统身份认证的不足</li>
-<li>因此，有必要为整个系统系统提出新的安全解决方案，他需要满足：（1）允许轻松集成新设备和新服务; （2）完全适应物联网的要求和需求; （3）不依赖于设备的类型，也不依赖于用例架构和设计。  //新的解决方案的要求</li>
+        <p>本文首先对IOT设备访问控制进行了总结，然后翻译了两篇物联网与IOT设备访问控制相结合的论文。<br><a id="more"></a></p>
+<p>本文的ppt可以从[此处]获取。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="IOT访问控制的重要性"><a href="#IOT访问控制的重要性" class="headerlink" title="IOT访问控制的重要性"></a>IOT访问控制的重要性</h3><ul>
+<li>物联网（IOT）几乎涉及我们日常生活中包括工业、农业、智慧交通、医疗健康等所有领域。由于物联网的理念是将世界用各种IOT设备连接起来，使它们能够相互交流和合作，以提供广泛的服务，因此，未来会有大量的物联网设备被部署。根据Gartner在2016年的一项研究显示，预计到2020年，全世界将部署500亿台物联网设备。</li>
+<li>目前，物联网已经实现了物与物、物与人、人与人之间在任何时候、任何地点的有效连接。物联网中会产生海量的数据，其中具有大量的个人隐私。这些隐私信息一旦泄露，会带来巨大的损失。因此，应当通过访问控制技术，保障数据仅能够被拥有相应权限的用户访问。</li>
+</ul>
+<h3 id="传统访问控制技术"><a href="#传统访问控制技术" class="headerlink" title="传统访问控制技术"></a>传统访问控制技术</h3><ul>
+<li><p>传统的访问控制技术是由一个集中式的授权决策实体依据访问控制策略和其他属性信息进行访问控制决策，即通过引入中央可信实体的概念来构建的。</p>
+</li>
+<li><p>然而，由中央可信实体保存所有信息，并依据所保存的信息完成所有决策，在技术层面本身就不安全（例如，信息被篡改），需要依赖技术之外的法律层面来保障安全。</p>
+</li>
+<li><p>此外，由于物联网设备数量多，在拥有大量物联网节点的环境下，会给中心化服务器造成较大的压力。</p>
+</li>
+</ul>
+<h3 id="区块链-访问控制"><a href="#区块链-访问控制" class="headerlink" title="区块链 + 访问控制"></a>区块链 + 访问控制</h3><ul>
+<li><p>区块链是一种去中心化的分布式技术，是一种以密码学算法为基础的点对点分布式账本技术，是一种互联网上的共享数据库技术。从技术上解决了基于信任的中心化模型带来的安全问题。它基于密码学算法保证价值的安全转移，基于哈希链及时间戳机制保证数据的可追溯、不可篡改特性，基于共识算法保证节点间区块数据的一致性，基于自动化的脚本代码和图灵完备的虚拟机保证可编程的智能合约。</p>
+</li>
+<li><p>目前，区块链与访问控制主要有两种结合方式：</p>
+<p>(1) 种是区块链技术与现有的物联网访问控制模型结合，区块链充当现有访问控制模型的可信实体。</p>
+<p>(2) 种是提出一种新的完全基于区块链的物联网访问控制模型，区块链作为可信实体的同时，基于区块链的特性设计了基于交易或者智能合约的访问控制方法。</p>
+</li>
 </ul>
 <h2 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案-1"></a>解决方案-1</h2><h3 id="文章题目"><a href="#文章题目" class="headerlink" title="文章题目"></a>文章题目</h3><p>Bubbles of Trust: A decentralized blockchain-based authentication system for IoT <a href="https://github.com/jerryma0912/BlogFileRepo/raw/master/Bubbles%20of%20Trust_A%20decentralized%20blockchain-based%20authentication%20system%20for%20IoT.pdf" target="_blank" rel="noopener">原文获取</a></p>
 <p>信任泡：基于区块链的去中心化认证系统</p>
@@ -487,11 +502,11 @@ var _hmt = _hmt || [];
   <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
 
-  <p><span>本文标题:</span>区块链在IOT设备可信接入中的应用</p>
+  <p><span>本文标题:</span>区块链在IOT设备访问控制中的应用</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年07月26日 - 23:55:15</p>
-  <p><span>最后更新:</span>2019年07月30日 - 19:03:12</p>
-  <p><span>原始链接:</span><a href="/2019/07/26/22-blockchainInIOT/" title="区块链在IOT设备可信接入中的应用">https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/</a>
+  <p><span>最后更新:</span>2019年07月30日 - 19:37:24</p>
+  <p><span>原始链接:</span><a href="/2019/07/26/22-blockchainInIOT/" title="区块链在IOT设备访问控制中的应用">https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -684,7 +699,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-1"><span class="nav-number">2.</span> <span class="nav-text">解决方案-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目"><span class="nav-number">2.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍"><span class="nav-number">2.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理"><span class="nav-number">2.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势"><span class="nav-number">2.4.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性评估"><span class="nav-number">2.6.</span> <span class="nav-text">安全性评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-2"><span class="nav-number">3.</span> <span class="nav-text">解决方案-2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目-1"><span class="nav-number">3.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍-1"><span class="nav-number">3.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理-1"><span class="nav-number">3.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势-1"><span class="nav-number">3.4.</span> <span class="nav-text">优势</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IOT访问控制的重要性"><span class="nav-number">1.1.</span> <span class="nav-text">IOT访问控制的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传统访问控制技术"><span class="nav-number">1.2.</span> <span class="nav-text">传统访问控制技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链-访问控制"><span class="nav-number">1.3.</span> <span class="nav-text">区块链 + 访问控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-1"><span class="nav-number">2.</span> <span class="nav-text">解决方案-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目"><span class="nav-number">2.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍"><span class="nav-number">2.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理"><span class="nav-number">2.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势"><span class="nav-number">2.4.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性评估"><span class="nav-number">2.6.</span> <span class="nav-text">安全性评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案-2"><span class="nav-number">3.</span> <span class="nav-text">解决方案-2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章题目-1"><span class="nav-number">3.1.</span> <span class="nav-text">文章题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要介绍-1"><span class="nav-number">3.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理-1"><span class="nav-number">3.3.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势-1"><span class="nav-number">3.4.</span> <span class="nav-text">优势</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -718,7 +733,7 @@ var _hmt = _hmt || [];
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45k</span>
+    <span title="Site words total count">45.2k</span>
   
 </div>
 
