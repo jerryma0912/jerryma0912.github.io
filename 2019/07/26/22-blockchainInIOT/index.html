@@ -82,7 +82,7 @@
 <meta name="description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
 <meta name="keywords" content="区块链">
 <meta property="og:type" content="article">
-<meta property="og:title" content="区块链在IOT设备安全认证中的应用">
+<meta property="og:title" content="区块链在IOT设备可信接入中的应用">
 <meta property="og:url" content="https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/index.html">
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
@@ -97,9 +97,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729144639.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729162730.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729173517.png">
-<meta property="og:updated_time" content="2019-07-29T13:08:10.684Z">
+<meta property="og:updated_time" content="2019-07-30T11:03:12.305Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="区块链在IOT设备安全认证中的应用">
+<meta name="twitter:title" content="区块链在IOT设备可信接入中的应用">
 <meta name="twitter:description" content="本文首先翻译了两篇物联网在区块链中的应用的论文，然后对物联网设备认证与区块链的结合进行了总结。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729104146.png">
 
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
 
 
 
-  <title>区块链在IOT设备安全认证中的应用 | JERRY HOME</title>
+  <title>区块链在IOT设备可信接入中的应用 | JERRY HOME</title>
   
 
 
@@ -311,7 +311,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">区块链在IOT设备安全认证中的应用</h1>
+          <h1 class="post-title" itemprop="name headline">区块链在IOT设备可信接入中的应用</h1>
         
 
         <div class="post-meta">
@@ -410,16 +410,14 @@ var _hmt = _hmt || [];
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729104146.png" alt></p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729105311.png" alt></p>
 </li>
-<li><p>然后，Master向区块链发送包含MasterID、Master公钥以及它想要创建的groupID的一笔交易，正式创建一个信任泡。具体算法如下：智能合约检查groupID、Master公钥和MasterID的唯一性，如果区块链中MasterID、Master公钥或groupID已经存在，则不创建。如果创建成功，此时区块链将持把groupID、MasterID、Master公钥进行绑定。</p>
+<li><p>然后，Master向区块链发送包含MasterID、Master公钥以及它想要创建的groupID的一笔交易，正式创建一个信任泡。具体算法如下：智能合约检查groupID、Master公钥和MasterID的唯一性，如果区块链中MasterID、Master公钥或groupID已经存在，则不创建。如果创建成功，此时区块链将把groupID、MasterID、Master公钥进行绑定。</p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729112202.png" alt></p>
-</li>
-</ol>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729105555.png" alt></p>
-<ol start="3">
+</li>
 <li><p>之后，follower依次发送包含followerID和ticket的交易<code>transaction_1:{ticket}_signedWith(PriKey_F)</code>，与信任泡相关联。具体算法如下：智能合约利用follower交易中携带的公钥验证完整性，利用Master公钥检查ticket的有效性，再验证follower信息的唯一性，如果区块链中已经存在followerID、addrID,或者groupID不存在,或者Ticket验证不通过，则该follower不会被关联至该信任泡。而一旦follower的关联请求成功，则区块链将会把groupID、followerID和follower公钥向绑定，以后不再需要使用ticket来验证。<img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729112856.png" alt></p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729140552.png" alt></p>
 </li>
-<li><p>未来，follower发送交易时，只需要发送<code>transacation_n:{data||groupID||followerID}_signedWith(PriKeyF)</code>，当区块链收到交易时，通过follower的公钥验证签名来验证其完整性，如果验证通过，区块链将验证交易中groupID、followerID和Follower公钥是否与存储的信息一致，如果一致，则设备认证成功。</p>
+<li><p>未来，follower发送交易时，只需要发送<code>transacation_n:{data||groupID||followerID}_signedWith(PriKeyF)</code>，当区块链收到交易时，通过follower的公钥验证签名来验证其完整性，如果验证通过，区块链将验证交易中groupID、followerID是否与存储的信息一致，如果一致，则设备认证成功。</p>
 </li>
 <li><p>数据通信规则的算法如下：如果区块链中发送者的id不存在或者接收者的id不存在，则禁止通信；如果发送者的groupID与接收者的groupID不同，则禁止通信；如果对发送者新的的验证失败，则禁止通信。因此，Master 5E可以创建39组，而Master BB不能创建0A组；0A组的1B与DE可以相互通信，而F9组的50不能与0A组的6F通信；未经授权的F9组79不能与已经授权的F9组41进行通信。</p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729144853.png" alt></p>
@@ -457,13 +455,13 @@ var _hmt = _hmt || [];
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190729173517.png" alt></p>
 <ol>
 <li>用户使用用户名和密码向peer进行身份验证，以请求访问令牌</li>
-<li>身份认证通过后，将创建访问令牌。</li>
+<li>身份认证通过后，创建访问令牌。</li>
 <li>peer创建一个交易并将令牌发送至order节点，使用共识组件进行排序。</li>
-<li>之后，order生成一个块，该块将发送至所有的peer节点，peer节点将把该交易加入本地账本中。</li>
+<li>之后，orderer生成一个块，该块将发送至所有的peer节点，peer节点将把该交易加入本地账本中。</li>
 <li>之后，特定的peer将令牌发送回请求的用户。</li>
-<li>用户将令牌嵌入到设备中以进一步访问。</li>
+<li>用户将令牌嵌入到设备中，以便进一步访问。</li>
 <li>以访问MQTT服务为例，用户持该令牌访问MQTT broker（代理）时，需要使用令牌进行授权。</li>
-<li>MQTT broker向fabric授权服务发送请求。</li>
+<li>MQTT broker向fabric授权服务发送请求，并接收返回结果。</li>
 <li>授权完成后，设备最终能够使用broker的服务。</li>
 </ol>
 </li>
@@ -489,11 +487,11 @@ var _hmt = _hmt || [];
   <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
 
-  <p><span>本文标题:</span>区块链在IOT设备安全认证中的应用</p>
+  <p><span>本文标题:</span>区块链在IOT设备可信接入中的应用</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年07月26日 - 23:55:15</p>
-  <p><span>最后更新:</span>2019年07月29日 - 21:08:10</p>
-  <p><span>原始链接:</span><a href="/2019/07/26/22-blockchainInIOT/" title="区块链在IOT设备安全认证中的应用">https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/</a>
+  <p><span>最后更新:</span>2019年07月30日 - 19:03:12</p>
+  <p><span>原始链接:</span><a href="/2019/07/26/22-blockchainInIOT/" title="区块链在IOT设备可信接入中的应用">https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/07/26/22-blockchainInIOT/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
