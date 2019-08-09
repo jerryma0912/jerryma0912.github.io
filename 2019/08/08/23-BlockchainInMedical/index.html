@@ -86,16 +86,18 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="123456title: 基于飞洛平台的电子病历系统设计date: 2019-08-08 23:19:20tags: 区块链categories:#- 区块链技术#- 3. 区块链与医疗 本文为基于趣链飞洛平台的电子病历系统项目介绍。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png">
+<meta property="og:image" content="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808231626.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232128.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232154.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232209.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232226.png">
-<meta property="og:updated_time" content="2019-08-08T15:25:29.088Z">
+<meta property="og:updated_time" content="2019-08-09T15:31:21.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JERRY HOME">
 <meta name="twitter:description" content="123456title: 基于飞洛平台的电子病历系统设计date: 2019-08-08 23:19:20tags: 区块链categories:#- 区块链技术#- 3. 区块链与医疗 本文为基于趣链飞洛平台的电子病历系统项目介绍。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808231626.png">
+<meta name="twitter:image" content="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png">
 
 
 
@@ -349,7 +351,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  61 字
+                  4.2k 字
                 </span>
               
 
@@ -365,7 +367,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  14 分钟
                 </span>
               
             </div>
@@ -388,6 +390,62 @@ var _hmt = _hmt || [];
       
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: 基于飞洛平台的电子病历系统设计</span><br><span class="line">date: 2019-08-08 23:19:20</span><br><span class="line">tags: 区块链</span><br><span class="line">categories:</span><br><span class="line">#- 区块链技术</span><br><span class="line">#- 3. 区块链与医疗</span><br></pre></td></tr></table></figure>
 <p>本文为基于趣链飞洛平台的电子病历系统项目介绍。 <a id="more"></a></p>
+<h1 id="一、项目介绍"><a href="#一、项目介绍" class="headerlink" title="一、项目介绍"></a>一、项目介绍</h1><h2 id="1．项目背景"><a href="#1．项目背景" class="headerlink" title="1．项目背景"></a>1．项目背景</h2><p>随着互联网以及计算机技术的快速发展，促进了“互联网+医疗”新的应用场景。在近年来，在医疗卫生领域的改革效果不甚理想，城镇与乡村居民看病流程繁琐，信息数据无法共享且接受滞后，以及大量纸质病历的使用造成了资源浪费。面对种种问题，国务院在政府的工作中多次要求，要加强建设医疗体系，改善看病难的问题，使群众可以在各个医疗机构中享受更加便利的服务。对此，基于电子病历的医疗信息平台建设，可以改善上述问题。</p>
+<p>虽然在目前各医疗组织机构收集了海量病历数据，但是由于医疗病历的隐私性，病历信息只能在医院内部查看或者共享。长久以来，导致了各个医院见的病历信息封闭，缺乏一个标准化的数据共享平台，让各个医院之间的诊治医生难以查看病人完整的就诊报告，给诊治病情增加了难度。同时病历存储在各个医院的系统中，病人难以查看自己的病历记录，而且对于当前中心化的存储方式非常容易造成大量的数据泄露。不管是从病历信息的隐私性还是安全性考虑，目前并没有一个可以让病历信息共享和能够保证病历数据存储安全的系统平台。对于中心式孤岛化的医疗病历系统来说，如何既要保证病历信息数据的安全，又要让这些病历信息数据共享，发挥其合理的价值是个难以解决的问题。同时，诊治医生对于病人开具的病历到底拥有什么样的使用权力，一直是业内讨论的热点，能否保证病历记录不被恶意篡改，又恰巧是我们在技术上需要探讨的地方。如果能够有效的利用这些病历信息，保证数据安全的前提下实现信息共享，就能够积极改变我国居民的医疗就诊现状。</p>
+<p>对于上述医疗行业痛点，利用传统技术是难以解决的，但是如果能够利用区块链技术就能完美的解决这些问题。利用区块链数据的不可篡改性，保证了存储在区块链中的数据是安全可靠。此外，区块链的可追溯性，保证了写入链中的数据都能追溯源头，就难以伪造数据。对于数据存储方式来说，区块链是一种去中心化的存储方式，并不会被独占，这就对医疗组织机构之间的数据共享提供了技术基础。对于电子病历的系统，可以进一步将智能合约部署到区块链中，可以让病人查看自己的病历，或选择是否共享自己的病历信息。医生也能更加高效的查阅病人的病历信息，为医生的诊治提供了完备的科学依据。</p>
+<h2 id="2．项目目的"><a href="#2．项目目的" class="headerlink" title="2．项目目的"></a>2．项目目的</h2><p>本项目研究一种基于区块链技术，以病历信息为中心的电子病历系统。在分析医疗基本信息管理、病人挂号就诊、医生问诊看病等各项环节上，设计并开发一套能够保障病人隐私信息，又能实现医疗数据共享，提高就诊看病效率，且符合区块链相应技术要求的规范业务流程和框架系统。基于当前的业务流程，首先建立电子病历系统的区块链网络，在病历信息对病人自愿的情况下，发展共享病历信息用于研究的激励机制，最终能够依靠区块链来实现电子病历信息的共享。</p>
+<p>项目的主要目的包括：</p>
+<p>（1）基于趣链飞洛的区块链框架</p>
+<p>采用技术成熟的趣链飞洛平台作为项目的实施平台，利用区块链的性质将病患信息入链，之后在将各个医院的病患信息整合入链，为电子病历系统建立起完备的数据服务平台。</p>
+<p>（2）电子病历数据存储结构和业务流程</p>
+<p>对比传统电子病历中心化的方式，多采用一些关系型数据库。在本项目的设计中，考虑到负载的压力，我们选用MongoDB来存储部分基本数据信息。其次，电子病历是作为基本的数据结构，我们需要考虑充分，设计完善，符合现下主流的业务流程。</p>
+<p>（3）保护电子病历信息和共享研究数据</p>
+<p>由于病人病历信息本身是属于个人隐私数据，所以在设计电子病历时，应当将病历信息的隐私保护放在首位。医生只有在看病时，才有权限查看病人的病历信息。病人在自愿的情况下，可以将个人病历信息脱敏后用于科学研究，致力于医疗发展。</p>
+<p>（4）编写和部署智能合约，实现业务逻辑</p>
+<p>利用智能合约，可以将系统整体的业务逻辑设计写到区块链逻辑设计中。对于区块链中的可执行代码段，根据之前所设定的业务流程，进一步地设计不同调用函数，为系统内部用户调用区块链中的数据提供支撑。</p>
+<h1 id="二、总体设计"><a href="#二、总体设计" class="headerlink" title="二、总体设计"></a>二、总体设计</h1><h2 id="1．系统结构描述"><a href="#1．系统结构描述" class="headerlink" title="1．系统结构描述"></a>1．系统结构描述</h2><p>系统结构从下而上共分为数据层、业务层、展示层三层。整体框图如下图所示。</p>
+<p><img src="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png" alt="img"></p>
+<p><strong>（1）数据层</strong></p>
+<p>数据层由飞洛平台、Mongo数据库、星际文件系统（IPFS）组成。飞洛平台是趣链科技在其自主研发的区块链底层技术Hyperchain2.0的基础上，打造的可视化急速部署和运维管理平台，能够为大量特定场景提供区块链服务。在本项目中用于提供底层区块链服务平台，并通过智能合约存储相关信息。MongoDB是一个基于分布式文件存储的数据，能够提供可扩展的高性能数据存储解决方案。在本项目中用于提供缓存服务。IPFS是永久的、去中心化保存和共享文件的方法，是一种内容可寻址、版本化、点对点超媒体的分布式协议。在本项目中用于存储文件、图片等非必须内容。</p>
+<p><strong>（2）业务层</strong></p>
+<p>业务层根据项目的实际功能，主要划分为六大模块：登录信息管理模块、病历本管理模块、病历管理模块、就诊记录管理模块、科室管理模块、住院管理模块。登录信息模块主要用于医生、病人和管理人员的注册、登录和个人信息管理；病历本管理模块主要用于病人对个人病历本的查询与管理；病历管理模块主要用于医生对病历的管理与查询；就诊记录管理模块主要用于病人与医生之间的授权管理；科室管理模块主要用于管理人员对科室医生、出诊医生、病人挂号进行管理；住院管理模块主要用于对病人住院信息、知情同意书和手术记录进行记录和管理。</p>
+<p><strong>（3）展示层</strong></p>
+<p>在业务层基础上，通过构建web端和手机app，实现不同角色提供和展示不同的内容，用于直接与用户进行交互，引导用户执行相关的操作。</p>
+<h2 id="2．系统模块设计"><a href="#2．系统模块设计" class="headerlink" title="2．系统模块设计"></a>2．系统模块设计</h2><p>如下图所示，系统模块可分为六大模块。根据业务的流程可将系统分为四个时间节点：系统初始化阶段、就诊准备阶段、就诊问诊阶段、住院阶段。接下来将对每个时间段内需要操作的不同模块，分别进行详细的阐述。</p>
+<p><img src="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png" alt="img"></p>
+<h3 id="2-1-系统初始化阶段"><a href="#2-1-系统初始化阶段" class="headerlink" title="2.1 系统初始化阶段"></a>2.1 系统初始化阶段</h3><p>（1）用户注册管理子模块</p>
+<p>该子模块用于病人端、医生端和管理端的注册。三类用户的注册过程几乎相同，主要的差别体现在用户数据的结构、调用的智能合约名称以及具体的智能合约内函数。在注册时，用户首先填写个人信息，并将个人信息提交至后端，后端校验身份通过后，通过api接口创建区块链账户，完成注册。</p>
+<p>（2）用户登录管理子模块</p>
+<p>该子模块用于病人端、医生端和管理端的登录。其功能是根据传入前端的登录信息来验证是否与注册时存入区块链中的信息一致。如果一致则登录成功，反之则失败。用户再填写好信息后发送至后端，后端调用智能合约取出数据库中的信息，并依次进行验证。如果成功，则将登录信息存入session，并根据用户类型对不同用户进行不同的权限操作。</p>
+<p>（3）用户信息管理子模块</p>
+<p>该子模块用于病人端、医生端和管理端对个人信息的修改。若用户需要修改个人信息，可在用户登录成功后，进入该子模块，修改内容填写完成后，系统会将修改内容提交至后端，并通过调用智能合约对用户信息重新进行存储。</p>
+<p>（4）病历本初始化子模块</p>
+<p>在系统中，病人管理着以病人编号为索引的病历本，因此，在病人首次登陆系统后，页面会自动跳转并询问病人是否初始化该病历本。若选择初始化，则调用初始化病历本的智能合约，将初始化病人信息、病历本信息进行关联，写入数据库中。</p>
+<p>（5）科室初始化出诊和挂号子模块</p>
+<p>该子模块用于初始化科室出诊和挂号管理。后端将取出科室登录时存储的科室编号、科室名称用于初始化创建科室出诊挂号数据，发送给智能合约，智能合约收到请求后将初始化数据存入数据库中。</p>
+<h3 id="2-2-就诊准备阶段"><a href="#2-2-就诊准备阶段" class="headerlink" title="2.2 就诊准备阶段"></a>2.2 就诊准备阶段</h3><p>就诊准备阶段，科室管理员需要对科室内医生列表、出诊医生列表和病人挂号进行管理，为病人就诊做准备。</p>
+<p>（1）科室管理员管理医生列表子模块</p>
+<p>科室管理员登录成功后，可以将已注册的医生加入到本科室的医生列表中，也可以进行删除。科室管理员首先提交查看医生列表请求给智能合约，智能合约验证数据正确后，则返回医生列表数据。若此时管理员需要添加医生，需要填写医生编号与姓名，并将结果发送至智能合约，智能合约同理在校验身份通过后，将列表存入区块链中。</p>
+<p>（2）科室管理员管理医生出诊列表子模块</p>
+<p>科室管理员可依据科室内医生列表，选择列表中的医生添加到出诊列表中，当出诊结束后，科室管理员再依据第二天的出诊安排表，修改出诊列表。科室管理员提交查看出诊医生列表给智能合约，智能合约验证数据正确后，则返回科室医生列表。若此时需要添加/删除医生，需要填写医生编号与姓名，并将结果发送至智能合约，智能合约在验证身份通过后，将列表存入区块链中。</p>
+<p>（3）病人挂号列表子模块</p>
+<p>病人的挂号管理，是为了将病人信息添加至出诊医生的名单下，使医生能够从挂号列表中选取病人问诊。主要包括获取挂号、删除挂号等两类操作。病人选择需要挂号的科室与出诊医生，并将信息发送到智能合约，智能合约进行身份认证，认证通过后将更新列表存入区块链中。同理，也可进行删除。</p>
+<h3 id="2-3-就诊问诊阶段"><a href="#2-3-就诊问诊阶段" class="headerlink" title="2.3 就诊问诊阶段"></a>2.3 就诊问诊阶段</h3><p>（1）医生初始化就诊记录子模块</p>
+<p>医生首先通过智能合约查看科室内已挂号病人列表，选择挂号的病人后，创建以病人为编号的就诊记录，并填写病人编号和就诊时间到智能合约。智能合约会创建以病人编号为索引的就诊记录，并添加到区块链中，此时，初始化就诊记录成功。</p>
+<p>（2）医生填写和保存病历子模块</p>
+<p>医生新建就诊记录后，即可填写就诊的信息及诊断。页面有两个按钮，第一个为保存，第二个为提交。保存按钮可将填写的信息保存至缓存内，保存后可继续查看与编辑；提交按钮则将填写的信息通过智能合约存入区块链，提交后病历不可编辑，同时，若没有得到病人的授权，则无法再次查看该病历。</p>
+<p>（3）病人授权管理子模块</p>
+<p>病人可对个人病历进行授权或取消，决定医生是否有权限在就诊结束后查看其病历，若同意医生查看，则病人也可根据医生查看的次数获得一定的积分奖励。病人首先查询就诊记录，将医生编号填写到病历本的授权列表中并通过智能合约存入区块链。此时，若医生每查看一次该病人病历，病人将获得一定的积分奖励。同理，当病人删除授权列表中的记录，并提交给智能合约后，则完成取消授权。</p>
+<p>（4）医生查病人病历本子模块</p>
+<p>医生可通过病人编号为索引向智能合约请求该病人的个人病历。智能合约验证医生身份后，查询该病人的授权列表，并返回该病人同意授权的病例信息，同时给予该病人一定的积分奖励，所有的数据均存入区块链。</p>
+<p>（5）用户查看就诊历史记录子模块</p>
+<p>用户可通过向智能合约提交查看就诊记录请求，查看其病历本内的所有就诊历史记录。智能合约通过验证用户身份后，返回历史记录。</p>
+<h3 id="2-4-住院阶段"><a href="#2-4-住院阶段" class="headerlink" title="2.4 住院阶段"></a>2.4 住院阶段</h3><p>（1）医生初始化住院记录子模块</p>
+<p>医生首先通过智能合约创建以病人为编号的住院记录，并填写病人的编号、住院时间、病房信息等到智能合约。智能合约会创建以病人编号为索引的住院记录，并添加到区块链，此时，初始化住院记录成功。</p>
+<p>（2）医生填写和保存住院病历子模块</p>
+<p>医生创建住院病历后，即可填写查房记录、会诊记录、手术记录等表单。页面有两个按钮，第一个为保存，第二个为提交，保存按钮可保存当前的表单至缓存，保存后可继续查看与编辑；提交按钮会通过智能合约将表单保存至区块链，提交后不可编辑。</p>
+<p>（3）知情同意书管理子模块</p>
+<p>病人通过页面，上传已签名的知情同意书电子文档至IPFS，同时将文件地址以及病人编号通过智能合约存入区块链，从而完成知情同意书的上传。</p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808231626.png" alt></p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232128.png" alt></p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232154.png" alt></p>
@@ -414,7 +472,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span></p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年08月08日 - 23:16:57</p>
-  <p><span>最后更新:</span>2019年08月08日 - 23:25:29</p>
+  <p><span>最后更新:</span>2019年08月09日 - 23:31:21</p>
   <p><span>原始链接:</span><a href="/2019/08/08/23-BlockchainInMedical/" title>https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/" aria-label="复制成功！"></i></span>
   </p>
@@ -520,8 +578,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -584,6 +651,22 @@ var _hmt = _hmt || [];
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、项目介绍"><span class="nav-number">1.</span> <span class="nav-text">一、项目介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．项目背景"><span class="nav-number">1.1.</span> <span class="nav-text">1．项目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．项目目的"><span class="nav-number">1.2.</span> <span class="nav-text">2．项目目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、总体设计"><span class="nav-number">2.</span> <span class="nav-text">二、总体设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．系统结构描述"><span class="nav-number">2.1.</span> <span class="nav-text">1．系统结构描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．系统模块设计"><span class="nav-number">2.2.</span> <span class="nav-text">2．系统模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-系统初始化阶段"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1 系统初始化阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-就诊准备阶段"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 就诊准备阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-就诊问诊阶段"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 就诊问诊阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-住院阶段"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.4 住院阶段</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -611,7 +694,7 @@ var _hmt = _hmt || [];
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.3k</span>
+    <span title="Site words total count">49.4k</span>
   
 </div>
 
