@@ -87,18 +87,18 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文为基于趣链飞洛平台的电子病历系统项目介绍。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png">
-<meta property="og:image" content="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233640.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233701.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808231626.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232128.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232154.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232209.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232226.png">
-<meta property="og:updated_time" content="2019-08-09T15:34:30.798Z">
+<meta property="og:updated_time" content="2019-08-09T15:37:11.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于飞洛平台的电子病历系统设计">
 <meta name="twitter:description" content="本文为基于趣链飞洛平台的电子病历系统项目介绍。">
-<meta name="twitter:image" content="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233640.png">
 
 
 
@@ -404,7 +404,7 @@ var _hmt = _hmt || [];
 <p>（4）编写和部署智能合约，实现业务逻辑</p>
 <p>利用智能合约，可以将系统整体的业务逻辑设计写到区块链逻辑设计中。对于区块链中的可执行代码段，根据之前所设定的业务流程，进一步地设计不同调用函数，为系统内部用户调用区块链中的数据提供支撑。</p>
 <h1 id="二、总体设计"><a href="#二、总体设计" class="headerlink" title="二、总体设计"></a>二、总体设计</h1><h2 id="1．系统结构描述"><a href="#1．系统结构描述" class="headerlink" title="1．系统结构描述"></a>1．系统结构描述</h2><p>系统结构从下而上共分为数据层、业务层、展示层三层。整体框图如下图所示。</p>
-<p><img src="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233640.png" alt></p>
 <p><strong>（1）数据层</strong></p>
 <p>数据层由飞洛平台、Mongo数据库、星际文件系统（IPFS）组成。飞洛平台是趣链科技在其自主研发的区块链底层技术Hyperchain2.0的基础上，打造的可视化急速部署和运维管理平台，能够为大量特定场景提供区块链服务。在本项目中用于提供底层区块链服务平台，并通过智能合约存储相关信息。MongoDB是一个基于分布式文件存储的数据，能够提供可扩展的高性能数据存储解决方案。在本项目中用于提供缓存服务。IPFS是永久的、去中心化保存和共享文件的方法，是一种内容可寻址、版本化、点对点超媒体的分布式协议。在本项目中用于存储文件、图片等非必须内容。</p>
 <p><strong>（2）业务层</strong></p>
@@ -412,7 +412,7 @@ var _hmt = _hmt || [];
 <p><strong>（3）展示层</strong></p>
 <p>在业务层基础上，通过构建web端和手机app，实现不同角色提供和展示不同的内容，用于直接与用户进行交互，引导用户执行相关的操作。</p>
 <h2 id="2．系统模块设计"><a href="#2．系统模块设计" class="headerlink" title="2．系统模块设计"></a>2．系统模块设计</h2><p>如下图所示，系统模块可分为六大模块。根据业务的流程可将系统分为四个时间节点：系统初始化阶段、就诊准备阶段、就诊问诊阶段、住院阶段。接下来将对每个时间段内需要操作的不同模块，分别进行详细的阐述。</p>
-<p><img src="file:////Users/jerry/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233701.png" alt></p>
 <h3 id="2-1-系统初始化阶段"><a href="#2-1-系统初始化阶段" class="headerlink" title="2.1 系统初始化阶段"></a>2.1 系统初始化阶段</h3><p>（1）用户注册管理子模块</p>
 <p>该子模块用于病人端、医生端和管理端的注册。三类用户的注册过程几乎相同，主要的差别体现在用户数据的结构、调用的智能合约名称以及具体的智能合约内函数。在注册时，用户首先填写个人信息，并将个人信息提交至后端，后端校验身份通过后，通过api接口创建区块链账户，完成注册。</p>
 <p>（2）用户登录管理子模块</p>
@@ -472,7 +472,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>基于飞洛平台的电子病历系统设计</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年08月08日 - 23:19:20</p>
-  <p><span>最后更新:</span>2019年08月09日 - 23:34:30</p>
+  <p><span>最后更新:</span>2019年08月09日 - 23:37:11</p>
   <p><span>原始链接:</span><a href="/2019/08/08/23-BlockchainInMedical/" title="基于飞洛平台的电子病历系统设计">https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/" aria-label="复制成功！"></i></span>
   </p>
