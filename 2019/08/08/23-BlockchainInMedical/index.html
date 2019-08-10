@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232154.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232209.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232226.png">
-<meta property="og:updated_time" content="2019-08-10T02:52:34.976Z">
+<meta property="og:updated_time" content="2019-08-10T02:58:05.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于飞洛平台的电子病历系统设计">
 <meta name="twitter:description" content="本文为基于趣链飞洛平台的电子病历系统项目介绍。">
@@ -427,14 +427,14 @@ var _hmt = _hmt || [];
 <p>在系统中，病人管理着以病人编号为索引的病历本，因此，在病人首次登陆系统后，页面会自动跳转并询问病人是否初始化该病历本。若选择初始化，则调用初始化病历本的智能合约，将初始化病人信息、病历本信息进行关联，写入数据库中。</p>
 <p>（5）科室初始化出诊和挂号子模块</p>
 <p>该子模块用于初始化科室出诊和挂号管理。后端将取出科室登录时存储的科室编号、科室名称用于初始化创建科室出诊挂号数据，发送给智能合约，智能合约收到请求后将初始化数据存入数据库中。</p>
-<h3 id="2-2-就诊准备阶段"><a href="#2-2-就诊准备阶段" class="headerlink" title="2.2 就诊准备阶段"></a>2.2 就诊准备阶段</h3><p>就诊准备阶段，科室管理员需要对科室内医生列表、出诊医生列表和病人挂号进行管理，为病人就诊做准备。</p>
+<h3 id="就诊准备阶段"><a href="#就诊准备阶段" class="headerlink" title="就诊准备阶段"></a>就诊准备阶段</h3><p>就诊准备阶段，科室管理员需要对科室内医生列表、出诊医生列表和病人挂号进行管理，为病人就诊做准备。</p>
 <p>（1）科室管理员管理医生列表子模块</p>
 <p>科室管理员登录成功后，可以将已注册的医生加入到本科室的医生列表中，也可以进行删除。科室管理员首先提交查看医生列表请求给智能合约，智能合约验证数据正确后，则返回医生列表数据。若此时管理员需要添加医生，需要填写医生编号与姓名，并将结果发送至智能合约，智能合约同理在校验身份通过后，将列表存入区块链中。</p>
 <p>（2）科室管理员管理医生出诊列表子模块</p>
 <p>科室管理员可依据科室内医生列表，选择列表中的医生添加到出诊列表中，当出诊结束后，科室管理员再依据第二天的出诊安排表，修改出诊列表。科室管理员提交查看出诊医生列表给智能合约，智能合约验证数据正确后，则返回科室医生列表。若此时需要添加/删除医生，需要填写医生编号与姓名，并将结果发送至智能合约，智能合约在验证身份通过后，将列表存入区块链中。</p>
 <p>（3）病人挂号列表子模块</p>
 <p>病人的挂号管理，是为了将病人信息添加至出诊医生的名单下，使医生能够从挂号列表中选取病人问诊。主要包括获取挂号、删除挂号等两类操作。病人选择需要挂号的科室与出诊医生，并将信息发送到智能合约，智能合约进行身份认证，认证通过后将更新列表存入区块链中。同理，也可进行删除。</p>
-<h3 id="2-3-就诊问诊阶段"><a href="#2-3-就诊问诊阶段" class="headerlink" title="2.3 就诊问诊阶段"></a>2.3 就诊问诊阶段</h3><p>（1）医生初始化就诊记录子模块</p>
+<h3 id="就诊问诊阶段"><a href="#就诊问诊阶段" class="headerlink" title="就诊问诊阶段"></a>就诊问诊阶段</h3><p>（1）医生初始化就诊记录子模块</p>
 <p>医生首先通过智能合约查看科室内已挂号病人列表，选择挂号的病人后，创建以病人为编号的就诊记录，并填写病人编号和就诊时间到智能合约。智能合约会创建以病人编号为索引的就诊记录，并添加到区块链中，此时，初始化就诊记录成功。</p>
 <p>（2）医生填写和保存病历子模块</p>
 <p>医生新建就诊记录后，即可填写就诊的信息及诊断。页面有两个按钮，第一个为保存，第二个为提交。保存按钮可将填写的信息保存至缓存内，保存后可继续查看与编辑；提交按钮则将填写的信息通过智能合约存入区块链，提交后病历不可编辑，同时，若没有得到病人的授权，则无法再次查看该病历。</p>
@@ -444,7 +444,7 @@ var _hmt = _hmt || [];
 <p>医生可通过病人编号为索引向智能合约请求该病人的个人病历。智能合约验证医生身份后，查询该病人的授权列表，并返回该病人同意授权的病例信息，同时给予该病人一定的积分奖励，所有的数据均存入区块链。</p>
 <p>（5）用户查看就诊历史记录子模块</p>
 <p>用户可通过向智能合约提交查看就诊记录请求，查看其病历本内的所有就诊历史记录。智能合约通过验证用户身份后，返回历史记录。</p>
-<h3 id="2-4-住院阶段"><a href="#2-4-住院阶段" class="headerlink" title="2.4 住院阶段"></a>2.4 住院阶段</h3><p>（1）医生初始化住院记录子模块</p>
+<h3 id="住院阶段"><a href="#住院阶段" class="headerlink" title="住院阶段"></a>住院阶段</h3><p>（1）医生初始化住院记录子模块</p>
 <p>医生首先通过智能合约创建以病人为编号的住院记录，并填写病人的编号、住院时间、病房信息等到智能合约。智能合约会创建以病人编号为索引的住院记录，并添加到区块链，此时，初始化住院记录成功。</p>
 <p>（2）医生填写和保存住院病历子模块</p>
 <p>医生创建住院病历后，即可填写查房记录、会诊记录、手术记录等表单。页面有两个按钮，第一个为保存，第二个为提交，保存按钮可保存当前的表单至缓存，保存后可继续查看与编辑；提交按钮会通过智能合约将表单保存至区块链，提交后不可编辑。</p>
@@ -486,7 +486,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>基于飞洛平台的电子病历系统设计</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年08月08日 - 23:19:20</p>
-  <p><span>最后更新:</span>2019年08月10日 - 10:52:34</p>
+  <p><span>最后更新:</span>2019年08月10日 - 10:58:05</p>
   <p><span>原始链接:</span><a href="/2019/08/08/23-BlockchainInMedical/" title="基于飞洛平台的电子病历系统设计">https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/" aria-label="复制成功！"></i></span>
   </p>
@@ -680,7 +680,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目介绍"><span class="nav-number">1.</span> <span class="nav-text">项目介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目背景"><span class="nav-number">1.1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目目的"><span class="nav-number">1.2.</span> <span class="nav-text">项目目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总体设计"><span class="nav-number">2.</span> <span class="nav-text">总体设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统结构描述"><span class="nav-number">2.1.</span> <span class="nav-text">系统结构描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统模块设计"><span class="nav-number">2.2.</span> <span class="nav-text">系统模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统初始化阶段"><span class="nav-number">2.2.1.</span> <span class="nav-text">系统初始化阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-就诊准备阶段"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 就诊准备阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-就诊问诊阶段"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 就诊问诊阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-住院阶段"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.4 住院阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型设计"><span class="nav-number">3.</span> <span class="nav-text">原型设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册登录原型设计"><span class="nav-number">3.1.</span> <span class="nav-text">注册登录原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病人挂号原型设计"><span class="nav-number">3.2.</span> <span class="nav-text">病人挂号原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加病历原型设计"><span class="nav-number">3.3.</span> <span class="nav-text">添加病历原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病历查询原型设计"><span class="nav-number">3.4.</span> <span class="nav-text">病历查询原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病历授权原型设计"><span class="nav-number">3.5.</span> <span class="nav-text">病历授权原型设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、创新点"><span class="nav-number">4.</span> <span class="nav-text">四、创新点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目介绍"><span class="nav-number">1.</span> <span class="nav-text">项目介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目背景"><span class="nav-number">1.1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目目的"><span class="nav-number">1.2.</span> <span class="nav-text">项目目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总体设计"><span class="nav-number">2.</span> <span class="nav-text">总体设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统结构描述"><span class="nav-number">2.1.</span> <span class="nav-text">系统结构描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统模块设计"><span class="nav-number">2.2.</span> <span class="nav-text">系统模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统初始化阶段"><span class="nav-number">2.2.1.</span> <span class="nav-text">系统初始化阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#就诊准备阶段"><span class="nav-number">2.2.2.</span> <span class="nav-text">就诊准备阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#就诊问诊阶段"><span class="nav-number">2.2.3.</span> <span class="nav-text">就诊问诊阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#住院阶段"><span class="nav-number">2.2.4.</span> <span class="nav-text">住院阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型设计"><span class="nav-number">3.</span> <span class="nav-text">原型设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册登录原型设计"><span class="nav-number">3.1.</span> <span class="nav-text">注册登录原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病人挂号原型设计"><span class="nav-number">3.2.</span> <span class="nav-text">病人挂号原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加病历原型设计"><span class="nav-number">3.3.</span> <span class="nav-text">添加病历原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病历查询原型设计"><span class="nav-number">3.4.</span> <span class="nav-text">病历查询原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病历授权原型设计"><span class="nav-number">3.5.</span> <span class="nav-text">病历授权原型设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、创新点"><span class="nav-number">4.</span> <span class="nav-text">四、创新点</span></a></li></ol></div>
             
 
           </div>
