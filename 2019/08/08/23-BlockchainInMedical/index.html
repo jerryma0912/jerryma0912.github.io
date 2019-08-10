@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232154.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232209.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232226.png">
-<meta property="og:updated_time" content="2019-08-09T15:40:57.372Z">
+<meta property="og:updated_time" content="2019-08-10T02:48:38.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于飞洛平台的电子病历系统设计">
 <meta name="twitter:description" content="本文为基于趣链飞洛平台的电子病历系统项目介绍。">
@@ -390,10 +390,10 @@ var _hmt = _hmt || [];
 
       
         <p>本文为基于趣链飞洛平台的电子病历系统项目介绍。 <a id="more"></a></p>
-<h1 id="一、项目介绍"><a href="#一、项目介绍" class="headerlink" title="一、项目介绍"></a>一、项目介绍</h1><h2 id="1．项目背景"><a href="#1．项目背景" class="headerlink" title="1．项目背景"></a>1．项目背景</h2><p>随着互联网以及计算机技术的快速发展，促进了“互联网+医疗”新的应用场景。在近年来，在医疗卫生领域的改革效果不甚理想，城镇与乡村居民看病流程繁琐，信息数据无法共享且接受滞后，以及大量纸质病历的使用造成了资源浪费。面对种种问题，国务院在政府的工作中多次要求，要加强建设医疗体系，改善看病难的问题，使群众可以在各个医疗机构中享受更加便利的服务。对此，基于电子病历的医疗信息平台建设，可以改善上述问题。</p>
+<h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>随着互联网以及计算机技术的快速发展，促进了“互联网+医疗”新的应用场景。在近年来，在医疗卫生领域的改革效果不甚理想，城镇与乡村居民看病流程繁琐，信息数据无法共享且接受滞后，以及大量纸质病历的使用造成了资源浪费。面对种种问题，国务院在政府的工作中多次要求，要加强建设医疗体系，改善看病难的问题，使群众可以在各个医疗机构中享受更加便利的服务。对此，基于电子病历的医疗信息平台建设，可以改善上述问题。</p>
 <p>虽然在目前各医疗组织机构收集了海量病历数据，但是由于医疗病历的隐私性，病历信息只能在医院内部查看或者共享。长久以来，导致了各个医院见的病历信息封闭，缺乏一个标准化的数据共享平台，让各个医院之间的诊治医生难以查看病人完整的就诊报告，给诊治病情增加了难度。同时病历存储在各个医院的系统中，病人难以查看自己的病历记录，而且对于当前中心化的存储方式非常容易造成大量的数据泄露。不管是从病历信息的隐私性还是安全性考虑，目前并没有一个可以让病历信息共享和能够保证病历数据存储安全的系统平台。对于中心式孤岛化的医疗病历系统来说，如何既要保证病历信息数据的安全，又要让这些病历信息数据共享，发挥其合理的价值是个难以解决的问题。同时，诊治医生对于病人开具的病历到底拥有什么样的使用权力，一直是业内讨论的热点，能否保证病历记录不被恶意篡改，又恰巧是我们在技术上需要探讨的地方。如果能够有效的利用这些病历信息，保证数据安全的前提下实现信息共享，就能够积极改变我国居民的医疗就诊现状。</p>
 <p>对于上述医疗行业痛点，利用传统技术是难以解决的，但是如果能够利用区块链技术就能完美的解决这些问题。利用区块链数据的不可篡改性，保证了存储在区块链中的数据是安全可靠。此外，区块链的可追溯性，保证了写入链中的数据都能追溯源头，就难以伪造数据。对于数据存储方式来说，区块链是一种去中心化的存储方式，并不会被独占，这就对医疗组织机构之间的数据共享提供了技术基础。对于电子病历的系统，可以进一步将智能合约部署到区块链中，可以让病人查看自己的病历，或选择是否共享自己的病历信息。医生也能更加高效的查阅病人的病历信息，为医生的诊治提供了完备的科学依据。</p>
-<h2 id="2．项目目的"><a href="#2．项目目的" class="headerlink" title="2．项目目的"></a>2．项目目的</h2><p>本项目研究一种基于区块链技术，以病历信息为中心的电子病历系统。在分析医疗基本信息管理、病人挂号就诊、医生问诊看病等各项环节上，设计并开发一套能够保障病人隐私信息，又能实现医疗数据共享，提高就诊看病效率，且符合区块链相应技术要求的规范业务流程和框架系统。基于当前的业务流程，首先建立电子病历系统的区块链网络，在病历信息对病人自愿的情况下，发展共享病历信息用于研究的激励机制，最终能够依靠区块链来实现电子病历信息的共享。</p>
+<h2 id="项目目的"><a href="#项目目的" class="headerlink" title="项目目的"></a>项目目的</h2><p>本项目研究一种基于区块链技术，以病历信息为中心的电子病历系统。在分析医疗基本信息管理、病人挂号就诊、医生问诊看病等各项环节上，设计并开发一套能够保障病人隐私信息，又能实现医疗数据共享，提高就诊看病效率，且符合区块链相应技术要求的规范业务流程和框架系统。基于当前的业务流程，首先建立电子病历系统的区块链网络，在病历信息对病人自愿的情况下，发展共享病历信息用于研究的激励机制，最终能够依靠区块链来实现电子病历信息的共享。</p>
 <p>项目的主要目的包括：</p>
 <p>（1）基于趣链飞洛的区块链框架</p>
 <p>采用技术成熟的趣链飞洛平台作为项目的实施平台，利用区块链的性质将病患信息入链，之后在将各个医院的病患信息整合入链，为电子病历系统建立起完备的数据服务平台。</p>
@@ -403,7 +403,8 @@ var _hmt = _hmt || [];
 <p>由于病人病历信息本身是属于个人隐私数据，所以在设计电子病历时，应当将病历信息的隐私保护放在首位。医生只有在看病时，才有权限查看病人的病历信息。病人在自愿的情况下，可以将个人病历信息脱敏后用于科学研究，致力于医疗发展。</p>
 <p>（4）编写和部署智能合约，实现业务逻辑</p>
 <p>利用智能合约，可以将系统整体的业务逻辑设计写到区块链逻辑设计中。对于区块链中的可执行代码段，根据之前所设定的业务流程，进一步地设计不同调用函数，为系统内部用户调用区块链中的数据提供支撑。</p>
-<h1 id="二、总体设计"><a href="#二、总体设计" class="headerlink" title="二、总体设计"></a>二、总体设计</h1><h2 id="1．系统结构描述"><a href="#1．系统结构描述" class="headerlink" title="1．系统结构描述"></a>1．系统结构描述</h2><p>系统结构从下而上共分为数据层、业务层、展示层三层。整体框图如下图所示。</p>
+<p><br></p>
+<h1 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h1><h2 id="系统结构描述"><a href="#系统结构描述" class="headerlink" title="系统结构描述"></a>系统结构描述</h2><p>系统结构从下而上共分为数据层、业务层、展示层三层。整体框图如下图所示。</p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233640.png" alt></p>
 <p><strong>（1）数据层</strong></p>
 <p>数据层由飞洛平台、Mongo数据库、星际文件系统（IPFS）组成。飞洛平台是趣链科技在其自主研发的区块链底层技术Hyperchain2.0的基础上，打造的可视化急速部署和运维管理平台，能够为大量特定场景提供区块链服务。在本项目中用于提供底层区块链服务平台，并通过智能合约存储相关信息。MongoDB是一个基于分布式文件存储的数据，能够提供可扩展的高性能数据存储解决方案。在本项目中用于提供缓存服务。IPFS是永久的、去中心化保存和共享文件的方法，是一种内容可寻址、版本化、点对点超媒体的分布式协议。在本项目中用于存储文件、图片等非必须内容。</p>
@@ -411,9 +412,9 @@ var _hmt = _hmt || [];
 <p>业务层根据项目的实际功能，主要划分为六大模块：登录信息管理模块、病历本管理模块、病历管理模块、就诊记录管理模块、科室管理模块、住院管理模块。登录信息模块主要用于医生、病人和管理人员的注册、登录和个人信息管理；病历本管理模块主要用于病人对个人病历本的查询与管理；病历管理模块主要用于医生对病历的管理与查询；就诊记录管理模块主要用于病人与医生之间的授权管理；科室管理模块主要用于管理人员对科室医生、出诊医生、病人挂号进行管理；住院管理模块主要用于对病人住院信息、知情同意书和手术记录进行记录和管理。</p>
 <p><strong>（3）展示层</strong></p>
 <p>在业务层基础上，通过构建web端和手机app，实现不同角色提供和展示不同的内容，用于直接与用户进行交互，引导用户执行相关的操作。</p>
-<h2 id="2．系统模块设计"><a href="#2．系统模块设计" class="headerlink" title="2．系统模块设计"></a>2．系统模块设计</h2><p>如下图所示，系统模块可分为六大模块。根据业务的流程可将系统分为四个时间节点：系统初始化阶段、就诊准备阶段、就诊问诊阶段、住院阶段。接下来将对每个时间段内需要操作的不同模块，分别进行详细的阐述。</p>
+<h2 id="系统模块设计"><a href="#系统模块设计" class="headerlink" title="系统模块设计"></a>系统模块设计</h2><p>如下图所示，系统模块可分为六大模块。根据业务的流程可将系统分为四个时间节点：系统初始化阶段、就诊准备阶段、就诊问诊阶段、住院阶段。接下来将对每个时间段内需要操作的不同模块，分别进行详细的阐述。</p>
 <p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233701.png" alt></p>
-<h3 id="2-1-系统初始化阶段"><a href="#2-1-系统初始化阶段" class="headerlink" title="2.1 系统初始化阶段"></a>2.1 系统初始化阶段</h3><p>（1）用户注册管理子模块</p>
+<h3 id="系统初始化阶段"><a href="#系统初始化阶段" class="headerlink" title="系统初始化阶段"></a>系统初始化阶段</h3><p>（1）用户注册管理子模块</p>
 <p>该子模块用于病人端、医生端和管理端的注册。三类用户的注册过程几乎相同，主要的差别体现在用户数据的结构、调用的智能合约名称以及具体的智能合约内函数。在注册时，用户首先填写个人信息，并将个人信息提交至后端，后端校验身份通过后，通过api接口创建区块链账户，完成注册。</p>
 <p>（2）用户登录管理子模块</p>
 <p>该子模块用于病人端、医生端和管理端的登录。其功能是根据传入前端的登录信息来验证是否与注册时存入区块链中的信息一致。如果一致则登录成功，反之则失败。用户再填写好信息后发送至后端，后端调用智能合约取出数据库中的信息，并依次进行验证。如果成功，则将登录信息存入session，并根据用户类型对不同用户进行不同的权限操作。</p>
@@ -446,12 +447,14 @@ var _hmt = _hmt || [];
 <p>医生创建住院病历后，即可填写查房记录、会诊记录、手术记录等表单。页面有两个按钮，第一个为保存，第二个为提交，保存按钮可保存当前的表单至缓存，保存后可继续查看与编辑；提交按钮会通过智能合约将表单保存至区块链，提交后不可编辑。</p>
 <p>（3）知情同意书管理子模块</p>
 <p>病人通过页面，上传已签名的知情同意书电子文档至IPFS，同时将文件地址以及病人编号通过智能合约存入区块链，从而完成知情同意书的上传。</p>
-<h1 id="三、原型设计"><a href="#三、原型设计" class="headerlink" title="三、原型设计"></a>三、原型设计</h1><p>产品原型是产品面市之前的一个框架设计，对描述产品的功能、人机交互形式具有十分重要的意义。接下来将选取本项目中较为重要的几个场景进行原型设计。</p>
-<h2 id="1．注册登录原型设计"><a href="#1．注册登录原型设计" class="headerlink" title="1．注册登录原型设计"></a>1．注册登录原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808231626.png" alt></p>
-<h2 id="2．病人挂号原型设计"><a href="#2．病人挂号原型设计" class="headerlink" title="2．病人挂号原型设计"></a>2．病人挂号原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232128.png" alt></p>
-<h2 id="3．添加病历原型设计"><a href="#3．添加病历原型设计" class="headerlink" title="3．添加病历原型设计"></a>3．添加病历原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232154.png" alt></p>
-<h2 id="4．病历查询原型设计"><a href="#4．病历查询原型设计" class="headerlink" title="4．病历查询原型设计"></a>4．病历查询原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232209.png" alt></p>
-<h2 id="5．病历授权原型设计"><a href="#5．病历授权原型设计" class="headerlink" title="5．病历授权原型设计"></a>5．病历授权原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232226.png" alt></p>
+<p><br></p>
+<h1 id="原型设计"><a href="#原型设计" class="headerlink" title="原型设计"></a>原型设计</h1><p>产品原型是产品面市之前的一个框架设计，对描述产品的功能、人机交互形式具有十分重要的意义。接下来将选取本项目中较为重要的几个场景进行原型设计。</p>
+<h2 id="注册登录原型设计"><a href="#注册登录原型设计" class="headerlink" title="注册登录原型设计"></a>注册登录原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808231626.png" alt></p>
+<h2 id="病人挂号原型设计"><a href="#病人挂号原型设计" class="headerlink" title="病人挂号原型设计"></a>病人挂号原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232128.png" alt></p>
+<h2 id="添加病历原型设计"><a href="#添加病历原型设计" class="headerlink" title="添加病历原型设计"></a>添加病历原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232154.png" alt></p>
+<h2 id="病历查询原型设计"><a href="#病历查询原型设计" class="headerlink" title="病历查询原型设计"></a>病历查询原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232209.png" alt></p>
+<h2 id="病历授权原型设计"><a href="#病历授权原型设计" class="headerlink" title="病历授权原型设计"></a>病历授权原型设计</h2><p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232226.png" alt></p>
+<p><br></p>
 <h1 id="四、创新点"><a href="#四、创新点" class="headerlink" title="四、创新点"></a>四、创新点</h1><p>本项目在基于传统的电子病历系统设计开发的基础上，融入了区块链技术，保证了了电子病历中的数据不可篡改和可追溯，为多家医疗机构提供入链端口，保证电子病历信息能够在多个组织间安全传送，以达到数据共享的目的。</p>
 <p>本项目实现了基于区块链的电子病历系统，主要的创新点：</p>
 <p>（1）分析了传统电子病历系统患者就诊看病的流程，为了保证病患的病历信息隐私，对医生看诊设置权限，当有问诊看病权限时，才能查看病人的电子病历信息。医生如果要查看电子病历需要得到病人的授权，且在查阅病历时候会生成不可篡改的查阅记录。</p>
@@ -478,7 +481,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>基于飞洛平台的电子病历系统设计</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年08月08日 - 23:19:20</p>
-  <p><span>最后更新:</span>2019年08月09日 - 23:40:57</p>
+  <p><span>最后更新:</span>2019年08月10日 - 10:48:38</p>
   <p><span>原始链接:</span><a href="/2019/08/08/23-BlockchainInMedical/" title="基于飞洛平台的电子病历系统设计">https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/" aria-label="复制成功！"></i></span>
   </p>
@@ -672,7 +675,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、项目介绍"><span class="nav-number">1.</span> <span class="nav-text">一、项目介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．项目背景"><span class="nav-number">1.1.</span> <span class="nav-text">1．项目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．项目目的"><span class="nav-number">1.2.</span> <span class="nav-text">2．项目目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、总体设计"><span class="nav-number">2.</span> <span class="nav-text">二、总体设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．系统结构描述"><span class="nav-number">2.1.</span> <span class="nav-text">1．系统结构描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．系统模块设计"><span class="nav-number">2.2.</span> <span class="nav-text">2．系统模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-系统初始化阶段"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1 系统初始化阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-就诊准备阶段"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 就诊准备阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-就诊问诊阶段"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 就诊问诊阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-住院阶段"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.4 住院阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、原型设计"><span class="nav-number">3.</span> <span class="nav-text">三、原型设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．注册登录原型设计"><span class="nav-number">3.1.</span> <span class="nav-text">1．注册登录原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．病人挂号原型设计"><span class="nav-number">3.2.</span> <span class="nav-text">2．病人挂号原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3．添加病历原型设计"><span class="nav-number">3.3.</span> <span class="nav-text">3．添加病历原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4．病历查询原型设计"><span class="nav-number">3.4.</span> <span class="nav-text">4．病历查询原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5．病历授权原型设计"><span class="nav-number">3.5.</span> <span class="nav-text">5．病历授权原型设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、创新点"><span class="nav-number">4.</span> <span class="nav-text">四、创新点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目介绍"><span class="nav-number">1.</span> <span class="nav-text">项目介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目背景"><span class="nav-number">1.1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目目的"><span class="nav-number">1.2.</span> <span class="nav-text">项目目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总体设计"><span class="nav-number">2.</span> <span class="nav-text">总体设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统结构描述"><span class="nav-number">2.1.</span> <span class="nav-text">系统结构描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统模块设计"><span class="nav-number">2.2.</span> <span class="nav-text">系统模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统初始化阶段"><span class="nav-number">2.2.1.</span> <span class="nav-text">系统初始化阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-就诊准备阶段"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 就诊准备阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-就诊问诊阶段"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 就诊问诊阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-住院阶段"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.4 住院阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型设计"><span class="nav-number">3.</span> <span class="nav-text">原型设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册登录原型设计"><span class="nav-number">3.1.</span> <span class="nav-text">注册登录原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病人挂号原型设计"><span class="nav-number">3.2.</span> <span class="nav-text">病人挂号原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加病历原型设计"><span class="nav-number">3.3.</span> <span class="nav-text">添加病历原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病历查询原型设计"><span class="nav-number">3.4.</span> <span class="nav-text">病历查询原型设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#病历授权原型设计"><span class="nav-number">3.5.</span> <span class="nav-text">病历授权原型设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、创新点"><span class="nav-number">4.</span> <span class="nav-text">四、创新点</span></a></li></ol></div>
             
 
           </div>
