@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="本文为基于区块链的电子病历系统项目介绍，该项目基于趣链飞洛平台。PPT">
+<meta name="description" content="本文为基于区块链的电子病历系统项目介绍，该项目基于趣链飞洛平台。">
 <meta name="keywords" content="区块链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于飞洛平台的电子病历系统设计">
-<meta property="og:url" content="https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/index.html">
+<meta property="og:url" content="https://jerryma0912.github.io/2019/08/08/24-IoT/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本文为基于区块链的电子病历系统项目介绍，该项目基于趣链飞洛平台。PPT">
+<meta property="og:description" content="本文为基于区块链的电子病历系统项目介绍，该项目基于趣链飞洛平台。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233640.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233701.png">
@@ -94,10 +94,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232154.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232209.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190808232226.png">
-<meta property="og:updated_time" content="2019-08-15T15:26:40.535Z">
+<meta property="og:updated_time" content="2019-08-15T15:20:07.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于飞洛平台的电子病历系统设计">
-<meta name="twitter:description" content="本文为基于区块链的电子病历系统项目介绍，该项目基于趣链飞洛平台。PPT">
+<meta name="twitter:description" content="本文为基于区块链的电子病历系统项目介绍，该项目基于趣链飞洛平台。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190809233640.png">
 
 
@@ -138,7 +138,7 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/">
+  <link rel="canonical" href="https://jerryma0912.github.io/2019/08/08/24-IoT/">
 
 
 
@@ -291,7 +291,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/">
+    <link itemprop="mainEntityOfPage" href="https://jerryma0912.github.io/2019/08/08/24-IoT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry">
@@ -389,7 +389,7 @@ var _hmt = _hmt || [];
       
 
       
-        <p>本文为基于区块链的电子病历系统项目介绍，该项目基于趣链飞洛平台。<a href="https://github.com/jerryma0912/BlogFileRepo/raw/master/基于趣链的电子病历管理系统.pdf" target="_blank" rel="noopener">PPT</a>  <a id="more"></a></p>
+        <p>本文为基于区块链的电子病历系统项目介绍，该项目基于趣链飞洛平台。  <a id="more"></a></p>
 <p><hr></p>
 <h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>随着互联网以及计算机技术的快速发展，促进了“互联网+医疗”新的应用场景。在近年来，在医疗卫生领域的改革效果不甚理想，城镇与乡村居民看病流程繁琐，信息数据无法共享且接受滞后，以及大量纸质病历的使用造成了资源浪费。面对种种问题，国务院在政府的工作中多次要求，要加强建设医疗体系，改善看病难的问题，使群众可以在各个医疗机构中享受更加便利的服务。对此，基于电子病历的医疗信息平台建设，可以改善上述问题。</p>
 <p>虽然在目前各医疗组织机构收集了海量病历数据，但是由于医疗病历的隐私性，病历信息只能在医院内部查看或者共享。长久以来，导致了各个医院见的病历信息封闭，缺乏一个标准化的数据共享平台，让各个医院之间的诊治医生难以查看病人完整的就诊报告，给诊治病情增加了难度。同时病历存储在各个医院的系统中，病人难以查看自己的病历记录，而且对于当前中心化的存储方式非常容易造成大量的数据泄露。不管是从病历信息的隐私性还是安全性考虑，目前并没有一个可以让病历信息共享和能够保证病历数据存储安全的系统平台。对于中心式孤岛化的医疗病历系统来说，如何既要保证病历信息数据的安全，又要让这些病历信息数据共享，发挥其合理的价值是个难以解决的问题。同时，诊治医生对于病人开具的病历到底拥有什么样的使用权力，一直是业内讨论的热点，能否保证病历记录不被恶意篡改，又恰巧是我们在技术上需要探讨的地方。如果能够有效的利用这些病历信息，保证数据安全的前提下实现信息共享，就能够积极改变我国居民的医疗就诊现状。</p>
@@ -482,9 +482,9 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>基于飞洛平台的电子病历系统设计</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年08月08日 - 23:19:20</p>
-  <p><span>最后更新:</span>2019年08月15日 - 23:26:40</p>
-  <p><span>原始链接:</span><a href="/2019/08/08/23-BlockchainInMedical/" title="基于飞洛平台的电子病历系统设计">https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/08/08/23-BlockchainInMedical/" aria-label="复制成功！"></i></span>
+  <p><span>最后更新:</span>2019年08月15日 - 23:20:07</p>
+  <p><span>原始链接:</span><a href="/2019/08/08/24-IoT/" title="基于飞洛平台的电子病历系统设计">https://jerryma0912.github.io/2019/08/08/24-IoT/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/08/08/24-IoT/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -529,8 +529,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/26/22-blockchainInIOT/" rel="next" title="区块链在IOT设备访问控制中的应用">
-                <i class="fa fa-chevron-left"></i> 区块链在IOT设备访问控制中的应用
+              <a href="/2019/08/08/23-BlockchainInMedical/" rel="next" title="基于飞洛平台的电子病历系统设计">
+                <i class="fa fa-chevron-left"></i> 基于飞洛平台的电子病历系统设计
               </a>
             
           </div>
@@ -538,10 +538,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/08/24-IoT/" rel="prev" title="基于飞洛平台的电子病历系统设计">
-                基于飞洛平台的电子病历系统设计 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
