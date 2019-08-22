@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="DNS,">
+  <meta name="keywords" content="PKI,">
 
 
 
@@ -79,18 +79,66 @@
 
 
 
-<meta name="description" content="本文简述了配置DNS服务器时常用的各记录类型的含义以及常用的配置方法。本文转自dns和常见dns记录类型介绍">
-<meta name="keywords" content="DNS">
+<meta name="description" content="《爱春秋学院》网络安全课程PPT。观看课程在线视频，请点击此处（需要梯子）。">
+<meta name="keywords" content="PKI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DNS的记录类型及配置的说明">
-<meta property="og:url" content="https://jerryma0912.github.io/2018/03/09/9-DNS/index.html">
+<meta property="og:title" content="PKI基本原理">
+<meta property="og:url" content="https://jerryma0912.github.io/2019/08/16/25-DESInstruction/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本文简述了配置DNS服务器时常用的各记录类型的含义以及常用的配置方法。本文转自dns和常见dns记录类型介绍">
+<meta property="og:description" content="《爱春秋学院》网络安全课程PPT。观看课程在线视频，请点击此处（需要梯子）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T11:53:40.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817010623.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011510.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011541.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011852.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011919.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011946.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817012022.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190818235116.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141401.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141423.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141452.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819214630.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141602.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141730.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819143327.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819150052.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224417.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819213000.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819214839.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819215912.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220114.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220140.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220212.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220356.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220436.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222226.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222303.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222503.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222525.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222710.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222733.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222818.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222838.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222954.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223019.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223142.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223203.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223349.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223431.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223624.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223654.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223729.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223829.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223853.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224029.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224124.png">
+<meta property="og:updated_time" content="2019-08-22T11:11:28.348Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DNS的记录类型及配置的说明">
-<meta name="twitter:description" content="本文简述了配置DNS服务器时常用的各记录类型的含义以及常用的配置方法。本文转自dns和常见dns记录类型介绍">
+<meta name="twitter:title" content="PKI基本原理">
+<meta name="twitter:description" content="《爱春秋学院》网络安全课程PPT。观看课程在线视频，请点击此处（需要梯子）。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817010623.png">
 
 
 
@@ -130,13 +178,13 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="https://jerryma0912.github.io/2018/03/09/9-DNS/">
+  <link rel="canonical" href="https://jerryma0912.github.io/2019/08/16/25-DESInstruction/">
 
 
 
 
 
-  <title>DNS的记录类型及配置的说明 | JERRY HOME</title>
+  <title>PKI基本原理 | JERRY HOME</title>
   
 
 
@@ -283,7 +331,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jerryma0912.github.io/2018/03/09/9-DNS/">
+    <link itemprop="mainEntityOfPage" href="https://jerryma0912.github.io/2019/08/16/25-DESInstruction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry">
@@ -300,7 +348,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">DNS的记录类型及配置的说明</h1>
+          <h1 class="post-title" itemprop="name headline">PKI基本原理</h1>
         
 
         <div class="post-meta">
@@ -312,8 +360,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T19:28:33+08:00">
-                2018-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T23:34:25+08:00">
+                2019-08-16
               </time>
             
 
@@ -322,39 +370,6 @@ var _hmt = _hmt || [];
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/科学上网/" itemprop="url" rel="index">
-                    <span itemprop="name">科学上网</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/科学上网/2-DNS记录与配置/" itemprop="url" rel="index">
-                    <span itemprop="name">2. DNS记录与配置</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -377,7 +392,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  433 字
+                  29 字
                 </span>
               
 
@@ -414,20 +429,54 @@ var _hmt = _hmt || [];
       
 
       
-        <p>本文简述了配置DNS服务器时常用的各记录类型的含义以及常用的配置方法。本文转自<a href="http://blog.csdn.net/u013920085/article/details/42552987" target="_blank" rel="noopener">dns和常见dns记录类型介绍</a><br><a id="more"></a></p>
-<h3 id="DNS常用的记录类型"><a href="#DNS常用的记录类型" class="headerlink" title="DNS常用的记录类型"></a>DNS常用的记录类型</h3><h4 id="A记录"><a href="#A记录" class="headerlink" title="A记录"></a>A记录</h4><p>A（Address）记录是将指定的域名解析到指定的IP地址。</p>
-<h4 id="AAAA记录"><a href="#AAAA记录" class="headerlink" title="AAAA记录"></a>AAAA记录</h4><p>AAAA记录是将指定的域名解析到指定的IPV6的IP地址。</p>
-<h4 id="CNAME记录"><a href="#CNAME记录" class="headerlink" title="CNAME记录"></a>CNAME记录</h4><p>CNAME记录是将一个域名的别名指定到一个域名上。这样的好处在于方便更换IP地址。</p>
-<h3 id="NS记录"><a href="#NS记录" class="headerlink" title="NS记录"></a>NS记录</h3><p>NS（Name Server）记录是域名服务器记录，用来指定该域名由哪个DNS服务器来进行解析。</p>
-<h4 id="MX记录"><a href="#MX记录" class="headerlink" title="MX记录"></a>MX记录</h4><p>MX（Mail Exchanger）记录是邮件交换记录，它指向一个邮件服务器，用于电子邮件系统发邮件时根据收信人的地址后缀来定位邮件服务器。例如，当Internet上的某用户要发一封信给 <a href="mailto:user@mydomain.com" target="_blank" rel="noopener">user@mydomain.com</a> 时，该用户的邮件系统通过DNS查找mydomain.com这个域名的MX记录，如果MX记录存在， 用户计算机就将邮件发送到MX记录所指定的邮件服务器上。</p>
-<h4 id="TXT记录"><a href="#TXT记录" class="headerlink" title="TXT记录"></a>TXT记录</h4><p>TXT记录指的是某个主机名或域名的说明，https利用txt记录来验证主机就是txt的应用之一。</p>
-<hr>
-
-<h3 id="DNS配置方法"><a href="#DNS配置方法" class="headerlink" title="DNS配置方法"></a>DNS配置方法</h3><p>在<a href="https://my.freenom.com/clientarea.php" target="_blank" rel="noopener">注册域名</a>后,在域名管理中填写DNS解析服务器的地址。在DNS解析服务器的管理界面中，针对域名根据需要配填写DNS的条目。通常的格式为<code>TYPE   NAME    DATA    TTL</code></p>
-<ul>
-<li>如果解析本域名，则<code>NAME</code>填写<code>@</code></li>
-<li>如果需要设置域名泛解析，即对所有的次级域名进行解析，则<code>NAME</code>填写<code>*</code></li>
-</ul>
+        <p>  《爱春秋学院》网络安全课程PPT。观看课程在线视频，请<a href="https://www.youtube.com/watch?v=U40fgu2mbFg" target="_blank" rel="noopener">点击此处</a>（需要梯子）。<a id="more"></a></p>
+<p><hr><br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817010623.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011510.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011541.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011852.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011919.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011946.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817012022.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190818235116.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141401.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141423.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141452.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819214630.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141602.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141730.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819143327.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819150052.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224417.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819213000.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819214839.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819215912.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220114.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220140.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220212.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220356.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220436.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222226.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222303.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222503.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222525.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222710.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222733.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222818.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222838.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222954.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223019.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223142.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223203.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223349.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223431.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223624.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223654.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223729.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223829.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223853.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224029.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224055.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224124.png" alt></p>
 
       
     </div>
@@ -446,12 +495,12 @@ var _hmt = _hmt || [];
   <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
 
-  <p><span>本文标题:</span>DNS的记录类型及配置的说明</p>
+  <p><span>本文标题:</span>PKI基本原理</p>
   <p><span>文章作者:</span>Jerry</p>
-  <p><span>发布时间:</span>2018年03月09日 - 19:28:33</p>
-  <p><span>最后更新:</span>2018年03月09日 - 19:53:40</p>
-  <p><span>原始链接:</span><a href="/2018/03/09/9-DNS/" title="DNS的记录类型及配置的说明">https://jerryma0912.github.io/2018/03/09/9-DNS/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2018/03/09/9-DNS/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年08月16日 - 23:34:25</p>
+  <p><span>最后更新:</span>2019年08月22日 - 19:11:28</p>
+  <p><span>原始链接:</span><a href="/2019/08/16/25-DESInstruction/" title="PKI基本原理">https://jerryma0912.github.io/2019/08/16/25-DESInstruction/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/08/16/25-DESInstruction/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -483,7 +532,7 @@ var _hmt = _hmt || [];
       
         <div class="post-tags">
           
-            <a href="/tags/DNS/" rel="tag"># DNS</a>
+            <a href="/tags/PKI/" rel="tag"># PKI</a>
           
         </div>
       
@@ -496,8 +545,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/05/8-kali/" rel="next" title="kali学习笔记">
-                <i class="fa fa-chevron-left"></i> kali学习笔记
+              <a href="/2019/08/16/24-PKIInstruction/" rel="next" title="DES基本原理">
+                <i class="fa fa-chevron-left"></i> DES基本原理
               </a>
             
           </div>
@@ -505,10 +554,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/09/10-frp-install/" rel="prev" title="在局域网内利用frp及SSR搭建局域网代理服务器">
-                在局域网内利用frp及SSR搭建局域网代理服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -565,17 +610,8 @@ var _hmt = _hmt || [];
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -637,22 +673,6 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS常用的记录类型"><span class="nav-number">1.</span> <span class="nav-text">DNS常用的记录类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A记录"><span class="nav-number">1.1.</span> <span class="nav-text">A记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AAAA记录"><span class="nav-number">1.2.</span> <span class="nav-text">AAAA记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CNAME记录"><span class="nav-number">1.3.</span> <span class="nav-text">CNAME记录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NS记录"><span class="nav-number">2.</span> <span class="nav-text">NS记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MX记录"><span class="nav-number">2.1.</span> <span class="nav-text">MX记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TXT记录"><span class="nav-number">2.2.</span> <span class="nav-text">TXT记录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS配置方法"><span class="nav-number">3.</span> <span class="nav-text">DNS配置方法</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
