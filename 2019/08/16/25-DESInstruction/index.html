@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="PKI,">
+  <meta name="keywords" content="DES,">
 
 
 
@@ -79,66 +79,23 @@
 
 
 
-<meta name="description" content="《爱春秋学院》网络安全课程PPT。观看课程在线视频，请点击此处（需要梯子）。">
-<meta name="keywords" content="PKI">
+<meta name="description" content="数据加密标准（Data Encryption Standard，DES）学习笔记。">
+<meta name="keywords" content="DES">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PKI基本原理">
+<meta property="og:title" content="DES基本原理">
 <meta property="og:url" content="https://jerryma0912.github.io/2019/08/16/25-DESInstruction/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="《爱春秋学院》网络安全课程PPT。观看课程在线视频，请点击此处（需要梯子）。">
+<meta property="og:description" content="数据加密标准（Data Encryption Standard，DES）学习笔记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817010623.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011510.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011541.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011852.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011919.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011946.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817012022.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190818235116.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141401.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141423.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141452.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819214630.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141602.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141730.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819143327.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819150052.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224417.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819213000.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819214839.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819215912.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220114.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220140.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220212.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220356.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220436.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222226.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222303.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222503.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222525.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222710.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222733.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222818.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222838.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222954.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223019.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223142.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223203.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223349.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223431.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223624.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223654.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223729.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223829.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223853.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224029.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224055.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224124.png">
-<meta property="og:updated_time" content="2019-08-23T15:49:13.321Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822222758.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822194000.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822193206.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822194609.png">
+<meta property="og:updated_time" content="2019-08-25T15:42:44.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PKI基本原理">
-<meta name="twitter:description" content="《爱春秋学院》网络安全课程PPT。观看课程在线视频，请点击此处（需要梯子）。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817010623.png">
+<meta name="twitter:title" content="DES基本原理">
+<meta name="twitter:description" content="数据加密标准（Data Encryption Standard，DES）学习笔记。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822222758.png">
 
 
 
@@ -184,7 +141,7 @@ var _hmt = _hmt || [];
 
 
 
-  <title>PKI基本原理 | JERRY HOME</title>
+  <title>DES基本原理 | JERRY HOME</title>
   
 
 
@@ -348,7 +305,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">PKI基本原理</h1>
+          <h1 class="post-title" itemprop="name headline">DES基本原理</h1>
         
 
         <div class="post-meta">
@@ -392,7 +349,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  29 字
+                  957 字
                 </span>
               
 
@@ -408,7 +365,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -429,54 +386,76 @@ var _hmt = _hmt || [];
       
 
       
-        <p>  《爱春秋学院》<strong>网络安全课程</strong>PPT。观看课程在线视频，请<a href="https://www.youtube.com/watch?v=U40fgu2mbFg" target="_blank" rel="noopener">点击此处</a>（需要梯子）。<a id="more"></a></p>
-<p><hr><br><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817010623.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011510.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011541.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011852.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011919.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817011946.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190817012022.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190818235116.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141401.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141423.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141452.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819214630.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141602.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819141730.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819143327.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819150052.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224417.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819213000.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819214839.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819215912.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220114.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220140.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220212.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220356.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819220436.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222226.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222303.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222503.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222525.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222710.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222733.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222818.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222838.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819222954.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223019.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223142.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223203.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223349.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223431.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223624.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223654.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223729.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223829.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819223853.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224029.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224055.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190819224124.png" alt></p>
+        <p>数据加密标准（Data Encryption Standard，DES）学习笔记。<a id="more"></a></p>
+<p><hr></p>
+<h2 id="DES出现的背景"><a href="#DES出现的背景" class="headerlink" title="DES出现的背景"></a>DES出现的背景</h2><ol>
+<li>民间对密码学研究较少</li>
+<li>没有对密码的评估标准</li>
+<li>商业保密的需求出现</li>
+</ol>
+<h2 id="DES提出的目的"><a href="#DES提出的目的" class="headerlink" title="DES提出的目的"></a>DES提出的目的</h2><ol>
+<li>算法必须提供较高的安全性</li>
+<li>算法必须完全确定且易于理解</li>
+<li>算法的安全性必须依赖于密钥，而不依赖于算法</li>
+<li>算法必须对所有的用户都有效</li>
+<li>算法必须适用于各种应用</li>
+<li>用以实现算法的电子器件必须很经济</li>
+<li>算法必须能有效使用</li>
+<li>算法必须能验证</li>
+<li>算法必须能出口</li>
+</ol>
+<h2 id="DES算法的实现"><a href="#DES算法的实现" class="headerlink" title="DES算法的实现"></a>DES算法的实现</h2><p><strong>背景</strong>：用户自己设定的密码直接运算，不靠谱；希望实现类似一次密码本的安全性</p>
+<p><strong>算法</strong>：</p>
+<ol>
+<li><p>用户输入的父密钥，生成16个子秘钥（如下图），进行16轮Feistel加密运算（如下图，因为Feistel加密中，2轮加密整个输入值，因此16轮Feistel算加密了8次）。</p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822222758.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822194000.png" alt></p>
+</li>
+<li><p>单轮Feistel的算法：将输入的64bit拆分为左右两个部分，右部分通过轮转函数后充当密钥，加密左侧。加密的左侧和右侧明文组合在一起，算作一轮的输出。因为这种算法只加密了一半，因此需要采用多轮Feistel进行加密。</p>
+<p><strong>Feistel轮的特点</strong>：加密算法和解密算法逻辑相同，可以使用同一套电路；用以实现算法的电子器件很经济；明文自身参加密钥流的生成。</p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822193206.png" alt></p>
+</li>
+<li><p>轮转函数：无可逆性要求，输入是密钥和明文。</p>
+<p><img src="https://raw.githubusercontent.com/jerryma0912/BlogPicRepo/master/20190822194609.png" alt></p>
+</li>
+</ol>
+<h2 id="DES的安全性"><a href="#DES的安全性" class="headerlink" title="DES的安全性"></a>DES的安全性</h2><h3 id="坊间对DES的安全质疑"><a href="#坊间对DES的安全质疑" class="headerlink" title="坊间对DES的安全质疑"></a>坊间对DES的安全质疑</h3><ol>
+<li>NSA对S盒（替换运算）切入陷门（同一问题的快速算法），NSA可以通过一个简单地方法对消息进行解密。</li>
+<li>112位密钥被修改为56位密钥。</li>
+<li>为何选择16轮的迭代加密运算，不多也不少。</li>
+</ol>
+<h3 id="密码分析的DES安全性"><a href="#密码分析的DES安全性" class="headerlink" title="密码分析的DES安全性"></a>密码分析的DES安全性</h3><h4 id="弱密钥"><a href="#弱密钥" class="headerlink" title="弱密钥"></a>弱密钥</h4><ol>
+<li>全弱密码：全0全1密钥，DES轮转加密变成完全相同的16次重复运算。</li>
+<li>半弱密码：只生成2个子秘钥。</li>
+<li>1/4弱密码：只生成4个子秘钥。</li>
+<li>弱密钥问题可以忽略不计因为密钥空间很大。</li>
+</ol>
+<h4 id="补密钥"><a href="#补密钥" class="headerlink" title="补密钥"></a>补密钥</h4><ol>
+<li>Ek(P)=C</li>
+<li>Ek’(P’)=C’</li>
+<li>选择明文攻击，测试的密钥数减少一半 2^56 -&gt; 2^55</li>
+</ol>
+<h4 id="代数结构"><a href="#代数结构" class="headerlink" title="代数结构"></a>代数结构</h4><ol>
+<li>理想的DES：64位明文分组映射到(2^64)!可能密文分组。</li>
+<li>56位密钥，理想上提供了2^56个映射关系，采用多重加密看起来似乎可以获得这些可能映射关系中的更多部分。然而，这仅仅在DES运算不具有某种代数结构的条件下才成立。</li>
+<li>1992年数学证明DES不是一个群</li>
+<li>担心中间相遇攻击（Meeting In The Middle）：Ek3(Ek2(Ek1(P))) = Ek4(P)</li>
+</ol>
+<h4 id="密钥长度"><a href="#密钥长度" class="headerlink" title="密钥长度"></a>密钥长度</h4><ol>
+<li>IBM最初的112为密钥，被NSA修改为56位密钥</li>
+<li>暴力攻击现在已经成为可能</li>
+</ol>
+<h4 id="迭代次数"><a href="#迭代次数" class="headerlink" title="迭代次数"></a>迭代次数</h4><ol>
+<li>为什么是16轮而不是32轮</li>
+<li>密文5轮迭代后，密文每一位基本上是所有明文和密文的函数。经过8轮迭代后，密文基本上是所有明文和密钥位的随机函数（雪崩效应），那么为什么8轮后还不停止。</li>
+<li>目前的成果，低于16轮任意DES的已知明文攻击，要比群举攻击有效。有趣的是当算法恰好有16轮时，只有群举攻击最有效。</li>
+</ol>
+<h4 id="其他攻击"><a href="#其他攻击" class="headerlink" title="其他攻击"></a>其他攻击</h4><ol>
+<li>差分密码分析</li>
+<li>线性密码分析</li>
+</ol>
+<h2 id="优化的DES：3DES算法实现"><a href="#优化的DES：3DES算法实现" class="headerlink" title="优化的DES：3DES算法实现"></a>优化的DES：3DES算法实现</h2><p><strong>3DES的实现</strong>：加密 - 解密 - 加密</p>
+<p><strong>其他优化方式</strong>：DESX、更换S盒、独立子秘钥、RDES、SnDES、GDES、CRYPT(3)，但是大部分都存在问题。</p>
 
       
     </div>
@@ -495,11 +474,11 @@ var _hmt = _hmt || [];
   <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
 
-  <p><span>本文标题:</span>PKI基本原理</p>
+  <p><span>本文标题:</span>DES基本原理</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2019年08月16日 - 23:34:25</p>
-  <p><span>最后更新:</span>2019年08月23日 - 23:49:13</p>
-  <p><span>原始链接:</span><a href="/2019/08/16/25-DESInstruction/" title="PKI基本原理">https://jerryma0912.github.io/2019/08/16/25-DESInstruction/</a>
+  <p><span>最后更新:</span>2019年08月25日 - 23:42:44</p>
+  <p><span>原始链接:</span><a href="/2019/08/16/25-DESInstruction/" title="DES基本原理">https://jerryma0912.github.io/2019/08/16/25-DESInstruction/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2019/08/16/25-DESInstruction/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -532,7 +511,7 @@ var _hmt = _hmt || [];
       
         <div class="post-tags">
           
-            <a href="/tags/PKI/" rel="tag"># PKI</a>
+            <a href="/tags/DES/" rel="tag"># DES</a>
           
         </div>
       
@@ -545,8 +524,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/16/24-PKIInstruction/" rel="next" title="DES基本原理">
-                <i class="fa fa-chevron-left"></i> DES基本原理
+              <a href="/2019/08/16/24-PKIInstruction/" rel="next" title="PKI基本原理">
+                <i class="fa fa-chevron-left"></i> PKI基本原理
               </a>
             
           </div>
@@ -610,8 +589,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -673,6 +661,22 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DES出现的背景"><span class="nav-number">1.</span> <span class="nav-text">DES出现的背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DES提出的目的"><span class="nav-number">2.</span> <span class="nav-text">DES提出的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DES算法的实现"><span class="nav-number">3.</span> <span class="nav-text">DES算法的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DES的安全性"><span class="nav-number">4.</span> <span class="nav-text">DES的安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坊间对DES的安全质疑"><span class="nav-number">4.1.</span> <span class="nav-text">坊间对DES的安全质疑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密码分析的DES安全性"><span class="nav-number">4.2.</span> <span class="nav-text">密码分析的DES安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#弱密钥"><span class="nav-number">4.2.1.</span> <span class="nav-text">弱密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补密钥"><span class="nav-number">4.2.2.</span> <span class="nav-text">补密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代数结构"><span class="nav-number">4.2.3.</span> <span class="nav-text">代数结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#密钥长度"><span class="nav-number">4.2.4.</span> <span class="nav-text">密钥长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代次数"><span class="nav-number">4.2.5.</span> <span class="nav-text">迭代次数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他攻击"><span class="nav-number">4.2.6.</span> <span class="nav-text">其他攻击</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化的DES：3DES算法实现"><span class="nav-number">5.</span> <span class="nav-text">优化的DES：3DES算法实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
