@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>https://jerryma0912.github.io/2018/03/05/8-kali/</loc>
+    <lastmod>2019-08-28T15:59:29.683Z</lastmod>
+    <data>
+        <display>
+        <title>kali学习笔记</title>
+        <pubTime>2018-03-05T15:38:53.000Z</pubTime>
+        
+        <tag>kali</tag>
+         
+         
+           
+             
+              <breadCrumb title="网络安全学习笔记" url="https://jerryma0912.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="1. kali的搭建与使用" url="https://jerryma0912.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1-kali%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://jerryma0912.github.io/2019/08/26/26-Cryptography/</loc>
     <lastmod>2019-08-27T15:50:09.195Z</lastmod>
     <data>
@@ -238,29 +261,6 @@
           
              
               <breadCrumb title="2. OverTheWire" url="https://jerryma0912.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2-OverTheWire/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://jerryma0912.github.io/2018/03/05/8-kali/</loc>
-    <lastmod>2018-07-24T02:35:15.000Z</lastmod>
-    <data>
-        <display>
-        <title>kali学习笔记</title>
-        <pubTime>2018-03-05T15:38:53.000Z</pubTime>
-        
-        <tag>kali</tag>
-         
-         
-           
-             
-              <breadCrumb title="网络安全学习笔记" url="https://jerryma0912.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-             
-              <breadCrumb title="1. kali的搭建与使用" url="https://jerryma0912.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1-kali%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
           
         </display>
     </data>

