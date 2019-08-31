@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="本文阐述了利用python向校园网络发送认证请求的方法。操作系统:macOS-10.12.6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-14T13:28:28.933Z">
+<meta property="og:updated_time" content="2019-08-31T15:52:34.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用python发送校园网络认证请求">
 <meta name="twitter:description" content="本文阐述了利用python向校园网络发送认证请求的方法。操作系统:macOS-10.12.6">
@@ -415,7 +415,7 @@ var _hmt = _hmt || [];
 
       
         <p>本文阐述了利用python向校园网络发送认证请求的方法。操作系统:macOS-10.12.6<br><a id="more"></a></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学校的网络从去年起，必须经过网络身份认证，才能接入互联网。每次认证后仅在当天有效。第二天凌晨3点后就必须重新认证。<br>因此，这对需要挂机下文件的用户/挂服务器的用户/每次开机想直接上网的用户而言造成了很大的麻烦。因此，我使用python写了一个认证小程序。</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学校的网络从去年起，必须经过网络身份认证，才能接入互联网。每次认证后仅在当天有效。第二天凌晨3点后就必须重新认证。<br>因此，这对需要挂机下文件的用户/挂服务器的用户/每次开机想直接上网的用户而言造成了很大的麻烦。因此，我使用python写了一个认证小程序。 </p>
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>学校的认证采用网页认证的方法，也就是说登录指定的url，输入账号和密码，即可完成认证。因此，通过brupsuite的抓包，发现该http数据包采用post请求，将数据体的指定内容发送到指定的url上。因此，利用python的http库，编写了程序。</p>
 <h3 id="认证程序"><a href="#认证程序" class="headerlink" title="认证程序"></a>认证程序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">cs_url = <span class="string">"http://10.69.253.12/ac_portal/login.php"</span></span><br><span class="line">my_data=&#123;</span><br><span class="line">    <span class="string">"opr"</span> : <span class="string">"pwdLogin"</span>,</span><br><span class="line">    <span class="string">"userName"</span> : <span class="string">"-----"</span>,    <span class="comment">#输入账号</span></span><br><span class="line">    <span class="string">"pwd"</span> : <span class="string">"-----"</span>,    <span class="comment">#输入密码</span></span><br><span class="line">    <span class="string">"rememberPwd"</span> : <span class="string">"0"</span></span><br><span class="line">&#125;</span><br><span class="line">r = requests.post(cs_url,data=my_data)</span><br></pre></td></tr></table></figure>
 <p>我将python脚本放在<code>/usr/local/</code>路径下，文件名为<code>zucclogin.py</code>。</p>
@@ -448,7 +448,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>使用python发送校园网络认证请求</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2018年03月19日 - 16:24:03</p>
-  <p><span>最后更新:</span>2019年08月14日 - 21:28:28</p>
+  <p><span>最后更新:</span>2019年08月31日 - 23:52:34</p>
   <p><span>原始链接:</span><a href="/2018/03/19/13-loginZUCC/" title="使用python发送校园网络认证请求">https://jerryma0912.github.io/2018/03/19/13-loginZUCC/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2018/03/19/13-loginZUCC/" aria-label="复制成功！"></i></span>
   </p>
