@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerryma0912.github.io/2018/02/02/5-python-string/</loc>
+    
+    <lastmod>2019-09-04T15:15:07.626Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerryma0912.github.io/2019/08/26/26-Cryptography/</loc>
     
     <lastmod>2019-09-03T15:37:42.764Z</lastmod>
@@ -173,13 +180,6 @@
     <loc>https://jerryma0912.github.io/2018/03/09/9-DNS/</loc>
     
     <lastmod>2018-03-09T11:53:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jerryma0912.github.io/2018/02/02/5-python-string/</loc>
-    
-    <lastmod>2018-02-06T08:42:55.000Z</lastmod>
     
   </url>
   

@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>https://jerryma0912.github.io/2018/02/02/5-python-string/</loc>
+    <lastmod>2019-09-04T15:15:07.626Z</lastmod>
+    <data>
+        <display>
+        <title>python的字符串处理与特殊函数</title>
+        <pubTime>2018-02-02T00:45:25.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="2. 字符串处理与特殊函数" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E4%B8%8E%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://jerryma0912.github.io/2019/08/26/26-Cryptography/</loc>
     <lastmod>2019-09-03T15:37:42.764Z</lastmod>
     <data>
@@ -514,29 +537,6 @@
           
              
               <breadCrumb title="2. DNS记录与配置" url="https://jerryma0912.github.io/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/2-DNS%E8%AE%B0%E5%BD%95%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://jerryma0912.github.io/2018/02/02/5-python-string/</loc>
-    <lastmod>2018-02-06T08:42:55.000Z</lastmod>
-    <data>
-        <display>
-        <title>python的字符串处理与特殊函数</title>
-        <pubTime>2018-02-02T00:45:25.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-             
-              <breadCrumb title="2. 字符串处理与特殊函数" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E4%B8%8E%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/"/>
           
         </display>
     </data>
