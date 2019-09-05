@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>https://jerryma0912.github.io/2018/02/06/6-python-class/</loc>
+    <lastmod>2019-09-05T15:41:01.068Z</lastmod>
+    <data>
+        <display>
+        <title>python的面向对象</title>
+        <pubTime>2018-02-06T08:47:25.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="3.面向对象" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://jerryma0912.github.io/2018/02/02/5-python-string/</loc>
     <lastmod>2019-09-04T15:15:07.626Z</lastmod>
     <data>
@@ -376,29 +399,6 @@
           
              
               <breadCrumb title="4.学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/4-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://jerryma0912.github.io/2018/02/06/6-python-class/</loc>
-    <lastmod>2018-04-03T10:34:38.000Z</lastmod>
-    <data>
-        <display>
-        <title>python的面向对象</title>
-        <pubTime>2018-02-06T08:47:25.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-             
-              <breadCrumb title="3.面向对象" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
           
         </display>
     </data>
