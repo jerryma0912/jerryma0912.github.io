@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>https://jerryma0912.github.io/2018/04/03/16-python-note/</loc>
+    <lastmod>2019-09-08T15:34:19.781Z</lastmod>
+    <data>
+        <display>
+        <title>python学习笔记</title>
+        <pubTime>2018-04-03T11:59:43.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="4.学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/4-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://jerryma0912.github.io/2018/02/02/5-python-string/</loc>
     <lastmod>2019-09-07T15:43:51.195Z</lastmod>
     <data>
@@ -376,29 +399,6 @@
           
              
               <breadCrumb title="1. 服务器环境搭建" url="https://jerryma0912.github.io/categories/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/1-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://jerryma0912.github.io/2018/04/03/16-python-note/</loc>
-    <lastmod>2018-04-16T13:51:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>python学习笔记</title>
-        <pubTime>2018-04-03T11:59:43.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-             
-              <breadCrumb title="4.学习笔记" url="https://jerryma0912.github.io/categories/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/4-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
