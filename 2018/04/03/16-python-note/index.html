@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="我在学习完C++后开始学习的python，因此本文主要记录了在学习python时的笔记，以及python语法与c++的一些区别。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-09T15:48:05.056Z">
+<meta property="og:updated_time" content="2019-09-11T15:37:15.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记">
 <meta name="twitter:description" content="我在学习完C++后开始学习的python，因此本文主要记录了在学习python时的笔记，以及python语法与c++的一些区别。">
@@ -479,7 +479,7 @@ var _hmt = _hmt || [];
 <li>函数对象有一个<strong>name</strong>属性，可以拿到函数的名字</li>
 <li><p>在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import functools</span><br><span class="line">def log(func):</span><br><span class="line">    @functools.wraps(func)</span><br><span class="line">    def wrapper(*args, **kw):</span><br><span class="line">      print(&apos;call %s():&apos; % func.__name__)</span><br><span class="line">      return func(*args, **kw)</span><br><span class="line">    return wrapper</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import functools</span><br><span class="line">def log(text):</span><br><span class="line">    def decorator(func):</span><br><span class="line">       @functools.wraps(func)</span><br><span class="line">       def wrapper(*args, **kw):</span><br><span class="line">            print(&apos;%s %s():&apos; % (text, func.__name__))</span><br><span class="line">            return func(*args, **kw)</span><br><span class="line">       return wrapper</span><br><span class="line">  return decorator</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">       @functools.wraps(func)</span></span><br><span class="line">       <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">            print(<span class="string">'%s %s():'</span> % (text, func.__name__))</span><br><span class="line">            <span class="keyword">return</span> func(*args, **kw)</span><br><span class="line">       <span class="keyword">return</span> wrapper</span><br><span class="line">  <span class="keyword">return</span> decorator</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>functools.partial可以帮助我们创建偏函数。<code>int2 = functools.partial(int, base=2)</code>，<code>max2 = functools.partial(max, 10)</code></p>
 </li>
@@ -679,7 +679,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>python学习笔记</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2018年04月03日 - 19:59:43</p>
-  <p><span>最后更新:</span>2019年09月09日 - 23:48:05</p>
+  <p><span>最后更新:</span>2019年09月11日 - 23:37:15</p>
   <p><span>原始链接:</span><a href="/2018/04/03/16-python-note/" title="python学习笔记">https://jerryma0912.github.io/2018/04/03/16-python-note/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2018/04/03/16-python-note/" aria-label="复制成功！"></i></span>
   </p>
