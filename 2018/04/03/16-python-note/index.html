@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="我在学习完C++后开始学习的python，因此本文主要记录了在学习python时的笔记，以及python语法与c++的一些区别。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-11T15:37:15.729Z">
+<meta property="og:updated_time" content="2019-09-12T15:52:53.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记">
 <meta name="twitter:description" content="我在学习完C++后开始学习的python，因此本文主要记录了在学习python时的笔记，以及python语法与c++的一些区别。">
@@ -377,7 +377,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  11.3k 字
+                  11.2k 字
                 </span>
               
 
@@ -550,7 +550,7 @@ var _hmt = _hmt || [];
 </ol>
 <h3 id="错误、调试、测试"><a href="#错误、调试、测试" class="headerlink" title="错误、调试、测试"></a>错误、调试、测试</h3><ol>
 <li><p>当我们认为某些代码可能会出错时，就可以用try来运行这段代码，如果执行出错，则后续代码不会继续执行，而是直接跳转至错误处理代码，即except语句块，执行完except后，如果有finally语句块，则执行finally语句块，至此，执行完毕。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    print(&apos;try...&apos;)</span><br><span class="line">    r = 10 / int(&apos;2&apos;)</span><br><span class="line">    print(&apos;result:&apos;, r)</span><br><span class="line">except ValueError as e:</span><br><span class="line">    print(&apos;ValueError:&apos;, e)</span><br><span class="line">except ZeroDivisionError as e:</span><br><span class="line">    print(&apos;ZeroDivisionError:&apos;, e)</span><br><span class="line">else:</span><br><span class="line">    print(&apos;no error!&apos;)</span><br><span class="line">finally:</span><br><span class="line">    print(&apos;finally...&apos;)</span><br><span class="line">print(&apos;END&apos;)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="string">'try...'</span>)</span><br><span class="line">    r = <span class="number">10</span> / int(<span class="string">'2'</span>)</span><br><span class="line">    print(<span class="string">'result:'</span>, r)</span><br><span class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'ValueError:'</span>, e)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'ZeroDivisionError:'</span>, e)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'no error!'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">'finally...'</span>)</span><br><span class="line">print(<span class="string">'END'</span>)</span><br></pre></td></tr></table></figure>
 <p> Python的错误其实也是class，所有的错误类型都继承自BaseException，所以在使用except时需要注意的是，它不但捕获该类型的错误，还把其子类也“一网打尽”。<a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" target="_blank" rel="noopener">常见的错误类型和继承关系</a><br> 不需要在每个可能出错的地方去捕获错误，只要在合适的层次去捕获错误就可以了。这样一来，就大大减少了写try…except…finally的麻烦。</p>
 </li>
 <li><p>Python内置的logging模块可以非常容易地记录错误信息，同时，<code>让程序继续执行下去</code>。通过配置，logging还可以把错误记录到日志文件里，方便事后排查。</p>
@@ -679,7 +679,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>python学习笔记</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2018年04月03日 - 19:59:43</p>
-  <p><span>最后更新:</span>2019年09月11日 - 23:37:15</p>
+  <p><span>最后更新:</span>2019年09月12日 - 23:52:53</p>
   <p><span>原始链接:</span><a href="/2018/04/03/16-python-note/" title="python学习笔记">https://jerryma0912.github.io/2018/04/03/16-python-note/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2018/04/03/16-python-note/" aria-label="复制成功！"></i></span>
   </p>
