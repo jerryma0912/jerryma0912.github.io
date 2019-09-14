@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JERRY HOME">
 <meta property="og:description" content="我在学习完C++后开始学习的python，因此本文主要记录了在学习python时的笔记，以及python语法与c++的一些区别。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-12T15:52:53.213Z">
+<meta property="og:updated_time" content="2019-09-14T15:54:46.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记">
 <meta name="twitter:description" content="我在学习完C++后开始学习的python，因此本文主要记录了在学习python时的笔记，以及python语法与c++的一些区别。">
@@ -582,7 +582,7 @@ var _hmt = _hmt || [];
 <p>如果要操作二进制数据，就需要使用BytesIO.函数与StringIO相同。</p>
 </li>
 <li><p>os模块下的基本功能：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.name #操作系统类型</span><br><span class="line">os.uname()   #详细的系统信息（windows没有）</span><br><span class="line">os.environ  #环境变量</span><br><span class="line">os.environ.get(&apos;key&apos;)  #获取某个环境变量的值</span><br><span class="line">os.path.abspath(&apos;.&apos;) #查看当前目录的绝对路径</span><br><span class="line">os.mkdir(&apos;/Users/michael/testdir&apos;)  #创建一个目录</span><br><span class="line">os.rmdir(&apos;/Users/michael/testdir&apos;)   # 删掉一个目录</span><br><span class="line">os.path.join(&apos;/Users/michael&apos;, &apos;testdir&apos;)  #把两个路径合成一个时，要通过该函数,不要求目录和文件要真实存在</span><br><span class="line">os.path.split(&apos;/Users/michael/testdir/file.txt&apos;)  #拆分路径,不要求目录和文件要真实存在</span><br><span class="line">os.path.splitext(&apos;/path/to/file.txt&apos;) #直接让你得到文件扩展名,不要求目录和文件要真实存在</span><br><span class="line">os.rename(&apos;test.txt&apos;, &apos;test.py&apos;) # 对文件重命名</span><br><span class="line">os.remove(&apos;test.py&apos;) # 删掉文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.name <span class="comment">#操作系统类型</span></span><br><span class="line">os.uname()   <span class="comment">#详细的系统信息（windows没有）</span></span><br><span class="line">os.environ  <span class="comment">#环境变量</span></span><br><span class="line">os.environ.get(<span class="string">'key'</span>)  <span class="comment">#获取某个环境变量的值</span></span><br><span class="line">os.path.abspath(<span class="string">'.'</span>) <span class="comment">#查看当前目录的绝对路径</span></span><br><span class="line">os.mkdir(<span class="string">'/Users/michael/testdir'</span>)  <span class="comment">#创建一个目录</span></span><br><span class="line">os.rmdir(<span class="string">'/Users/michael/testdir'</span>)   <span class="comment"># 删掉一个目录</span></span><br><span class="line">os.path.join(<span class="string">'/Users/michael'</span>, <span class="string">'testdir'</span>)  <span class="comment">#把两个路径合成一个时，要通过该函数,不要求目录和文件要真实存在</span></span><br><span class="line">os.path.split(<span class="string">'/Users/michael/testdir/file.txt'</span>)  <span class="comment">#拆分路径,不要求目录和文件要真实存在</span></span><br><span class="line">os.path.splitext(<span class="string">'/path/to/file.txt'</span>) <span class="comment">#直接让你得到文件扩展名,不要求目录和文件要真实存在</span></span><br><span class="line">os.rename(<span class="string">'test.txt'</span>, <span class="string">'test.py'</span>) <span class="comment"># 对文件重命名</span></span><br><span class="line">os.remove(<span class="string">'test.py'</span>) <span class="comment"># 删掉文件</span></span><br></pre></td></tr></table></figure>
 <p>shutil模块可以作为os模块的补充：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copyfile()  #复制文件</span><br></pre></td></tr></table></figure>
 <p>我们可以利用Python的特性来过滤文件，例如：</p>
@@ -679,7 +679,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span>python学习笔记</p>
   <p><span>文章作者:</span>Jerry</p>
   <p><span>发布时间:</span>2018年04月03日 - 19:59:43</p>
-  <p><span>最后更新:</span>2019年09月12日 - 23:52:53</p>
+  <p><span>最后更新:</span>2019年09月14日 - 23:54:46</p>
   <p><span>原始链接:</span><a href="/2018/04/03/16-python-note/" title="python学习笔记">https://jerryma0912.github.io/2018/04/03/16-python-note/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jerryma0912.github.io/2018/04/03/16-python-note/" aria-label="复制成功！"></i></span>
   </p>
